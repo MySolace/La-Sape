@@ -123,7 +123,7 @@ gulp.task('assemble', function (done) {
 
 // get rid of those leading '/'s
 gulp.task('replace', ['assemble'], function () {
-	gulp.src([config.dest + '/index.html'])
+	gulp.src([config.dest + '/*.html'])
 		.pipe(replace('="/assets/', '="assets/'))
 		.pipe(gulp.dest(config.dest));
 });
