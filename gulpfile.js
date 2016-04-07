@@ -17,6 +17,7 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var webpack = require('webpack');
 var compass = require('gulp-compass');
+var replace = require('gulp-replace');
 
 
 // configuration
@@ -120,6 +121,14 @@ gulp.task('assemble', function (done) {
 });
 
 
+// get rid of those leading '/'s
+gulp.task('replace', ['assemble'], function () {
+	gulp.src([config.dest + '/index.html'])
+		.pipe(replace('="/assets/', '="assets/'))
+		.pipe(gulp.dest(config.dest));
+});
+
+
 // server
 gulp.task('serve', function () {
 
@@ -176,7 +185,8 @@ gulp.task('default', ['clean'], function () {
 		'styles',
 		'scripts',
 		'images',
-		'assemble'
+		'assemble',
+		'replace'
 	];
 
 	// run build
