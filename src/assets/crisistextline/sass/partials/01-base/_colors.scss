@@ -1,11 +1,9 @@
 // GRAYS
 $color-dark:        #444;
-$color-light:       #F3F3F3;
-$color-med:         #CCC;
-$color-med-light:   #EEE;
-$color-med-med:     #B3B3B3;
-$color-hover:       #E7E7E7;
 $color-med-dark:    #999;
+$color-med:         #CCC;
+$color-med-light:   #E7E7E7;
+$color-light:       #F3F3F3;
 
 // COLORS
 $color-blue:        #789BB3;
@@ -50,6 +48,10 @@ $color-9:           #722846;    // burgundy
 $color-level-2:     $color-blue;
 $color-level-3:     $color-purple;
 $color-supervisor:  $color-orange-alert;
+
+// MISC USES
+$color-hover:           $color-med-light;
+$color-traffic-light:   #B3B3B3;
 
 // SHADOWS
 $shadow-big:        0 0 2em $color-med;

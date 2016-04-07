@@ -249,15 +249,15 @@
 }
 
 .supchat-style {
-    background-color: $color-med-light;
+    background-color: $color-light;
     background-image: image-url('sprites-supchat-styles.png');
     background-position: -30px 0px;
     padding: 0;
     height: 30px;
     width: 30px;
     vertical-align: middle;
-    &:hover {
-        background-color: $color-med-light !important;
+    &:hover, &.active {
+        background-color: $color-light !important;
     }
     &.tiles {
         &:hover, &.active {

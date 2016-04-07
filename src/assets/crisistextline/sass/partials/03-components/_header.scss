@@ -52,59 +52,6 @@ header {
     margin: $header-padding;
 }
 
-.traffic-light {
-    float: left;
-    width: 5.75em;
-    height: 2em;
-    background: $color-med-med;
-    margin-top: 1em;
-    border-bottom-left-radius: 10%1em;
-    border-top-left-radius: 10%1em;
-    border-bottom-right-radius: 10%1em;
-    border-top-right-radius: 10%1em;
-    padding: .5em 0;
-    text-align: center;
-
-    li[class*='light-'] {
-        list-style: none;
-        border-radius: 50%;
-        width: 1em;
-        height: 1em;
-        background-color: $color-med-light;
-        float: left;
-        margin-left: .3em;
-
-        &.up {
-            background-image: image-url('fa-arrow-right.png');
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        &.down {
-            background-image: image-url('fa-arrow-left.png');
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-    }
-
-
-    .light-1.on {
-        background-color: $color-green;
-    }
-
-    .light-2.on {
-        background-color: yellow;
-    }
-
-    .light-3.on {
-        background-color: $color-orange-alert;
-    }
-
-    .light-4.on {
-        background-color: $color-red;
-    }
-}
-
 .app-demo, .app-local, .app-dev {
     &:after {
         margin-left: 1em;

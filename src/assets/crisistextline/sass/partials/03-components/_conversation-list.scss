@@ -64,8 +64,8 @@
         }
 
         td {
-            border-bottom: 1px solid $color-med-light;
-            border-top: 1px solid $color-med-light;
+            border-bottom: 1px solid $color-light;
+            border-top: 1px solid $color-light;
             padding: .5em 0;
         }
 
@@ -78,7 +78,7 @@
             font-style: italic;
             background-color: $color-light;
             &:hover {
-                background-color: $color-med-light;
+                background-color: $color-hover;
             }
         }
 

@@ -7,13 +7,10 @@ colors:
         "CTL Green Hover": "#88C38F"
     "Grays":
         Dark: "#444"
-        Med: "#CCC"
-        Hover: "#E7E7E7"
-        Light: "#F3F3F3"
-    "More Grays":
         "Med Dark": "#999"
-        "Med Med": "#B3B3B3"
-        "Med Light": "#EEE"
+        Med: "#CCC"
+        "Med Light": "#E7E7E7"
+        Light: "#F3F3F3"
     "Queue Priorities":
         "Low Priority": "#999"
         "Regular Priority": "#444"
@@ -46,3 +43,6 @@ colors:
         "Question": "#A65436"
         "Management Plan": "#FF9900"
         "To Do": "#78B37F"
+    "Misc":
+        "Hover": "#F3F3F3"
+        "Traffic Light": "#B3B3B3"
