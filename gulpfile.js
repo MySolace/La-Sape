@@ -53,7 +53,6 @@ gulp.task('clean', function (cb) {
 // styles
 gulp.task('styles:crisistextline', function() {
 	return gulp.src(config.src.styles.crisistextline)
-		.pipe(sourcemaps.init())
 		.pipe(compass({
 			css: 'dist/assets/crisistextline/styles',
 			sass: 'src/assets/crisistextline/sass',
@@ -61,8 +60,9 @@ gulp.task('styles:crisistextline', function() {
 		}).on('err', function (err) {
             console.log(err);
         }))
-		.pipe(rename('ctl.css'))
-		.pipe(sourcemaps.write())
+		.pipe(prefix('last 1 version'))
+		.pipe(gulpif(!config.dev, csso()))
+		// .pipe(rename('ctl.css'))
 		.pipe(gulp.dest(config.dest + '/assets/crisistextline/styles'))
 		.pipe(gulpif(config.dev, reload({stream:true})));
 });
@@ -186,7 +186,6 @@ gulp.task('default', ['clean'], function () {
 		'scripts',
 		'images',
 		'assemble',
-		'replace'
 	];
 
 	// run build
