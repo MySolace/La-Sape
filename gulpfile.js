@@ -62,7 +62,6 @@ gulp.task('styles:crisistextline', function() {
         }))
 		.pipe(prefix('last 1 version'))
 		.pipe(gulpif(!config.dev, csso()))
-		// .pipe(rename('ctl.css'))
 		.pipe(gulp.dest(config.dest + '/assets/crisistextline/styles'))
 		.pipe(gulpif(config.dev, reload({stream:true})));
 });
@@ -121,12 +120,12 @@ gulp.task('assemble', function (done) {
 });
 
 
-// get rid of those leading '/'s
-gulp.task('replace', ['assemble'], function () {
-	gulp.src([config.dest + '/*.html'])
-		.pipe(replace('="/assets/', '="assets/'))
-		.pipe(gulp.dest(config.dest));
-});
+// // get rid of those leading '/'s
+// gulp.task('replace', ['assemble'], function () {
+// 	gulp.src([config.dest + '/*.html'])
+// 		.pipe(replace('="/assets/', '="assets/'))
+// 		.pipe(gulp.dest(config.dest));
+// });
 
 
 // server
