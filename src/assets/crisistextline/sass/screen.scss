@@ -1,0 +1,52 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@charset "UTF-8";
+
+@import "compass";
+
+@import "partials/01-base/colors";
+@import "partials/01-base/dimensions";
+@import "partials/01-base/typography";
+@import "partials/01-base/base";
+
+@import "partials/02-elements/buttons";
+@import "partials/02-elements/scrollbar";
+@import "partials/02-elements/notice";
+@import "partials/02-elements/tables";
+@import "partials/02-elements/forms";
+@import "partials/02-elements/icons";
+
+@import "vendor/jquery-ui";
+@import "vendor/dataTables.jqueryui";
+@import "vendor/dataTables.tableTools";
+
+// TC - TODO: need to sort through the following
+
+@import "partials/03-components/toolbox";
+@import "partials/03-components/header";
+@import "partials/03-components/nav";
+@import "partials/03-components/body";
+@import "partials/03-components/main";
+@import "partials/03-components/pwdchk";
+@import "partials/03-components/referrals";
+@import "partials/03-components/transfer";
+@import "partials/03-components/action-item-form";
+@import "partials/03-components/sidebar";
+@import "partials/03-components/conversation";
+@import "partials/03-components/conversation-list";
+@import "partials/03-components/queue-button";
+@import "partials/03-components/management-plan";
+@import "partials/03-components/synonyms";
+@import "partials/03-components/platform-quotes";
+
+@import "partials/04-structures/profile";
+@import "partials/04-structures/supervisor";
+@import "partials/04-structures/my-dashboard";
+@import "partials/04-structures/reporting-log";
+@import "partials/04-structures/counselor-action-items";
+@import "partials/04-structures/user-profile";
+
+// TC  - this is down here b/c of hopscotch - bring it in earlier?
+@import "partials/03-components/releasenotes";

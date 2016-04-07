@@ -1,0 +1,6 @@
+#login-quote-author {
+    float:right;
+    &:before {
+        content: "-";
+    }
+}

@@ -1,0 +1,21 @@
+@import "../../vendor/hopscotch/hopscotch"; // Import base Hopscotch SCSS files
+
+.ccresources-updates {
+    .note, .policy {
+        padding: .25em 1em 1em;
+        &:first-of-type {
+            margin-top: 1em;
+        }
+        &:nth-child(2n+1) {
+            background-color: $color-light;
+        }
+        .step {
+            margin-left: 3em;
+            padding-bottom: 1em;
+            border-bottom: 1px solid $color-med;
+            &:last-of-type {
+                border: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{{#each ctl.colors}}
+    <h3>{{@key}}</h3>
+    <div class="f-color-chips">
+    {{#each this}}
+        <div class="f-color-chip {{this}}">
+            <div class="f-color-chip__name">{{@key}}</div>
+            <div class="f-color-chip__color">{{this}}</div>
+        </div>
+    {{/each}}
+    </div>
+{{/each}}

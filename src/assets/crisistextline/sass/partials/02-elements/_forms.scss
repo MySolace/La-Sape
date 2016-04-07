@@ -1,0 +1,59 @@
+div[role="main"] {
+    .section-admin {
+        label {
+            width: 15em;
+            display: inline-block;
+        }
+    }
+}
+
+.form-field {
+    margin: 2em 0;
+
+    label {
+        font-size: 1.2em;
+    }
+
+    .choice-field {
+        padding: 0.25em;
+        display: inline-block;
+        width: 100%;
+
+        &.selected {
+            background: $color-hover;
+        }
+
+        label {
+            font-size: 1em;
+            margin-left: 2em;
+            cursor: pointer;
+            display: block;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            float: left;
+        }
+    }
+}
+
+input[type="text"] {
+    line-height: 2em;
+}
+
+.mini {
+    .form-field {
+        margin: 0;
+    }
+}
+
+textarea {
+    @include transition(height 0.2s);
+}
+
+select {
+    height: 2.5em;
+    border: 1px solid $color-med;
+    &[multiple="multiple"] {
+        height: 100%;
+    }
+}

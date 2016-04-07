@@ -1,0 +1,139 @@
+$profile-plan-height: 15em;
+$convo-plan-height: 140px;
+$convo-half-height: 200px;
+$convo-title-opacity: .75;
+$convo-plan-opacity: .10;
+
+.conversation-summary {
+    // padding: .5em 0 .5em .5em;
+    display: block;
+    height: calc(#{$convo-plan-height} + 3em);
+    .summary-buttons {
+        width: 100%;
+        button.tab {
+            padding: .75em;
+        }
+    }
+    .summary-close {
+        width: 20px;
+        height: 20px;
+        padding: 1px;
+        border: none !important;
+        margin: .6em .5em 0;
+        background: image-url('sprites.png') no-repeat;
+        background-position: -10px -130px;
+        background-color: white;
+        &:hover {
+            background-color: $color-dark;
+            background-position: -50px -130px;
+        }
+    }
+    .management-plan-save {
+        margin-right: .5em;
+    }
+    textarea {
+        height: $convo-plan-height * 3 / 4;
+        width: 100%;
+    }
+
+    .summary-wrapper {
+        height: $convo-plan-height;
+        overflow-y: auto;
+        padding: 1em 1em 0;
+        font-size: 12px;
+        .summary-tab {
+            overflow: hidden;
+        }
+        .summary-item-label,
+        .accordion-header,
+        .accordion-item-header {
+            font-weight: bold;
+        }
+        .field-empty {
+            display: inline-block;
+        }
+        .field-data {
+            margin-left: 1em;
+        }
+        ul {
+            margin: 0;
+            padding-left: 1em;
+        }
+        form {
+            margin: 0;
+        }
+        table {
+            border-collapse: collapse;
+            td {
+                padding: 0;
+            }
+            &.field-data {
+                margin-top: 1em;
+                margin-bottom: 1em;
+            }
+        }
+        select#crisistext_repeattexterbundle_managementplan_actor {
+            display: none;
+        }
+        .profile-management-plan-edit {
+            cursor: pointer;
+        }
+        .summary-accordion {
+            margin: .5em 0;
+            padding: 1em;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// Doing coloring here
+$op-1: $convo-plan-opacity;
+$op-2: $convo-title-opacity/2 - $convo-plan-opacity/2;
+$op-3: $convo-title-opacity - $convo-plan-opacity/2;
+@each $n in (0,1,2,3,4,5,6,7,8,9) {
+    $c: black;
+    // Needs to be still DRYer, but SASS still limited in this regard
+    @if $n == 0 { $c: $color-0; } @else if $n == 1 { $c: $color-1; } @else if $n == 2 { $c: $color-2; } @else if $n == 3 { $c: $color-3; } @else if $n == 4 { $c: $color-4; }
+    @else if $n == 5 { $c: $color-5; } @else if $n == 6 { $c: $color-6; } @else if $n == 7 { $c: $color-7; } @else if $n == 8 { $c: $color-8; } @else if $n == 9 { $c: $color-9; }
+    .conversation-summary.color-#{$n} {
+        background: rgba($c, $op-1);
+        .summary-buttons button.tab {
+            border: none;
+            color: $c;
+            background: rgba($c, $op-2);
+            &:hover, &.active {
+                background: rgba($c, $op-3);
+                color: white;
+            }
+            &.active {
+                font-weight: bold;
+            }
+        }
+        .summary-wrapper button {
+            background: rgba($c, $op-2);
+            &:hover {
+                background: rgba($c, $op-3);
+            }
+        }
+        .summary-accordion {
+            border: 1px solid rgba($c, $op-2);
+        }
+    }
+}
+
+.conversations .external {
+    .message-list.half {
+        height: $convo-half-height !important;
+    }
+    &.minimized {
+        .conversation-summary {
+            display: none !important;
+        }
+        .message-list.half {
+            height: 300px !important;
+        }
+    }
+}
+

@@ -1,0 +1,56 @@
+// GRAYS
+$color-dark:        #444;
+$color-light:       #F3F3F3;
+$color-med:         #CCC;
+$color-med-light:   #EEE;
+$color-med-med:     #B3B3B3;
+$color-hover:       #E7E7E7;
+$color-med-dark:    #999;
+
+// COLORS
+$color-blue:        #789BB3;
+$color-blue-hover:  #88ABC3;
+$color-green:       #78B37F;
+$color-green-hover: #88C38F;
+$color-green-dark:  #517A56;
+$color-purple:      #A460C5;    $the-color-purple:  $color-purple; // We now have The Color Purple in the code base
+$color-purple-hover:#A67AB5;
+$color-orange-alert:#FF9900;
+$color-green-alert: #0A990A;
+$color-red:         #D9534F;
+$color-gold:        #F2D10C;
+
+// CHANGES - WHAT IS THIS?
+$color-rate-r:      rgba(255,0,0,.5);
+$color-rate-ry:	    rgba(255,125,0,.5);
+$color-rate-y:      rgba(255,255,0,.5);
+$color-rate-yg:     rgba(125,255,0,.5);
+$color-rate-g:      rgba(0,200,0,.5);
+$color-overlay:     rgba(0,0,0,.4);
+
+// ACTION BOARD COLORS - MOVE TO ACTION BOARD?
+$color-flag: $color-blue;
+$color-question: #A65436;
+$color-mgtplan: $color-orange-alert;
+$color-todo: $color-green;
+
+// CC CONVO TITLEBAR COLORS
+$color-0:           $color-blue;
+$color-1:           $color-question;
+$color-2:           $color-green;
+$color-3:           #3F3FA8;    // dark blue
+$color-4:           #C16B87;    // salmon
+$color-5:           #69A01A;    // lime
+$color-6:           #259FA5;    // teal
+$color-7:           #6A4789;    // purple
+$color-8:           #145126;    // hunter green
+$color-9:           #722846;    // burgundy
+
+// CC LEVEL COLORS
+$color-level-2:     $color-blue;
+$color-level-3:     $color-purple;
+$color-supervisor:  $color-orange-alert;
+
+// SHADOWS
+$shadow-big:        0 0 2em $color-med;
+$shadow-small:      0 2px 8px rgba(0,0,0,0.6);

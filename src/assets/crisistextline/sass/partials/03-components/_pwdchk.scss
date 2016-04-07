@@ -1,0 +1,53 @@
+#pwd_strength_container {
+    position: absolute;
+    left: 50%;
+    margin-left: 23em;
+    top: 6em;
+    background: white;
+}
+
+.pwd_strength_indicator {
+    border-width: 5px;
+    border-style: solid;
+    padding: 1em;
+    text-align: left;
+    width: 18em;
+    @include box-shadow($shadow-big);
+
+    &:after {
+        right: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(255, 255, 255, 0);
+        border-right-color: #ffffff;
+        border-width: 30px;
+        top: 30px;
+        margin-top: -30px;
+    }
+}
+
+.pwd_strength_red {
+    &:after {
+        border-right-color: red;
+    }
+    border-color: red;
+}
+
+.pwd_strength_yellow {
+    &:after {
+        border-right-color: yellow;
+    }
+    border-color: yellow;
+}
+
+.pwd_strength_green {
+    &:after {
+        border-right-color: green;
+    }
+    border-color: green;
+}
+

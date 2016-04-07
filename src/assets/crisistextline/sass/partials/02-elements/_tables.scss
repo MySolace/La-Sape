@@ -1,0 +1,27 @@
+table {
+    width: 100%;
+
+    td, th {
+        padding: 1em;
+    }
+    th {
+        background: $color-blue;
+        color: white;
+        text-align: left;
+    }
+
+    tbody {
+        tr:nth-child(even) {
+        }
+        tr:nth-child(odd) {
+        }
+    }
+    &.no-padding {
+        tr {
+            padding: 0;
+        }
+        td {
+            padding: 0;
+        }
+    }
+}

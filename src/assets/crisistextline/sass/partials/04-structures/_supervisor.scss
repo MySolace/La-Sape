@@ -1,0 +1,442 @@
+@mixin action-box-color($color) {
+    border: 2px solid $color;
+    .action-title {
+        background-color: $color;
+        .pip {
+            color: $color;
+        }
+    }
+}
+
+.action-boxes {
+    min-width: 600px;
+    width: 100%;
+    height: calc(100% - #{$padding-main-div}/2);
+    .action-title {
+        position: relative;
+        text-align: center;
+        padding: .5em;
+        color: white;
+        font-weight: bold;
+        &:hover {
+            cursor: move;
+        }
+        .title {
+            position: relative;
+            display: inline;
+            margin: .5em auto;
+            .pip {
+                display: none;
+                background-color: white;
+                position: absolute;
+                top: -2px;
+                left: -1.5em;
+                font-size: .6em;
+                padding: 0 .25em;
+                @include border-radius(.25em);
+            }
+        }
+        .add {
+            display: none;
+            position: absolute;
+            top: 5px;
+            right: 1em;
+            height: 18px;
+            width: 18px;
+            cursor: pointer;
+            background: image-url('filled-plus.png') no-repeat;
+            background-position: 0px 0px;
+            background-size: 300%;
+        }
+    }
+    .action-box, .action-box-placeholder {
+        float: left;
+        margin: $padding-action-board;
+        height: calc(50% - 2 * #{$padding-action-board} - 1px);
+        width: calc(50% - 2 * #{$padding-action-board} - 1px); // -1 px to account for weird float issues
+    }
+    .action-box {
+        background-color: white;
+        &.question {
+            @include action-box-color($color-question);
+        }
+        &.flag {
+            @include action-box-color($color-flag);
+        }
+        &.mgtplan {
+            @include action-box-color($color-mgtplan);
+        }
+        &.todo {
+            @include action-box-color($color-todo);
+            .action-title .add {
+                display: inline-block;
+            }
+        }
+    }
+    .action-box-placeholder {
+        background-color: $color-light;
+    }
+}
+
+.action-items {
+    width: 100%;
+    height: calc(100% - #{$padding-main-div} * 3/4);
+    overflow-y: auto;
+    .item-list {
+        display: block;
+        overflow-y: hidden;
+        .action-item {
+            display: flex; // <--- This here is certifiable MAGICK (http://stackoverflow.com/questions/5540485/how-to-make-an-inline-block-element-fill-the-remainder-of-the-line#answer-30526943)
+            cursor: pointer;
+            padding: $padding-action-item;
+            border-top: 1px solid $color-light;
+            border-bottom: 1px solid $color-light;
+        }
+    }
+    button {
+        font-size: .75em;
+        padding: .5em;
+        &.default {
+            background-color: $color-blue;
+            color: white;
+            &:hover {
+                background-color: $color-blue-hover;
+            }
+        }
+        &.dummy:hover {
+            background: $color-med;
+            color: black;
+        }
+
+    }
+    .action-items-empty {
+        padding: $padding-action-item;
+    }
+}
+
+.action-item {
+    &:hover {
+        background-color: $color-light;
+    }
+    .status-box {
+        width: $size-action-status-box !important;
+        height: $size-action-status-box !important;
+        background: image-url('sprites-actionitem.png') no-repeat;
+        background-position: -200px 0;
+        border: 2px solid $color-dark;
+        margin-right: 1em;
+    }
+    .content {
+        width: 100%;
+        position: relative;
+        .content-meta {
+            font-size: 10px;
+            color: $color-med-dark;
+            overflow: hidden;
+            a {
+                color: $color-med-dark;
+                text-decoration: none;
+                &:hover {
+                    color: $color-blue;
+                    text-decoration: underline;
+                }
+            }
+            .left {
+                float: left;
+                .meta {
+                    margin-right: 1em;
+                }
+            }
+            .right {
+                float: right;
+            }
+        }
+        .content-main {
+            font-size: 16px;
+        }
+        .content-supplemental .inner {
+            padding-top: $padding-action-item * 3/4;
+        }
+        .content-action {
+            padding-top: $padding-action-item;
+        }
+    }
+    &.unread {
+        /*
+        .status-box {
+            border-width: 2px;
+        }
+        */
+        .content-main {
+            font-weight: bold;
+        }
+    }
+    .toggle {
+        display: none;
+    }
+    &.open {
+        .toggle {
+            display: block;
+        }
+    }
+    &.inactive {
+        opacity: .4;
+        .status-box {
+            background-position: -2px -32px;
+        }
+    }
+    &.complete .status-box {
+        background-position: -2px 0;
+    }
+}
+
+.action-item-popup {
+    table {
+        table-layout: fixed;
+    }
+    td {
+        padding: 0;
+        &.label {
+            font-weight: bold;
+        }
+    }
+    input[type="text"] {
+        width: 100%;
+    }
+    textarea {
+        width: 100%;
+        height: 8em;
+    }
+
+    .ban-request-form {
+        text-align: center;
+    }
+}
+
+.sup-chats {
+    overflow: auto;
+    background: white;
+    position: relative;
+    // padding: 1em;
+
+    .sup-chats-go {
+        position: absolute;
+        top: 1em;
+        right: 2em;
+    }
+    .sup-pinned {
+        background: $color-light;
+        min-height: 18em;
+
+        &:before {
+            color: $color-dark;
+            content: 'Pin conversations using the star and they will show up at the top here.';
+            width: 13rem;
+            height: 13rem;
+            border: 1px solid $color-med;
+            z-index: 1;
+            display: block;
+            margin: 1rem;
+            position: absolute;
+            padding: 1rem;
+        }
+
+        .sup-card {
+            z-index: 10;
+            background: white;
+        }
+    }
+}
+
+.supchat-style {
+    background-color: $color-med-light;
+    background-image: image-url('sprites-supchat-styles.png');
+    background-position: -30px 0px;
+    padding: 0;
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+    &:hover {
+        background-color: $color-med-light !important;
+    }
+    &.tiles {
+        &:hover, &.active {
+            background-position: 0 0;
+        }
+    }
+    &.rows {
+        background-position: -30px -30px;
+        &:hover, &.active {
+            background-position: 0 -30px;
+        }
+    }
+}
+
+.user-conversations {
+    h3 {
+        margin-bottom: 0;
+        &.level-2 {
+            color: $color-level-2;
+        }
+        &.level-3 {
+            color: $color-level-3;
+        }
+    }
+}
+
+.sup-card {
+    font-size: .8em;
+    background: $color-light;
+    @include box-shadow($shadow-small);
+    height: 17rem;
+    width: 16rem;
+    margin: 1rem;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    overflow: hidden;
+
+    &.enlarged {
+        font-size: 1em;
+        height: 22rem;
+        width: 22rem;
+
+        .sup-conversation {
+            height: 17rem;
+        }
+    }
+
+    h2 {
+        @include text-shadow(0 0 5px black);
+        font-size: 1em;
+        height: 2em;
+        margin: 0;
+        color: white;
+        padding: .2em;
+        line-height: 1.8em;
+
+        cursor: move;
+
+        .supchat-user-title {
+            max-width: 9em;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        ul {
+            position: absolute;
+            right: .2em;
+            top: .2em;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                margin: 0;
+                padding: 0;
+                display: inline;
+
+                a {
+                    padding: 0 .5em;
+                    display: inline-block;
+                    color: white;
+                    text-decoration: none;
+                    font-weight: lighter;
+
+                    &.active { font-weight: bolder; }
+                }
+            }
+        }
+    }
+
+    .sup-convo-wrapper > div {
+        padding-left: .5em;
+        padding-right: .5em;
+    }
+
+    .sup-convo-meta {
+        border-bottom: 1px solid $color-dark;
+        padding-top: .25em;
+        padding-bottom: .25em;
+
+        .sup-convo-meta-row {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            clear: both;
+        }
+        .numbers {
+            .convo-number {
+                float: left;
+            }
+            .level-count {
+                float: right;
+            }
+        }
+
+        .links {
+            float: right;
+        }
+
+        a {
+            margin: 0 0 0 .5em;
+        }
+    }
+
+    .sup-conversation {
+        height: 13rem;
+        overflow-y: scroll;
+
+        .message-text {
+            margin-left: 1em;
+            clear: both;
+        }
+
+        .message-user {
+            padding-right: .5em;
+            float: left;
+            max-width: 15em;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
+            &:after {
+                content: '';
+            }
+        }
+    }
+
+    .level-count {
+        a {
+            text-decoration: none;
+            color: $color-dark;
+        }
+        &.level-2 a {
+            color: $color-level-2;
+        }
+        &.level-3 a {
+            color: $color-level-3;
+        }
+    }
+
+    &.high-priority {
+        border: 2px solid $color-orange-alert;
+    }
+}
+
+.sup-chat-cc {
+    textarea {
+        width: 100%;
+        height: 3em;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .sup-chat-transcript {
+        padding: 0 .5em;
+        height: 15em;
+        overflow-y: scroll;
+    }
+}

@@ -1,0 +1,199 @@
+$size-user-profile-badge: 22px;
+$margin-user-profile-badge: 8px;
+$size-user-profile-avatar: (3 * $size-user-profile-badge) + (2 * $margin-user-profile-badge);
+$size-quote-indent: 3em;
+$width-quote-textarea: 75%;
+
+$popup-avatar-size: 40px;
+$popup-fontsize: 11px;
+$popup-line-height: 1.4;
+$popup-quote-lines: 3;
+
+// Main Profile Card formatting
+.profile-card {
+    div, img, a {
+        &.editable {
+            cursor: pointer;
+        }
+    }
+    .profile-card-name {
+        width: 100%;
+        color: black;
+        margin-top: 0;
+        .edit-link {
+            font-size: 14px;
+            font-weight: normal;
+        }
+    }
+    .profile-card-content {
+        width: 100%;
+        .profile-card-left, .profile-card-right {
+            display: inline-block;
+            vertical-align: top;
+        }
+        input, textarea {
+            clear: both;
+        }
+        div.unset {
+            font-style: italic;
+            color: $color-med-dark;
+        }
+    }
+    .profile-card-left {
+        margin-right: 1em;
+        .avatar {
+            .gravatar-toggle {
+                cursor: pointer;
+            }
+            &>div {
+                width: 100%;
+                font-size: .7em;
+            }
+            input[type="checkbox"] {
+                margin-left: 0;
+            }
+            .gravatar {
+                background-image: image-url('ctl-shortlogo-gray.png');
+            }
+        }
+        .badges {
+            clear: both;
+            display: relative;
+            overflow: hidden;
+            .badge {
+                float: left;
+                &:nth-of-type(3n) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    .profile-card-right {
+        textarea {
+            padding: .25em;
+        }
+        textarea, input {
+            font-size: 14px;
+        }
+    }
+    .edit-buttons button.submit {
+        @include button-active-hover;
+    }
+}
+
+// Profile Page Profile Card formatting (mainly adding in size dimensions)
+.user-profile .profile-card {
+    padding: 2em;
+    background: $color-light;
+    .profile-card-left {
+        .avatar {
+            width: $size-user-profile-avatar;
+            .gravatar {
+                width: $size-user-profile-avatar;
+                height: $size-user-profile-avatar;
+                background-size: $size-user-profile-avatar $size-user-profile-avatar;
+            }
+        }
+        .badges {
+            margin-top: 5px;
+            .badge {
+                width: $size-user-profile-badge;
+                height: $size-user-profile-badge;
+                margin-right: $margin-user-profile-badge;
+                &.cc-level {
+                    @include user-icon-square($color-med, $size-user-profile-badge);
+                    &.level-2 {
+                        background-color: $color-level-2;
+                    }
+                    &.level-3 {
+                        background-color: $color-level-3;
+                    }
+                }
+                &.one-year {
+                    @include user-icon-star($color-level-3);
+                    font-size: $size-user-profile-badge - 2px;
+                    margin-top: -1px;
+                }
+            }
+        }
+    }
+    .profile-card-right {
+        @include calc(width, 100% - #{$size-user-profile-avatar} - 1em);
+        textarea {
+            width: $width-quote-textarea;
+            height: 6em;
+        }
+        input[type="text"] {
+            width: 100%;
+            max-width: 20em;
+        }
+        .quote {
+            margin-left: $size-quote-indent;
+        }
+        .quotemark {
+            height: $size-quote-indent;
+            .inner {
+                font-size: 4em;
+                font-style: normal;
+                font-weight: bold;
+                color: $color-med-dark;
+            }
+        }
+    }
+    .edit-buttons {
+        margin-top: 2em;
+        position: relative;
+        overflow: hidden;
+        padding-left: $size-quote-indent;
+        button {
+            float: left;
+            &.cancel {
+                float: right;
+                @include calc(margin-right, 100% - #{$width-quote-textarea} - #{$size-quote-indent});
+            }
+        }
+    }
+}
+
+// Sidebar popup Profile Card formatting
+.ui-tooltip.profile-card-tooltip {
+    background-color: white;
+    color: $color-dark;
+    font-size: $popup-fontsize;
+    &:after {
+        display: none;
+    }
+}
+
+.profile-card.popup {
+    padding: .5em;
+    .profile-card-left {
+        .avatar {
+            width: $popup-avatar-size;
+            .gravatar {
+                width: $popup-avatar-size;
+                height: $popup-avatar-size;
+                background-size: $popup-avatar-size $popup-avatar-size;
+            }
+        }
+    }
+    .profile-card-right {
+        max-width: 200px;
+        .quote {
+            // For limiting to 3 lines, with ellpisis in webkit
+            display: block;
+            display: -webkit-box;
+            max-width: 100%;
+            max-height: $popup-quote-lines * $popup-fontsize * $popup-line-height;
+            margin: 1em auto 0;
+            line-height: $popup-line-height;
+            -webkit-line-clamp: $popup-quote-lines;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            &:before, &:after {
+                content: "\0022";
+            }
+        }
+    }
+}

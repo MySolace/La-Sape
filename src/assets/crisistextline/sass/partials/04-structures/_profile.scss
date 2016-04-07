@@ -1,0 +1,606 @@
+#main-wrapper.fixed-namebar {
+    margin-top: $height-namebar-div;
+    position: relative;
+    overflow: none;
+    @include calc(width, 100% - #{$width-sidebar-right} - #{$width-sidebar-left});
+    .main-left {
+        width: 100%;
+        position: relative;
+        padding-bottom: 7em;
+    }
+    &> h1 {
+        display: none;
+    }
+}
+
+.namebar {
+    position: fixed;
+    top: $header-height + 2em;
+    @include calc(width, 100% - #{$width-sidebar-left} - #{$padding-main-div} - 1em);
+    overflow: hidden;
+    background-color: transparent;
+    h2 {
+        z-index: 10;
+        padding-top: 2px;
+    }
+    .conversation-count {
+        z-index: 15;
+        padding-top: 2px;
+        position: relative;
+    }
+    .namebar-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 20px;
+        width:700px;
+        z-index: 15;
+    }
+    .title-right {
+        float: right;
+        line-height: 2em;
+        margin-left: 1rem;
+        margin-top: .25em;
+        position: relative;
+    }
+    .observe {
+        margin-top: 0;
+    }
+    .repeater-flag-box {
+        display: inline-block;
+        margin: 7px 0 0 10px;
+    }
+    .local-timestamp {
+        &:hover {
+            padding-left: 1em;
+            cursor: default;
+        }
+        background-color: white;
+    }
+}
+
+#tabs {
+    position: fixed;
+    top: $header-height + 6em;
+    display: block;
+    z-index: 5;
+    .tab-item {
+        display: inline-block;
+        &.active {
+            @include button-active-hover;
+            font-weight: bold;
+        }
+        &#tab-mgtplan {
+            display: none;
+        }
+    }
+}
+
+.main-left {
+    margin-top: 2.5em;
+}
+
+.tab-wrapper {
+    display: none;
+    @include clearfix;
+    overflow: none;
+    border-color: $color-light;
+    border-width: 1px 0;
+    border-style: solid;
+    padding: .5em 0;
+    &#wrapper-survey {
+        display: block;
+    }
+    &#wrapper-transcript {
+        padding: 0;
+    }
+}
+
+div[role="main"] .right-sidebar {
+    background: $color-light;
+    overflow-y: scroll;
+    position: fixed;
+    top: $header-height + $height-namebar-div + .75em;
+    padding: 1em;
+    padding-bottom: 3em;
+    right: 0;
+    width: $width-sidebar-right;
+    @include calc(height, 100% - #{$header-height} - #{$height-namebar-div} - .75em);
+
+    h3 {
+        margin: 0;
+        margin-bottom: .5em;
+    }
+
+    textarea {
+        width: 17em;
+        min-height: 3.5em;
+    }
+
+    .flag {
+        display: inline-block;
+        margin-bottom: 1em;
+        a {
+            background: $color-med;
+            border: 1px solid $color-med-dark;
+            color: white;
+            padding: .2em;
+            text-decoration: none;
+
+            &.active {
+                background: $color-blue-hover;
+                border-color: $color-blue;
+            }
+        }
+    }
+
+    .sidebar-item {
+        margin: 1em 0;
+        border-bottom: 1px solid $color-med;
+        padding-bottom: 1em;
+        font-size: .85em;
+    }
+}
+
+@mixin profile-transcript-style {
+    width: $width-profile-transcript;
+    border-right: 1px solid $color-light;
+}
+
+.profile-messages {
+    float: left;
+
+    @include profile-transcript-style;
+
+    .message {
+        &.note {
+            background: $color-light;
+            padding: .5em 0;
+            &:hover {
+                .message-meta {
+                    margin-right: 30px;
+                }
+            }
+        }
+        .message-meta {
+            float: right;
+            margin-right: 30px;
+        }
+        .message-user {
+            float: left;
+            height: auto;
+            max-width: 25%;
+        }
+        .message-text {
+            margin-left: 0;
+            padding-left: .5em;
+            padding-right: .5em;
+            display: block;
+            @include clearfix;
+        }
+
+        .message-add-note {
+            display: none;
+            float: right;
+            width: 25px;
+            text-align: right;
+            a {
+                text-decoration: none;
+                text-indent: 16px;
+                color: black;
+                background-image: image-url('sprites.png');
+                background-position: -12px -172px;
+                display: block;
+                font-weight: bold;
+                padding-top: 2px;
+            }
+        }
+
+        &:hover {
+            .message-add-note {
+                display: block;
+            }
+            .message-meta {
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+.message-note-list {
+    width: 25%;
+    float: left;
+    padding: 0 1em;
+
+    .container {
+        position: relative;
+    }
+
+    .message-note {
+        position: relative;
+        font-size: .85em;
+        padding: 0 .5em;
+        margin-top: .25em;
+        &:after {
+            right: 100%;
+            content: '\21B3';
+            height: 0;
+            width: .7em;
+            position: absolute;
+            top: 0;
+        }
+        &.left-arrow:after {
+            border: solid transparent;
+            border-color: rgba(0, 0, 0, 0);
+            border-right-color: black;
+            border-width: .6em;
+            content: '';
+        }
+    }
+}
+
+.profile-mgtplan {
+    .form-field {
+        margin: 0;
+        padding: 1em 0;
+        @include clearfix;
+        &:first-of-type {
+            padding-top: 0;
+            border: none;
+        }
+    }
+
+    .show .form-field {
+        padding: .25em 0;
+    }
+
+    label {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    form {
+        margin: 0;
+        position: relative;
+
+        .choice-wrapper label {
+            font-weight: normal;
+        }
+
+        textarea {
+            width: 60%;
+            min-width: 200px;
+            display: block;
+            margin-top: .5em;
+        }
+
+        input[type="text"] {
+            @extend textarea;
+        }
+
+        button[type="submit"] {
+        }
+    }
+    form.dummy-aware {
+        display: inline-block;
+    }
+}
+
+.post-convo-form {
+    border-bottom: none;
+    @extend .profile-mgtplan;
+    form {
+        .form-field {
+            padding: 2em 0;
+            border-top: 1px solid $color-light;
+        }
+        textarea {
+            width: 100%;
+        }
+        input[type="text"] {
+            width: 60%;
+        }
+    }
+}
+
+.columns-2 {
+    @include columns(20em 2);
+}
+
+.columns-3 {
+    @include columns(10em 3);
+}
+
+.columns-3, .columns-2 {
+    * {
+        @include break-inside(avoid);
+    }
+}
+
+.meta-right-floater {
+    @include background-image(linear-gradient(left middle,rgba($color-blue,0), $color-blue 2em));
+    padding-left: 2em;
+    position: absolute;
+    top: .5em;
+    right: .5em;
+}
+
+.meta-right-floater-critical {
+    @extend .meta-right-floater;
+    @include background-image(linear-gradient(left middle,rgba($color-green,0), $color-green 2em));
+}
+
+.critical .action, .starred .action {
+    @extend .meta-right-floater-critical;
+}
+
+.actions {
+    @extend .meta-right-floater;
+
+    a {
+        text-decoration: none !important;
+        font-weight: bold;
+        padding: 0 .2em;
+        line-height: 1em;
+        font-size: 1.5em;
+    }
+}
+
+$icon-width: 2em;
+
+.conversation-count.user-icon {
+    line-height: $icon-width;
+    width: $icon-width;
+    float: left;
+
+    span {
+        text-align: center;
+        margin: 0;
+        width: auto;
+        height: auto;
+        color: white;
+
+        a {
+            display: block;
+            width: 2em;
+            line-height: 2em;
+            color: white;
+            text-decoration: none;
+        }
+    }
+}
+
+.mock-button {
+    font-size: 0;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    &:hover {
+        background-color: $color-blue;
+    }
+
+    &.management-plan {
+        @include button-mgt-plan;
+    }
+    &.admin-request-phone {
+        background-image: image-url('sprites.png');
+        background-position: -6px -5px;
+        &:hover {
+            background-position: -46px -5px;
+        }
+    }
+    &.flag {
+        background-image: image-url('flag.png');
+        background-position: -6px -46px;
+        &:hover {
+            background-position: -46px -46px;
+        }
+        &.flagged {
+            background-position: -6px -6px;
+            &:hover {
+                background-position: -46px -6px;
+            }
+        }
+    }
+}
+
+.namebar-left {
+    .conversation-status, .actor-carrier {
+        clear: both;
+        float: left;
+        margin-bottom: .5em;
+        margin-top: -.25em;
+        margin-left: 2.5em;
+        cursor: default;
+    }
+    .conversation-status {
+        &:before {
+            content: 'Status: ';
+            font-weight: bold;
+        }
+        &.priority-4 {
+            color: $color-orange-alert;
+        }
+        &.priority-3 {
+            color: $color-green-alert;
+        }
+        &.priority-1 {
+            color: $color-med-dark;
+        }
+    }
+    .actor-carrier {
+        &:before {
+            content: 'Carrier: ';
+            font-weight: bold;
+        }
+    }
+}
+
+.actor-name-box {
+    margin: 0;
+    float: left;
+    position: relative;
+    @include calc(width, 100% - #{$width-sidebar-right});
+    input, .actor-name, a {
+        font-size: 21px;
+        font-weight: bold;
+    }
+    .actor-name, .actor-edit {
+        margin: .2em 0 0 .2em;
+        float: left;
+    }
+    .actor-name {
+        @include calc(max-width, 100% - #{7em});
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .actor-edit {
+        text-decoration: none;
+        color: $color-med;
+        font-weight: normal;
+        &:hover {
+            color: $color-med-dark;
+        }
+    }
+    &:hover {
+        .actor-edit {
+            display: inline;
+        }
+    }
+}
+
+.location-accuracy {
+    font-weight: bold;
+    &:after {
+        font-weight: normal;
+        margin-left: .5em;
+    }
+    &.verified:after {
+        content: 'Verified (entered by counselor)';
+        background: $color-rate-g;
+    }
+    &.billing:after {
+        content: 'Billing address (sent to us from the mobile carrier)';
+        background: $color-rate-y;
+    }
+    &.guess:after {
+        content: "Guess (Largest city for the texter's area code)";
+        background: $color-rate-r;
+    }
+}
+
+div[role="main"] .profile-fields {
+    li {
+        clear: both;
+        margin-top: .75em;
+        margin-bottom: .75em;
+
+        label {
+            display: inline-block;
+            width: 12em;
+        }
+        input {
+            display: inline-block;
+            font-size: 1em;
+            padding: .5em;
+        }
+
+        li {
+            label { width: 10.8em; }
+        }
+    }
+    .saved:after {
+        content: '\2713 ';
+        position: relative;
+        left: -2em;
+        color: $color-green;
+        width: 0;
+        display: inline-block;
+    }
+}
+
+.profile-container {
+    display: none;
+    @include box-shadow($shadow-small);
+    background: white;
+    position: fixed;
+    margin-top: -4.5em;
+    padding: .5em 1em 1em 1em;
+    margin-left: -1em;
+    z-index: 10;
+
+    .close {
+        width: 1.5em;
+        line-height: 1.5em;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: $color-dark;
+        cursor: pointer;
+        color: white;
+        text-align: center;
+    }
+    h2 {
+        margin-top: 0;
+    }
+}
+
+.namebar-left,
+.profile-container {
+    h2 input {
+        font-size: 1em;
+        margin: -2px;
+        padding: 0;
+        font-weight: bold;
+    }
+}
+
+.survey-item-list, .reporting-log-list, .ban-list {
+    ul {
+        margin: 0;
+        li {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+    td {
+        padding: 0;
+    }
+}
+
+.multi-text-more {
+    width: 15px;
+    height: 15px;
+    margin-top: .25em;
+    cursor: pointer;
+    background: image-url('filled-plus.png') no-repeat;
+    background-position: -15px 0px;
+    &:hover {
+        background-position: -30px 0px;
+    }
+}
+
+button.observe {
+    line-height: 1em;
+    padding: .6em 1em;
+}
+
+#number-request-explanation {
+    @include profile-transcript-style;
+    font-weight: bold;
+    color: $color-orange-alert;
+    padding: 1em 0;
+    border-bottom: 1px solid $color-light;
+}
+
+.profile-popup {
+    strong {
+        width: 10em;
+        display: inline-block;
+    }
+    textarea {
+        width: 100%;
+        min-height: 3.5em;
+    }
+}

@@ -1,0 +1,68 @@
+.reporting-log-index {
+    tr:hover {
+        cursor: pointer;
+    }
+}
+
+.reporting-log-form {
+    width: 100%;
+
+    > div {
+        padding: 10px 0;
+        border-bottom: 1px solid $color-light;
+    }
+
+    input[type="text"], textarea {
+        display: block;
+        width: 400px;
+    }
+
+    input[type="radio"] {
+        margin: 0 5px 0 15px;
+    }
+
+    textarea {
+        height: 75px;
+    }
+}
+
+.reporting-log-table {
+    border-collapse: collapse;
+    width: 75%;
+    border: 1px solid $color-blue;
+
+    tr:nth-child(odd) {
+        background-color: #F9F9F9;
+    }
+
+    th {
+        width: 25%;
+        border-bottom: 1px solid $color-med-light;
+    }
+
+    div.reporting-log-note {
+        margin: 5px;
+        padding: 5px;
+
+        &:not(:first-of-type) {
+            border-top: 1px solid $color-med;
+        }
+
+        div.reporting-log-note-creator {
+            margin: 5px 0 0 0;
+            font-size: 12px;
+            font-style: italic;
+        }
+    }
+
+    textarea {
+        display: block;
+        width: 100%;
+        transition: height .5s;
+        height: 2em;
+
+        &:focus {
+            height: 6em;
+        }
+    }
+}

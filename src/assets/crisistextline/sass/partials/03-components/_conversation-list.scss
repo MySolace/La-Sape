@@ -1,0 +1,221 @@
+.rating-Bad {
+    background: rgba(255,0,0,.3);
+}
+/*
+.rating-Good {
+    background: rgba($color-blue,.4);
+}
+*/
+.rating-Neutral {
+    
+}
+
+.rating-Good {
+    background: rgba($color-green,.4);
+}
+
+.sublist-example {
+    font-style: italic;
+    background-color: $color-light;
+}
+
+.conversation-list,
+.mgtplan-list {
+    border-spacing: 0;
+    border-collapse: collapse;
+    .conversation-info {
+        margin: 0;
+        padding: 0;
+        span {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            max-height: 1.2em;
+            overflow: hidden;
+            max-width: 5em;
+            vertical-align: middle;
+            &:after {
+                content: ',\00a0';
+            }
+            &:last-child:after {
+                content: '';
+            }
+        }
+    }
+
+    th {
+        padding: .5em 0;
+        &:first-child {
+            padding-left: 1.5em;
+        }
+    }
+
+    .conversation,
+    .mgtplan {
+        cursor: pointer;
+        font-weight: bold;
+
+        td:first-child {
+            padding-left: 1.5em;
+        }
+
+        &:last-child {
+            border: none;
+        }
+
+        td {
+            border-bottom: 1px solid $color-med-light;
+            border-top: 1px solid $color-med-light;
+            padding: .5em 0;
+        }
+
+        &:hover {
+            background: $color-light;
+        }
+
+        &.in-queue,
+        &.completed {
+            font-style: italic;
+            background-color: $color-light;
+            &:hover {
+                background-color: $color-med-light;
+            }
+        }
+
+        &.loading {
+            opacity: .5;
+            cursor: default;
+            background: none !important;
+
+            td:first-child:after {
+                content: image-url('loader.gif');
+                margin-left: 1em;
+                display: inline-block;
+            }
+        }
+    }
+
+    &#active-queue-list,
+    &#mgtplan-list {
+        td, th {
+            padding-left: 1.5em;
+            &.conversation-flags {
+                padding-right: 1.5em;
+            }
+        }
+    }
+
+    .conversation-subject {
+        overflow: hidden;
+        max-width: 50%;
+        .message {
+            font-weight: normal;
+            &:before {
+                content: '\00a0-\00a0'
+            }
+        }
+    }
+
+    .conversation-mgt-plan,
+    .mgtplan-reason {
+        // width: 3em;
+        .mgtplan-icon {
+            width: 2rem;
+            height: 2rem;
+            background-color: transparent;
+            @include button-mgt-plan;
+            &:hover {
+                background-position: -6px -166px;
+            }
+        }
+    }
+
+    .priority-1 {
+        color: $color-med-dark;
+        .repeater-flag-box {
+            border: 1px solid $color-med-dark;
+        }
+        .conversation-mgt-plan {
+            .button, .button:hover {
+                background-image: image-url('sprites-mgtplan.png');
+                background-position: -6px -86px;
+            }
+        }
+    }
+
+    .priority-3 {
+        color: $color-green-alert;
+        .repeater-flag-box {
+            border: 1px solid $color-green-alert;
+        }
+        .conversation-mgt-plan {
+            .button, .button:hover {
+                background-image: image-url('sprites-mgtplan.png');
+                background-position: -6px -46px;
+            }
+        }
+    }
+
+    .priority-4,
+    .overdue {
+        color: $color-orange-alert;
+        .repeater-flag-box {
+            border: 1px solid $color-orange-alert;
+        }
+        .conversation-mgt-plan {
+            .button, .button:hover {
+                background-image: image-url('sprites-mgtplan.png');
+                background-position: -6px -6px;
+            }
+        }
+    }
+
+    .minimized .repeater-flag-box {display: none;}
+
+    .row {
+        display: inline-block;
+        vertical-align: top;
+        .message {
+            margin: 0;
+        }
+    }
+
+    .row-left {
+        width: 20%;
+    }
+
+    .row-middle {
+        width: 65%;
+    }
+
+    .row-right {
+        width: 15%;
+    }
+
+    .conversation-cc,
+    .conversation-queue-type,
+    .conversation-texter {
+        width: 9em;
+    }
+
+    .conversation-name {
+        width: 15em;
+    }
+
+    .conversation-count {
+        width: 20em;
+    }
+
+    .conversation-time {
+        width: 14em;
+    }
+
+    .conversation-duration,
+    .conversation-start {
+        width: 12em;
+    }
+
+    .conversation-id {
+        width: 6em;
+    }
+}

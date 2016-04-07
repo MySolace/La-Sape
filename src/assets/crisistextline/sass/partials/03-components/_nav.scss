@@ -1,0 +1,70 @@
+nav, .nav {
+    li.active>a {
+        background-color: rgba(255,255,255,.4);
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    a, a:visited {
+        color: white;
+        text-decoration: none;
+        display: block;
+        padding: 0 1em;
+        position: relative;
+
+        &:hover {
+            background-color: rgba(255,255,255,.2);
+        }
+    }
+
+    .pip {
+        position: absolute;
+        top: .5em;
+        left: 1em;
+        line-height: .9em;
+        margin-left: -1em;
+        div, span {
+            display: inline-block;
+            @include border-radius(.25em);
+            padding: 0 .25em;
+            height: 1em;
+            margin-right: .25em;
+            &.queue {
+                background-color: rgba(255,0,0,.7);
+                color: white;
+            }
+            &.chronic {
+                background-color: $color-orange-alert;
+                color: white;
+            }
+            &.action-item {
+                color: white;
+                &.flag { border: 1px solid white; }
+                &.question { background-color: $color-question; }
+                &.todo { background-color: $color-todo; }
+                &.mgtplan { background-color: $color-mgtplan; }
+                &.unread { background-color: $color-green;}
+                &.submitted { background-color: $color-red;}
+            }
+            &.toolbox-unread {
+                color: white;
+                background-color: $color-green;
+            }
+            &.transfer-queue-pips {
+                color: white;
+                background-color: $color-green;
+            }
+        }
+    }
+}
+
+#main-wrapper .pip {
+    left: 1.5em;
+}
+
+.section-admin nav a, .section-admin .nav a {
+    padding-right: 1em;
+    padding-left: 1em;
+}

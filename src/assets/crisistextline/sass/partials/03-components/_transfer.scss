@@ -1,0 +1,40 @@
+table#handoff {
+    text-align: left;
+    input, textarea {
+        width: 300px;
+        margin: 0 auto;
+        resize: vertical;
+    }
+    .custom-combobox {
+        button {
+            display: none;
+        }
+        input.custom-combobox-input {
+            padding: 1px;
+            line-height: 2em;
+            // width: 256px;
+        }
+    }
+    tr {
+        &.required {
+            strong:after {
+                content: "*";
+                color: red;
+            }
+        }
+        &.need-val {
+            input {
+                border: 1px solid red;
+            }
+        }
+    }
+    td {
+        padding: .25em 0;
+    }
+}
+
+.ui-dialog .ui-autocomplete {
+    max-height: 240px;
+    overflow-y: auto;   /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+}

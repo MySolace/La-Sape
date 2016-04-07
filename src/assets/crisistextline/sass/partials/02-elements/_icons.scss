@@ -1,0 +1,51 @@
+.user-icon {
+    width: 1em;
+    height: 1em;
+    background: white;
+    display: inline-block;
+    margin-right: .5em;
+
+    span {
+        width: 60%;
+        height: 60%;
+        display: block;
+        margin: 20%;
+    }
+
+    &.color-0 span { background: $color-0; }
+    &.color-1 span { background: $color-1; }
+    &.color-2 span { background: $color-2; }
+    &.color-3 span { background: $color-3; }
+    &.color-4 span { background: $color-4; }
+    &.color-5 span { background: $color-5; }
+    &.color-6 span { background: $color-6; }
+    &.color-7 span { background: $color-7; }
+    &.color-8 span { background: $color-8; }
+    &.color-9 span { background: $color-9; }
+}
+
+@mixin user-icon-square($color, $size) {
+    color: white;
+    background-color: $color;
+    line-height: $size;
+    width: $size;
+    height: $size;
+    display: inline-block;
+    text-align: center;
+}
+
+@mixin user-icon-star($color) {
+    background-color: transparent !important;
+    color: $color;
+    &:after {
+        content: "\2605";
+    }
+}
+
+.user-icon-square {
+    @include user-icon-square($color-orange-alert, 10px);
+}
+
+.user-icon-star {
+    @include user-icon-star($color-orange-alert);
+}

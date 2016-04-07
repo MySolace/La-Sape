@@ -1,0 +1,49 @@
+// TC - TODO - KEEP IN APP
+// @media screen and (max-width: 1100px) {
+//     header {
+//         font-size: 1em !important;
+//     }
+// }
+
+// @media screen and (max-width: 920px) {
+//     header {
+//         font-size: .8em !important;
+//     }
+// }
+
+// @media screen and (max-width: 730px) {
+//     header .logo { display: none; }
+// }
+
+@mixin calc($property, $expression) {
+    #{$property}: calc(#{$expression});
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: -moz-calc(#{$expression});
+    #{$property}: -o-calc(#{$expression});
+}
+
+.loading {
+    background-image: image-url('loader.gif') no-repeat 95%;
+}
+
+.clearfix {
+    @include clearfix;
+}
+
+* {
+    @include transition-property(background-color);
+    @include transition-duration(.2s);
+}
+
+.right {
+    float: right;
+}
+
+.selector {
+    opacity: .5;
+    cursor: pointer;
+}
+
+.hover {
+    opacity: 1;
+}

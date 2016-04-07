@@ -1,0 +1,153 @@
+* {
+    @include box-sizing(border-box);
+}
+
+.mini {
+    div[role="main"] {
+        margin-bottom: 5em;
+        background: $color-light;
+        &>div {
+            background: white;
+            width: 40em;
+            height: auto;
+            max-height: 100%;
+            margin: 5em auto;
+            @include box-shadow(0 0 2em $color-med);
+            text-align: center;
+            overflow: visible;
+            padding: 1em;
+        }
+
+        @extend .login-form;
+    }
+}
+
+.login-form {
+    label {
+        width: auto;
+        display: block;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+        line-height: 2em;
+        text-align: center;
+        font-size: 1.5em;
+        width: 20em;
+        margin: .5em;
+    }
+    input[type="submit"] {
+        background: $color-blue;
+        color: white;
+        cursor: pointer;
+        border: 0;
+        width: auto;
+        padding: .2em 2em;
+    }
+    input:disabled {
+        opacity: .4;
+        cursor: auto;
+    }
+}
+
+body > div.flash {
+    position: absolute;
+    top: 4em;
+    border: 1px solid white;
+    left: 50%;
+    width: 40em;
+    background: $color-green;
+    color: white;
+    height: auto;
+    padding: .2em 1em;
+    margin-left: -20em;
+    text-align: center;
+    z-index: 9999999999;
+    .close {
+        @extend .close-x;
+    }
+}
+
+.close-x {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    background: white;
+    color: black;
+    font-size: 10px;
+    line-height: 10px;
+}
+
+div[role="main"] {
+    padding-top: 1.2*$header-height;
+    height: 100%;
+
+    &>div {
+        height: 100%;
+        overflow-y: scroll;
+        padding: 0 $padding-main-div $padding-main-div;
+        position: relative;
+    }
+    ul {
+        padding: 0;
+        list-style-type: square;
+    }
+    li {
+        margin: .5em 1.2em;
+    }
+
+    nav {
+        margin: 0 -3em;
+        background: $color-med;
+
+        ul {
+
+        }
+        li {
+            display: inline-block;
+            margin: 0;
+
+            &.active {
+                background: white;
+                a { color: $color-dark; }
+            }
+            &:first-child {
+            }
+        }
+        a {
+            padding: .55em 2em;
+            display: block;
+        }
+    }
+}
+
+.chat-history {
+    display: none;
+    background: $color-hover;
+}
+
+.user-letters {
+    overflow: none;
+    display: block;
+    font-weight: bold;
+    .user-letter {
+        float: left;
+        margin-bottom: 1em;
+        &.active, &:hover {
+            background-color: $color-blue;
+            color: white;
+        }
+    }
+}
+
+//Allow jqueryUI modal pop-ups to have their close button (optionally) hidden:
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+}
+
+.login-custom-message {
+  margin-left: 15px;
+}

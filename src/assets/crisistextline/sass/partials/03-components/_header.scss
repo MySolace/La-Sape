@@ -1,0 +1,133 @@
+header {
+    background: $color-blue;
+    position: absolute;
+    width: 100%;
+    font-size: 1.2em;
+    nav {
+        text-align: center;
+        width: 50%;
+        margin: 0 auto;
+
+        ul {
+            display: inline-block;
+        }
+        li {
+            display: inline-block;
+            position: relative;
+            a {
+                padding: 0 1.5em;
+                line-height: $header-height;
+            }
+        }
+    }
+
+    .meta-actions {
+        position: absolute;
+        bottom: .5em;
+        right: 0;
+        cursor: pointer;
+        color: white;
+        font-size: .9em;
+        font-weight: bold;
+        a {
+            font-weight: normal;
+            color: white;
+            text-decoration: none;
+            padding: 0 1em;
+            &:hover {
+                opacity: .6;
+            }
+        }
+    }
+}
+
+.logo {
+    max-height: 100%;
+    vertical-align: middle;
+}
+
+.logo-wrapper {
+    float: left;
+    height: $header-height - $header-padding*2;
+    margin: $header-padding;
+}
+
+.traffic-light {
+    float: left;
+    width: 5.75em;
+    height: 2em;
+    background: $color-med-med;
+    margin-top: 1em;
+    border-bottom-left-radius: 10%1em;
+    border-top-left-radius: 10%1em;
+    border-bottom-right-radius: 10%1em;
+    border-top-right-radius: 10%1em;
+    padding: .5em 0;
+    text-align: center;
+
+    li[class*='light-'] {
+        list-style: none;
+        border-radius: 50%;
+        width: 1em;
+        height: 1em;
+        background-color: $color-med-light;
+        float: left;
+        margin-left: .3em;
+
+        &.up {
+            background-image: image-url('fa-arrow-right.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        &.down {
+            background-image: image-url('fa-arrow-left.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+
+
+    .light-1.on {
+        background-color: $color-green;
+    }
+
+    .light-2.on {
+        background-color: yellow;
+    }
+
+    .light-3.on {
+        background-color: $color-orange-alert;
+    }
+
+    .light-4.on {
+        background-color: $color-red;
+    }
+}
+
+.app-demo, .app-local, .app-dev {
+    &:after {
+        margin-left: 1em;
+        padding: .5em 1em;
+        background: white;
+        @include border-radius(.5em);
+        background: $color-red;
+        color: white;
+        font-size: .8em;
+    }
+}
+.app-local:after { content: 'LOCAL'; }
+.app-demo:after { content: 'DEMO'; color: $color-blue; background: white; }
+.app-dev:after { content: 'DEV'; }
+
+.app-local.show-phone:after { content: 'LOCAL: CLI ONLY'; }
+.app-demo.show-phone:after { content: 'DEMO: 646-350-3724'; }
+.app-dev.show-phone:after { content: 'DEV: 646-681-1875'; }
+
+.logout-survey {
+    overflow: hidden;
+
+    iframe {
+        width: 100% !important;
+    }
+}

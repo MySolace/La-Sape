@@ -1,0 +1,48 @@
+# TC - Change these to use classes which then get applied
+colors:
+    "Primary Colors":
+        "CTL Blue": "#789BB3"
+        "CTL Blue Hover": "#88ABC3"
+        "CTL Green": "#78B37F"
+        "CTL Green Hover": "#88C38F"
+    "Grays":
+        Dark: "#444"
+        Med: "#CCC"
+        Hover: "#E7E7E7"
+        Light: "#F3F3F3"
+    "More Grays":
+        "Med Dark": "#999"
+        "Med Med": "#B3B3B3"
+        "Med Light": "#EEE"
+    "Queue Priorities":
+        "Low Priority": "#999"
+        "Regular Priority": "#444"
+        "Partner": "#0A990A"
+        "Code Orange": "#FF9900"
+    "CC Levels":
+        "Level 1": "#444"
+        "Level 2": "#789BB3"
+        "Level 3": "#A460C5"
+        "Supervisor/Staff": "#FF9900"
+    "Queue Health":
+        "CTL Green": "#78B37F"
+        "CTL Yellow": "#F2D10C"
+        "Code Orange": "#FF9900"
+        "Code Red": "#D9534F"
+    "Conversation Title Bars 1":
+        "CTL Blue": "#789BB3"
+        "CTL Question": "#A65436"
+        "CTL Green": "#78B37F"
+        "Dark Blue": "#3F3FA8"
+        "Salmon": "#C16B87"
+    "Conversation Title Bars 2":
+        "Lime": "#69A01A"
+        "Teal": "#6A4789"
+        "Purple": "#3F3FA8"
+        "Hunter Green": "#145126"
+        "Burgundy": "#722846"
+    "Supervisor Action Board":
+        "Flag": "#789BB3"
+        "Question": "#A65436"
+        "Management Plan": "#FF9900"
+        "To Do": "#78B37F"
