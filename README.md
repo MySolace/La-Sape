@@ -1,10 +1,10 @@
 # lasape
 
-The lasape UI toolkit is a highly-modular design system for rapid web page development. It contains different materials that can be assembled into more complex page layouts.
+La Sape is Crisis Text Line's live pattern library/style guide. It is built on top of [Fabricator](https://github.com/fbrctr/fabricator) is a highly-modular design system for rapid web page development. It contains different materials that can be assembled into more complex page layouts.
 
 ## Getting Started
 
-lasape requires [node.js](http://nodejs.org). Make sure your have `v0.10` or higher installed before proceeding.
+Fabricator requires [node.js](http://nodejs.org), so make sure your have `v0.10` or higher installed before proceeding.
 
 **Start the local development environment:**
 
@@ -12,22 +12,12 @@ lasape requires [node.js](http://nodejs.org). Make sure your have `v0.10` or hig
 $ npm start
 ```
 
-### Development Environment Features
+## Building
 
-- Live preview sever (using [BrowserSync](http://www.browsersync.io/))
-- CSS Autoprefixing
-- Sass compilation
-- Browserify bundling
-- Image optimization
-
-## Build
-
-**Build for release:**
+When you are done making your changes, make sure to run the following, to compile the production version of the static HTML and asset files:
 
 ```
 $ npm run build
 ```
 
-Fabricator builds both a static documentation site and optimized CSS and JS toolkit files.
-
-The build artifacts output to the `dist` directory. This can be deployed to any static hosting environment - no language runtime or database is required.
+Fabricator builds both a static documentation site and optimized CSS and JS toolkit files. Static files are compiled in the `dist` directory. You can view the files here: [http://crisistextline.github.io/La-Sape](http://crisistextline.github.io/La-Sape)
