@@ -1,6 +1,6 @@
-# lasape
+# La Sape
 
-La Sape is Crisis Text Line's live pattern library/style guide. It is built on top of [Fabricator](https://github.com/fbrctr/fabricator) is a highly-modular design system for rapid web page development. It contains different materials that can be assembled into more complex page layouts.
+La Sape is Crisis Text Line's live pattern library/style guide. It is built on top of [Fabricator](https://github.com/fbrctr/fabricator) is a highly-modular design system for rapid web page development. It contains different materials that can be assembled into more complex page layouts. For etymology, look here: [https://en.wikipedia.org/wiki/La_Sape](https://en.wikipedia.org/wiki/La_Sape)
 
 ## Getting Started
 
