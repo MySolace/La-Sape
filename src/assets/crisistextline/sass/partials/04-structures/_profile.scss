@@ -244,9 +244,14 @@ div[role="main"] .right-sidebar {
         margin: 0;
         padding: 1em 0;
         @include clearfix;
+        border-bottom: 1px solid $color-light;
         &:first-of-type {
             padding-top: 0;
             border: none;
+        }
+
+        p, ul {
+            padding-left: 3em;
         }
     }
 
@@ -556,7 +561,7 @@ div[role="main"] .profile-fields {
     }
 }
 
-.survey-item-list, .reporting-log-list, .ban-list {
+.survey-item-list, .reporting-log-list, .ban-list, .plan-list {
     ul {
         margin: 0;
         li {
