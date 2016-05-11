@@ -317,35 +317,6 @@ div[role="main"] .right-sidebar {
     }
 }
 
-.meta-right-floater {
-    @include background-image(linear-gradient(left middle,rgba($color-blue,0), $color-blue 2em));
-    padding-left: 2em;
-    position: absolute;
-    top: .5em;
-    right: .5em;
-}
-
-.meta-right-floater-critical {
-    @extend .meta-right-floater;
-    @include background-image(linear-gradient(left middle,rgba($color-green,0), $color-green 2em));
-}
-
-.critical .action, .starred .action {
-    @extend .meta-right-floater-critical;
-}
-
-.actions {
-    @extend .meta-right-floater;
-
-    a {
-        text-decoration: none !important;
-        font-weight: bold;
-        padding: 0 .2em;
-        line-height: 1em;
-        font-size: 1.5em;
-    }
-}
-
 $icon-width: 2em;
 
 .conversation-count.user-icon {
