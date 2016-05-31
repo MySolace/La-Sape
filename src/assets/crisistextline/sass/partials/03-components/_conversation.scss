@@ -395,6 +395,10 @@
             color: red;
         }
     }
+
+    .message-media {
+        @include calc(max-width, 100% - #{3em});
+    }
 }
 
 .next-conversation {
