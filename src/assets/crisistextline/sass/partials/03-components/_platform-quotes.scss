@@ -1,6 +1,49 @@
 #login-quote-author {
-    float:right;
+    text-align: right;
     &:before {
         content: "-";
     }
+}
+
+.overlay-close {
+    border: 1px solid black !important;
+    display: block;
+    padding: .25em .5em;
+    position: absolute;
+    top: 0;
+    right: 15px;
+}
+
+.super-intro-list {
+    list-style-type: none;
+
+    li {
+        padding: 10px;
+        overflow-y: auto;
+        float: left;
+        width: 33%;
+        height: 300px;
+        text-align: center;
+
+        img {
+            margin-bottom: 5px;
+        }
+
+        .super-name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .super-quote {
+            margin-top: 5px;
+            text-align: left;
+        }
+    }
+}
+
+
+
+.intro-supers, .intro-quote {
+    margin: 10px;
+    position: relative;
 }
