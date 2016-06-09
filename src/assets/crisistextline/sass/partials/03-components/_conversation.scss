@@ -47,10 +47,10 @@
         list-style-type: none;
     }
 
-    .button {
+    button {
         background: white;
         margin: .5em 0;
-        padding: .1em .5em;
+        padding: .1em .5em !important;
 
         &:hover {
             background: $color-dark;
@@ -165,6 +165,7 @@
             margin-right: 1em;
         }
         ul {
+            height: 15em;
             overflow-y: scroll;
             margin: .5em;
         }
@@ -198,6 +199,10 @@
 
     .external .message-list {
         height: 300px;
+
+        &.half {
+            height: 150px;
+        }
     }
 
     .internal .message-list {
@@ -289,8 +294,9 @@
 
     .conversation-toolbar {
         background: $color-light;
-        div {
+        div.toolbar-button {
             display: inline-block;
+            position: relative;
         }
         .taxonomy-widget {
             float: right;
@@ -314,10 +320,19 @@
     width: 450px;
     padding-bottom: .5em;
     position: relative;
-    button:last-child {
+    .toolbar-button:last-child {
         float: right;
         border-right: none;
         border-left: 1px solid $color-med;
+    }
+
+    &.minimized {
+        .conversation-summary {
+            display: none !important;
+        }
+        .message-list.half {
+            height: 300px !important;
+        }
     }
 }
 .internal {
@@ -477,6 +492,10 @@
         width: -webkit-calc(100% - 12px);
         width: -moz-calc(100% - 12px);
         width: -o-calc(100% - 12px);
+
+        &.short {
+            height: 5em;
+        }
 
         .close {
             @extend .close-x;

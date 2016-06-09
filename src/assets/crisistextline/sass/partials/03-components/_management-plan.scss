@@ -124,16 +124,6 @@ $op-3: $convo-title-opacity - $convo-plan-opacity/2;
 }
 
 .conversations .external {
-    .message-list.half {
-        height: $convo-half-height !important;
-    }
-    &.minimized {
-        .conversation-summary {
-            display: none !important;
-        }
-        .message-list.half {
-            height: 300px !important;
-        }
-    }
+
 }
 
