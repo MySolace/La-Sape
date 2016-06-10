@@ -252,14 +252,22 @@
             margin-left: 1em;
             border: 1px solid white;
         }
-        .mgt-plan {
+
+        .icon {
             width: 30px;
             height: 30px;
             display: inline-block;
             margin: 0 0 -12px 0;
-            background-image: image-url('sprites-mgtplan.png');
-            background-position: -6px -126px;
+            &.mgt-plan {
+                background-image: image-url('sprites-mgtplan.png');
+                background-position: -6px -126px;
+            }
+            &.ficon {
+                background-image: image-url('sprites-ficon.png');
+                background-position: -6px -126px;
+            }
         }
+
         &.priority-4 {
             background: $color-orange-alert;
         }
@@ -278,7 +286,7 @@
     }
 
     .minimized {
-        .repeater-flag-box, .mgt-plan {
+        .repeater-flag-box, .icon {
             display: none;
         }
     }

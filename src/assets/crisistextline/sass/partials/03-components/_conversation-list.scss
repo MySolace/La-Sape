@@ -116,6 +116,15 @@
         }
     }
 
+    .conversation-ficon {
+        .ficon {
+            width: 18px;
+            height: 18px;
+            background-image: image-url('sprites-ficon.png');
+            background-position: -12px -212px;
+        }
+    }
+
     .conversation-mgt-plan,
     .mgtplan-reason {
         // width: 3em;
@@ -135,6 +144,11 @@
         .repeater-flag-box {
             border: 1px solid $color-med-dark;
         }
+        .conversation-ficon {
+            .ficon {
+                background-position: -12px -92px;
+            }
+        }
         .conversation-mgt-plan {
             .button, .button:hover {
                 background-image: image-url('sprites-mgtplan.png');
@@ -147,6 +161,11 @@
         color: $color-green-alert;
         .repeater-flag-box {
             border: 1px solid $color-green-alert;
+        }
+        .conversation-ficon {
+            .ficon {
+                background-position: -12px -52px;
+            }
         }
         .conversation-mgt-plan {
             .button, .button:hover {
@@ -161,6 +180,11 @@
         color: $color-orange-alert;
         .repeater-flag-box {
             border: 1px solid $color-orange-alert;
+        }
+        .conversation-ficon {
+            .ficon {
+                background-position: -12px -12px;
+            }
         }
         .conversation-mgt-plan {
             .button, .button:hover {

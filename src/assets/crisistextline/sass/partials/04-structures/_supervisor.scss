@@ -368,11 +368,25 @@
             clear: both;
         }
         .numbers {
-            .convo-number {
+            .convo-number, .icons {
                 float: left;
             }
             .level-count {
                 float: right;
+            }
+        }
+
+        .icons {
+            padding-top: 1px;
+            div {
+                display: inline-block;
+                margin-left: 5px;
+                width: 11px;
+                height: 11px;
+                background-image: image-url('sprites-supchat.png');
+            }
+            .icon-mgtplan {
+                background-position: 0px -11px;
             }
         }
 

@@ -46,9 +46,23 @@
     .observe {
         margin-top: 0;
     }
-    .repeater-flag-box {
+    .icons {
         display: inline-block;
-        margin: 7px 0 0 10px;
+        margin: .75em 0 0 .75em;
+        div {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: .5em;
+        }
+        .ficon {
+            width: 18px;
+            height: 18px;
+            background-image: image-url('sprites-ficon.png');
+            background-position: -12px -92px;
+        }
+        .repeater-flag-box {
+
+        }
     }
     .local-timestamp {
         &:hover {
@@ -416,7 +430,7 @@ $icon-width: 2em;
     margin: 0;
     float: left;
     position: relative;
-    @include calc(width, 100% - #{$width-sidebar-right});
+    @include calc(width, 100% - #{$width-sidebar-right} - 8em);
     input, .actor-name, a {
         font-size: 21px;
         font-weight: bold;
