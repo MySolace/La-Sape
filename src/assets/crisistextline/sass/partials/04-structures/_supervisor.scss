@@ -433,6 +433,9 @@
         &.level-3 a {
             color: $color-level-3;
         }
+        &.level-4 a {
+            color: $color-level-4;
+        }
     }
 
     &.priority-4 .convo-number {
@@ -444,16 +447,13 @@
     &.priority-1 .convo-number {
         color: $color-priority-1;
     }
-    .convo-number {
+    .icons .prioritize-arrow {
         cursor: pointer;
-        .prioritize-arrow {
-            padding-left: .5em;
-            @include prioritize-arrow(11px);
-        }
+        padding-left: .5em;
+        @include prioritize-arrow(11px);
+
         &:hover {
-            .prioritize-arrow {
-                opacity: 1;
-            }
+            opacity: 1;
         }
     }
 
