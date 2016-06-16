@@ -14,7 +14,6 @@ $color-green-dark:  #517A56;
 $color-purple:      #A460C5;    $the-color-purple:  $color-purple; // We now have The Color Purple in the code base
 $color-purple-hover:#A67AB5;
 $color-orange-alert:#FF9900;
-$color-green-alert: #0A990A;
 $color-red:         #D9534F;
 $color-gold:        #F2D10C;
 $color-teal:        #008484;
@@ -50,6 +49,12 @@ $color-level-2:     $color-blue;
 $color-level-3:     $color-purple;
 $color-level-4:     $color-teal;
 $color-supervisor:  $color-orange-alert;
+
+// CONVO PRIORITY LEVELS
+$color-priority-1:  $color-med-dark;
+$color-priority-2:  $color-dark;
+$color-priority-3:  #0A990A;
+$color-priority-4:  $color-orange-alert;
 
 // MISC USES
 $color-hover:           $color-med-light;

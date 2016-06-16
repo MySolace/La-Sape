@@ -42,6 +42,26 @@
     }
 }
 
+@mixin prioritize-arrow($size) {
+    font-size: $size;
+    opacity: .4;
+    &.up {
+        &:before{
+            content: "\25B2";
+            color: $color-priority-4;
+        }
+    }
+    &.down {
+        &:before{
+            content: "\25BC";
+            color: $color-priority-2;
+        }
+    }
+    &:hover {
+        opacity: 1;
+    }
+}
+
 .user-icon-square {
     @include user-icon-square($color-orange-alert, 10px);
 }

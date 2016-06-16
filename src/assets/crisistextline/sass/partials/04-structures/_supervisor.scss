@@ -435,8 +435,30 @@
         }
     }
 
+    &.priority-4 .convo-number {
+        color: $color-priority-4;
+    }
+    &.priority-3 .convo-number {
+        color: $color-priority-3;
+    }
+    &.priority-1 .convo-number {
+        color: $color-priority-1;
+    }
+    .convo-number {
+        cursor: pointer;
+        .prioritize-arrow {
+            padding-left: .5em;
+            @include prioritize-arrow(11px);
+        }
+        &:hover {
+            .prioritize-arrow {
+                opacity: 1;
+            }
+        }
+    }
+
     &.high-priority {
-        border: 2px solid $color-orange-alert;
+        border: 2px solid $color-priority-4;
     }
 }
 

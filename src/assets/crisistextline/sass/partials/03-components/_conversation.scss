@@ -268,8 +268,18 @@
             }
         }
 
+        .prioritize-arrow {
+            @include prioritize-arrow(1em);
+            &.down {
+                color: white;
+                &:before, &:after {
+                    color: white;
+                }
+            }
+        }
+
         &.priority-4 {
-            background: $color-orange-alert;
+            background: $color-priority-4;
         }
 
         &.flashing {

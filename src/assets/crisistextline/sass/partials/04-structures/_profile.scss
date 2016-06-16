@@ -409,13 +409,13 @@ $icon-width: 2em;
             font-weight: bold;
         }
         &.priority-4 {
-            color: $color-orange-alert;
+            color: $color-priority-4;
         }
         &.priority-3 {
-            color: $color-green-alert;
+            color: $color-priority-3;
         }
         &.priority-1 {
-            color: $color-med-dark;
+            color: $color-priority-1;
         }
     }
     .actor-carrier {
