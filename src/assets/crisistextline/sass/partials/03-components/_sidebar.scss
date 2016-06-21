@@ -423,3 +423,13 @@ $user-status-height: 8em;
         }
     }
 }
+
+.chat-unread {
+    text-align: center;
+    font-size: .85em;
+    color: white;
+    background-color: $color-blue;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 2px;
+}
