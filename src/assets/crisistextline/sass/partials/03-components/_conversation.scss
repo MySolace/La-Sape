@@ -239,13 +239,14 @@
         &.color-8 { background: $color-8; }
         &.color-9 { background: $color-9; }
 
-        span:first-of-type {
+        .texter-name {
             overflow: hidden;
             text-overflow: ellipsis;
             max-width: 140px;
             white-space: nowrap;
             display: inline-block;
             vertical-align: middle;
+            margin-right: .5em;
         }
 
         .repeater-flag-box {
@@ -457,7 +458,7 @@
 
 .timestamp {
     font-weight: normal;
-    margin-left: 1em;
+    margin-left: .5em;
     font-size: .8em;
 
     &:before { content: '[started '; }
@@ -465,7 +466,7 @@
 }
 
 .pending-transfer {
-    font-weight: normal;
+    font-weight: bold;
     margin-left: 1em;
     font-size: .8em;
 }
