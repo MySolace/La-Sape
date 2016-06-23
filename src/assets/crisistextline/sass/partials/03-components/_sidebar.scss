@@ -25,6 +25,7 @@ $user-status-height: 8em;
     }
 
     .user-status {
+        margin-top: .5em;
         .user-name {
             font-weight: bold;
             &.counselor-level-2 {
