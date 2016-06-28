@@ -103,11 +103,10 @@
             width: 200px;
             padding-bottom: 0;
 
-            .conversation-content, .conversation-title .timestamp {
-                display: none;
-            }
-
-            .conversation-content, .conversation-title .pending-transfer {
+            .conversation-content,
+            .conversation-title .timestamp,
+            .conversation-title .pending-transfer,
+            .conversation-blocker {
                 display: none;
             }
         }

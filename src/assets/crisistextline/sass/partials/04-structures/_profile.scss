@@ -48,7 +48,7 @@
     }
     .icons {
         display: inline-block;
-        margin: .75em 0 0 .75em;
+        margin: .5em 0 0 .5em;
         div {
             display: inline-block;
             vertical-align: middle;
@@ -395,11 +395,10 @@ $icon-width: 2em;
 }
 
 .namebar-left {
-    .conversation-status, .actor-carrier {
+    #profile-ids {
         clear: both;
         float: left;
-        margin-bottom: .5em;
-        margin-top: -.25em;
+        margin-bottom: 1em;
         margin-left: 2.5em;
         cursor: default;
     }
