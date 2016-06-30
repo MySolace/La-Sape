@@ -151,3 +151,8 @@ div[role="main"] {
 .login-custom-message {
   margin-left: 15px;
 }
+
+//Adding more padding to jqueryUI tables (Firefox)
+.dataTables_wrapper {
+  padding-bottom: 3em;
+}
