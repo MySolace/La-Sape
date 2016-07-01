@@ -165,8 +165,27 @@
             margin-right: 1em;
         }
         ul {
-            overflow-y: scroll;
+            overflow-y: auto;
             margin: .5em;
+            list-style: none;
+            padding-left: 2em;
+            position: relative;
+
+            li {
+                margin-bottom: .7em;
+            }
+        }
+        .drag-handle {
+            position: absolute;
+            left: .5em;
+            margin-right: .5em;
+            cursor: move;
+            cursor: -webkit-grabbing;
+        }
+        .trash {
+            position: absolute;
+            left: .5em;
+            cursor: pointer;
         }
     }
 
