@@ -166,25 +166,51 @@
         }
         ul {
             overflow-y: auto;
-            margin: .5em;
+            margin-top: 2px;
             list-style: none;
-            padding-left: 2em;
-            position: relative;
-
+            padding-left: 0px;
+            padding-top: 0px;
             li {
-                margin-bottom: .7em;
+                position: relative;
+                padding: 15px;
+                border-bottom: 1px solid $color-med;
+                line-height: 1.5em;
+                color: $color-blue;
+            }
+            li:hover {
+                background-color: $color-blue;
+                color: white;
+                cursor: pointer;
+            }
+            li:hover .drag-handle {
+                color: white;
+            }
+            li.sortable-chosen {
+                background-color: white;
+                border: 1px solid $color-med;
+                color: $color-blue;
+                cursor: move;
+                cursor: -webkit-grabbing;
+            }
+            li.sortable-ghost {
+                background-color: $color-med;
+                color: $color-blue;
+            }
+            li:hover.sortable-chosen {
+                cursor: move;
+                cursor: -webkit-grabbing;
             }
         }
         .drag-handle {
             position: absolute;
-            left: .5em;
-            margin-right: .5em;
+            left: .9em;
             cursor: move;
             cursor: -webkit-grabbing;
+            color: $color-dark;
         }
         .trash {
             position: absolute;
-            left: .5em;
+            left: .9em;
             cursor: pointer;
         }
     }
