@@ -1,0 +1,62 @@
+.example-responses {
+    &>a {
+        float: right;
+        margin-right: 1em;
+    }
+    ul, ul.profile-widget {
+        overflow-y: auto;
+        margin-top: 2px;
+        list-style: none;
+        padding-left: 0px;
+        padding-top: 0px;
+        li {
+            position: relative;
+            padding: 15px;
+            border-bottom: 1px solid $color-med;
+            line-height: 1.5em;
+            color: $color-blue;
+        }
+        li:hover {
+            background-color: $color-blue;
+            color: white;
+            cursor: pointer;
+        }
+        li:hover .drag-handle {
+            color: white;
+        }
+        li.sortable-chosen {
+            background-color: white;
+            border: 1px solid $color-med;
+            color: $color-blue;
+            cursor: move;
+            cursor: -webkit-grabbing;
+        }
+        li.sortable-ghost {
+            background-color: $color-med;
+            color: $color-blue;
+        }
+        li:hover.sortable-chosen {
+            cursor: move;
+            cursor: -webkit-grabbing;
+        }
+    }
+    .drag-handle {
+        position: absolute;
+        left: .9em;
+        cursor: move;
+        cursor: -webkit-grabbing;
+        color: $color-dark;
+    }
+    .trash {
+        position: absolute;
+        left: .9em;
+        cursor: pointer;
+    }
+
+    ul.profile-widget {
+        margin-top: 1em;
+        li {
+            margin: 0px;
+        }
+    }
+}
