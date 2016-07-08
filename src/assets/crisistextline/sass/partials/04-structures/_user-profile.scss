@@ -197,3 +197,13 @@ $popup-quote-lines: 3;
         }
     }
 }
+
+#main-wrapper { 
+    .example-responses {
+        .example-response-actions {
+            button {
+                margin-right: 1em;
+            }
+        }
+    }
+}
