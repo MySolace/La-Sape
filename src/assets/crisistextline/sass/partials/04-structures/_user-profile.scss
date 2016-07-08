@@ -81,6 +81,32 @@ $popup-quote-lines: 3;
     }
 }
 
+.supervisor-actions {
+
+    margin-top: 1em;
+
+    button {
+        background-color: $color-med-dark;
+        color: white;
+        margin-right: .5em;
+        margin-bottom: .5em;
+        background-size: 3em;
+        background-repeat: no-repeat;
+        background-position: left center;
+    }
+    button:hover {
+        background-color: $color-blue;
+    }
+    .good-egg {
+        background-image: image-url('egg-with-hearts-white.svg');
+        padding-left: 40px;
+    }
+    .funky-apple {
+        background-image: image-url('apple.svg');
+        padding-left: 45px;
+    }
+}
+
 // Profile Page Profile Card formatting (mainly adding in size dimensions)
 .user-profile .profile-card {
     padding: 2em;
