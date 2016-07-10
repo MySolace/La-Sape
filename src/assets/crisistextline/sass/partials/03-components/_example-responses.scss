@@ -1,3 +1,34 @@
+@keyframes response-limit {
+    from { left: 0 }
+    to { left: 500px; opacity: 0; }
+}
+
+.example-response-dialog {
+    overflow: hidden;
+
+    textarea {
+        width: 100%;
+        height: 100%;
+        resize: none;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .example-responses {
+        ul.profile-widget {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .example-responses {
+        ul.profile-widget {
+            width: 75%;
+        }
+    }
+}
+
 .example-responses {
     &>a {
         float: right;
@@ -6,13 +37,19 @@
     .example-response-input {
         padding: 15px;
         border-bottom: 1px solid $color-med;
+        background-color: $color-light;
+        input {
+            width: 100%;
+        }
     }
     ul, ul.profile-widget {
-        overflow-y: auto;
         margin-top: 0px;
         list-style: none;
         padding-left: 0px;
         padding-top: 0px;
+        li:nth-child(20) {
+            border-bottom: 5px dashed $color-red;
+        }
         li {
             position: relative;
             padding: .8em;
@@ -43,6 +80,12 @@
             cursor: move;
             cursor: -webkit-grabbing;
         }
+    }
+    ul:empty {
+        padding: 1em;
+    }
+    ul:empty::after {
+        content: 'You have no messages saved. Click "New Message" to create one!';
     }
     .drag-handle {
         position: absolute;

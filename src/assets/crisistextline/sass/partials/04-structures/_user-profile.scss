@@ -226,6 +226,31 @@ $popup-quote-lines: 3;
 
 #main-wrapper { 
     .example-responses {
+
+        ul {
+            li:nth-child(20) {
+                padding-bottom: 2.8em;
+            }
+            li:nth-child(20):hover {
+                color: $color-blue;
+                background-color: $color-light;
+            }
+            li:nth-child(20)::after {
+                content: '▲ Only the messages above this line will appear in conversation view. ▲';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                color: $color-red;
+            }
+            li:nth-child(21) {
+                padding-top: 2em;
+            }
+            li:nth-child(21):hover {
+                color: $color-blue;
+                background-color: $color-light;
+            }  
+        }
+
         .example-response-actions {
             button {
                 margin-right: 1em;
