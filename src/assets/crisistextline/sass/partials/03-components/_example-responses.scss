@@ -92,12 +92,6 @@
             cursor: -webkit-grabbing;
         }
     }
-    ul:empty {
-        padding: 1em;
-    }
-    ul:empty::after {
-        content: 'You have no messages saved. Click "New Message" to create one!';
-    }
     .drag-handle {
         position: absolute;
         left: .9em;
@@ -112,7 +106,6 @@
     }
 
     ul.profile-widget {
-        margin-top: 1em;
         li {
             margin: 0px;
         }
