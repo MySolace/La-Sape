@@ -14,12 +14,28 @@
             width: 100%;
         }
     }
+
+    #main-wrapper {
+        .example-responses {
+            .example-response-input {
+                width: 100%;
+            }
+        }
+    }
 }
 
 @media screen and (min-width: 1280px) {
     .example-responses {
         ul.profile-widget {
             width: 75%;
+        }
+    }
+
+    #main-wrapper {
+        .example-responses {
+            .example-response-input {
+                width: 75%;
+            }
         }
     }
 }
