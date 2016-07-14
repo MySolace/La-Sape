@@ -111,22 +111,6 @@
             }
         }
 
-        .example-responses {
-            ul {
-                overflow-y: auto;
-            }
-        }
-
-        .example-response-actions {
-            border-bottom: 1px solid $color-med;
-            border-top: 2px solid $color-med;
-            background-color: $color-med-light;
-            button {
-                border: 0px;
-                padding: .5em 1em;
-            }
-        }
-
         .conversation-blocker {
             position: absolute;
             top: 0;
