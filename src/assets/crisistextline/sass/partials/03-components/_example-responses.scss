@@ -36,29 +36,29 @@
             border-bottom: 1px solid $color-med;
             line-height: 1.5em;
             color: $color-blue;
+            padding-left: 2.8em;
+            position: relative;
+        }
+        li::after {
+            position: absolute;
+            font-size: 1.5em;
+            left: .5em;
+            content: '☰';
+            top: calc(50% - .54em);
         }
         li:hover {
             background-color: $color-blue;
             color: white;
             cursor: pointer;
         }
-        li:hover .drag-handle {
-            color: white;
-        }
         li.sortable-chosen {
             background-color: white;
             border: 1px solid $color-med;
             color: $color-blue;
-            cursor: move;
-            cursor: -webkit-grabbing;
         }
         li.sortable-ghost {
             background-color: $color-med;
             color: $color-blue;
-        }
-        li:hover.sortable-chosen {
-            cursor: move;
-            cursor: -webkit-grabbing;
         }
     }
 }
@@ -107,6 +107,22 @@
 
     ul {
         margin-top: 1em;
+
+        li:first-child {
+            border-top: 1px solid $color-med;
+        }
+        li {
+            border-left: 1px solid $color-med;
+            border-right: 1px solid $color-med;
+        }
+        li:hover::before {
+            content: '✎';
+            position: absolute;
+            font-size: 1.5em;
+            left: -1.5em;
+            top: calc(50% - .54em);
+            color: $color-blue;
+        }
     }
 }
 
