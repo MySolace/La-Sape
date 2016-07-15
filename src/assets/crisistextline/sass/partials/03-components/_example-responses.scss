@@ -27,9 +27,11 @@
     }
     ul {
         margin-top: 0px;
+        margin-bottom: 0px;
         list-style: none;
         padding-left: 0px;
         padding-top: 0px;
+        position: relative;
         li {
             position: relative;
             padding: .8em;
@@ -45,11 +47,6 @@
             left: .5em;
             content: '☰';
             top: calc(50% - .54em);
-        }
-        li:hover {
-            background-color: $color-blue;
-            color: white;
-            cursor: pointer;
         }
         li.sortable-chosen {
             background-color: white;
@@ -67,6 +64,14 @@
     ul {
         overflow-y: auto;
         width: 100%;
+        height: 300px;
+        border-bottom: 1px solid $color-med;
+
+        li.selected {
+            background-color: $color-blue;
+            color: white;
+            cursor: pointer;
+        }
     }
 
     .example-response-search {
@@ -122,6 +127,11 @@
             left: -1.5em;
             top: calc(50% - .54em);
             color: $color-blue;
+        }
+        li:hover {
+            background-color: $color-blue;
+            color: white;
+            cursor: pointer;
         }
     }
 }

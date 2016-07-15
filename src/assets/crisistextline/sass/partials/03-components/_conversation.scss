@@ -154,8 +154,6 @@
     .character-count {
         font-size: .8em;
         color: $color-dark;
-        margin-left: 1em;
-        float: left;
     }
 
     .conversation .text-input {
@@ -309,6 +307,21 @@
             }
         }
     }
+
+    .conversation-footer {
+        padding: .5em;
+        height: 2em;
+        display: table;
+        width: 100%;
+    }
+
+    .conversation-footer > * {
+        display: table-cell;
+    }
+
+    .conversation-footer > :last-child {
+        text-align: right;
+    }
 }
 
 .message-list {
@@ -319,7 +332,6 @@
 .external {
     font-size: 1.1em;
     width: 450px;
-    padding-bottom: .5em;
     position: relative;
     button:last-child {
         float: right;
