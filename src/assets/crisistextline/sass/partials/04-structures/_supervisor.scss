@@ -463,6 +463,8 @@
 }
 
 .sup-chat-cc {
+    height: calc(100% - 2em);
+
     textarea {
         width: 100%;
         height: 3em;
@@ -476,4 +478,5 @@
         height: 15em;
         overflow-y: scroll;
     }
+
 }
