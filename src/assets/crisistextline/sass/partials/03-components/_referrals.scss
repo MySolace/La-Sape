@@ -44,6 +44,17 @@ table {
     input, select {
         display: inline-block;
     }
+    .radio-input {
+        display: inline-block;
+        overflow: hidden;
+
+        input, label {
+            float: left;
+        }
+        input {
+            clear: both;
+        }
+    }
     .hidden {
         display: none;
     }
@@ -79,5 +90,8 @@ table {
     section {
         padding: 0 1em 1em;
         background-color: $color-light;
+        > div {
+            clear: both;
+        }
     }
 }
