@@ -4,7 +4,6 @@
     padding: .5em;
     margin-top: 1em;
     margin-left: -1em;
-    z-index: 9000;
     position: absolute;
 
     &.left {
@@ -64,7 +63,6 @@
     position: absolute;
     right: 1em;
     bottom: 0;
-    z-index: 100;
     transform: translateZ(0);
     pointer-events: none;
     white-space: nowrap;
@@ -342,7 +340,6 @@
 .internal {
     width: 350px;
     position: relative;
-    z-index: 10;
 }
 
 .message-user {

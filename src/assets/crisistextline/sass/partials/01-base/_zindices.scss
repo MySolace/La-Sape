@@ -1,0 +1,32 @@
+
+.ui-front {
+    z-index: 9998;  // This should be the highest z-index on platform (platform quotes colorbox is at 9999)
+}
+
+.conversations {
+    z-index: 9000;
+}
+
+body > div.flash {
+    z-index: 8001;
+}
+
+.hopscotch-bubble {
+    z-index: 8000 !important;
+}
+
+div[role="main"] .right-sidebar {
+    z-index: 25;
+}
+
+.sup-chats .sup-pinned .sup-card {
+    z-index: 10;
+}
+
+.profile-container {
+    z-index: 10;
+}
+
+#tabs {
+    z-index: 5;
+}
