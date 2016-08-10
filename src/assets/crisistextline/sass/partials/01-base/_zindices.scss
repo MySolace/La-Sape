@@ -5,6 +5,12 @@
 
 .conversations {
     z-index: 9000;
+
+    .arrow {
+	    .conversation-title:after {
+	    	z-index: 9001;
+	    }
+	}
 }
 
 body > div.flash {
