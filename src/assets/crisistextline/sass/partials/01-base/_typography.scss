@@ -1,4 +1,4 @@
-$font-family:       'Lucida Sans', 'Lucida Grande', tahoma, arial, sans-serif;
+$font-family: 'Lucida Sans', 'Lucida Grande', tahoma, arial, sans-serif;
 
 html, body {
     font-family: $font-family;
@@ -12,6 +12,14 @@ html, body {
         -ms-user-select: none;
         user-select: none;
     }
+}
+
+@mixin normal-text() {
+    font-size: 14px;
+    font-weight: normal;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
 }
 
 input, textarea {

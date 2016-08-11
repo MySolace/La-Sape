@@ -43,7 +43,7 @@ nav, .nav {
             &.action-item {
                 color: white;
                 &.flag { border: 1px solid white; }
-                &.question { background-color: $color-question; }
+                &.notification { background-color: $color-notification; }
                 &.todo { background-color: $color-todo; }
                 &.mgtplan { background-color: $color-mgtplan; }
                 &.unread { background-color: $color-green;}
