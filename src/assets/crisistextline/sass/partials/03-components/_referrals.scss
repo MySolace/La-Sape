@@ -19,7 +19,11 @@
 }
 
 table {
-    &.referrals,
+    &.referrals {
+        .tags-toggle, .details-toggle {
+            cursor: pointer;
+        }
+    }
     &.referrals-admin {
         tr.even {
             background-color: $color-light;
