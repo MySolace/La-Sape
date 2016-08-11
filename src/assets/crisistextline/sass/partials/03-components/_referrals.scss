@@ -20,8 +20,20 @@
 
 table {
     &.referrals {
-        .tags-toggle, .details-toggle, .sub-programs-toggle {
-            cursor: pointer;
+        thead {
+            display: none;
+        }
+        td {
+            padding: 0 !important;
+        }
+        tr.sub td {
+            padding-left: 7em !important;
+        }
+        tr:first-of-type td {
+            padding-top: 0;
+        }
+        h2 {
+            margin-top: 0;
         }
     }
     &.referrals-admin {
@@ -29,6 +41,49 @@ table {
             background-color: $color-light;
         }
     }    
+}
+
+.referrals {
+    .referral {
+        padding: 3em;
+        border-bottom: 2px solid $color-med-light;
+        &:hover {
+            background-color: $color-light;
+        }
+    }
+    .meta {
+        margin-bottom: 1em;
+        .tags {
+            vertical-align: top;
+            display: inline-block;
+            padding-top: .25em;
+            width: 40%;
+            button {
+                padding: .4em;
+                text-transform: lowercase;
+                background: $color-med-light;
+                margin: 0 .5em .5em 0;
+                @include border-radius(6px);
+                color: $color-med-dark;
+                &:hover {
+                    color: white;
+                    background: $color-blue;
+                }
+            }
+            a {
+                margin-top: -.25em;
+                display: block;
+                font-size: .75em;
+            }
+        }
+        .contact {
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+    .tags-toggle, .details-toggle, .sub-programs-toggle {
+        cursor: pointer;
+    }
 }
 
 .referral-admin-form {
