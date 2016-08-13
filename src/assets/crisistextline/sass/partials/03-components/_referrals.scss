@@ -18,8 +18,35 @@
     user-select: text;
 }
 
+$issues-width: 10em;
+#referral-issues {
+    width: $issues-width;
+    position: absolute;
+    button {
+        float: left;
+        width: 100%;
+        text-align: center;
+        background-color: $color-med-light;
+        text-transform: none;
+        &:hover {
+            background-color: $color-blue;
+        }
+    }
+}
+
+.dataTables_wrapper #referral-table {
+    @include calc(width, 100% - #{$issues-width} - 2em);
+    margin-left: $issues-width + 2em;
+}
+
+// Hide base table while JS loading if refreshing on this page
+#main-wrapper > .records_list.referrals {
+    display: none;
+}
+
 table {
     &.referrals {
+        padding-top: 1em;
         thead {
             display: none;
         }
