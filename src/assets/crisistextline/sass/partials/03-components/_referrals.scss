@@ -27,10 +27,13 @@ table {
             padding: 0 !important;
         }
         tr.sub td {
-            padding-left: 7em !important;
+            padding-left: 6em !important;
         }
         tr:first-of-type td {
             padding-top: 0;
+            .referral {
+                border-top: 0;
+            }
         }
         h2 {
             margin-top: 0;
@@ -46,7 +49,8 @@ table {
 .referrals {
     .referral {
         padding: 3em;
-        border-bottom: 2px solid $color-med-light;
+        border-top: 1px solid $color-med-light;
+        border-bottom: 1px solid $color-med-light;
         &:hover {
             background-color: $color-light;
         }
