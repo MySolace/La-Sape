@@ -1,3 +1,13 @@
+#login-quote {
+    font-size: 3.5em;
+    text-indent: -0.45em;
+    margin-top: 0;
+
+    &.first-shift {
+        font-size: 2.5em;
+    }
+}
+
 #login-quote-author {
     text-align: right;
     &:before {
@@ -16,17 +26,23 @@
 
 .super-intro-list {
     list-style-type: none;
+    padding: 0;
 
     li {
-        padding: 10px;
+        
         overflow-y: auto;
-        float: left;
-        width: 33%;
-        height: 300px;
-        text-align: center;
+        margin-top: 1em;
 
         img {
             margin-bottom: 5px;
+            float: left;
+        }
+
+        p {
+            margin-left: 110px;
+            margin-top: 0;
+            margin-top: 0;
+            margin-bottom: 0.3em;
         }
 
         .super-name {
@@ -46,4 +62,17 @@
 .intro-supers, .intro-quote {
     margin: 10px;
     position: relative;
+    width: 45%;
+    padding-left: 2em;
+    display: inline-block;
+    vertical-align: top;
+    height: 90%;
+}
+
+.intro-supers {
+    border-left: 1px solid;
+
+    h2 {
+        margin-top: 0;
+    }
 }
