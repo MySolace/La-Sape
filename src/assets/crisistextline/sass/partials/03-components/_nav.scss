@@ -26,6 +26,7 @@ nav, .nav {
         left: 1em;
         line-height: 1em;
         margin-left: -1em;
+        text-align: center;
         div, span {
             display: inline-block;
             @include border-radius(.25em);
