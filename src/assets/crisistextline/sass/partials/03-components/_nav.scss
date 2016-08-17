@@ -12,12 +12,18 @@ nav, .nav {
         color: white;
         text-decoration: none;
         display: block;
-        padding: 0 1em;
+        padding: 0 1.2em;
         position: relative;
 
         &:hover {
             background-color: rgba(255,255,255,.2);
         }
+    }
+
+    .toolbox-tab {
+        .pip {
+            margin-left: -0.5em;    
+        }        
     }
 
     .pip {
@@ -32,9 +38,9 @@ nav, .nav {
             @include border-radius(.25em);
             height: 1.4em;
             width: 1.4em;
-            font-size: 0.7em;
+            font-size: 0.65em;
             &.queue {
-                background-color: rgba(255,0,0,.7);
+                background-color: $color-red;
                 color: white;
             }
             &.chronic {
