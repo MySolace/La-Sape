@@ -252,19 +252,39 @@ div[role="main"] .right-sidebar {
     }
 }
 
-.profile-feedback-list {
-    border-top: 1px solid $color-light;
-    border-right: 1px solid $color-light;
-    float: left;
-    width: 75%;
-    padding-bottom: .5em;
+.profile-feedback-input {
+    width: 100%;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    border-bottom: 1px solid $color-med;
 
-    h2 {
+    textarea {
+        width: 50%;
+        border: 1px solid $color-med;
+        resize: none;
+        height: 6em;
+    }
+
+    button {
         margin-top: .5em;
+    }
+}
+
+.profile-feedback-list {
+    border: 2px solid $color-med;
+    background-color: $color-light;
+    margin: 1em;
+    float: left;
+    width: calc(75% - 2em);
+    padding: 1em .5em;
+
+    h3 {
+        margin-top: 0;
+        margin-bottom: .5em;
     }
 
     .conversation-feedback {
-        margin-top: .5em;
+        margin: 1em 1em 0em;
 
         .feedback-actor {
             font-weight: bold;
