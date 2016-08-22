@@ -1,5 +1,5 @@
 @charset "UTF-8";
-$user-status-height: 8em;
+$user-status-height: 8.5em;
 
 #sidebar {
     float: left;
@@ -24,6 +24,10 @@ $user-status-height: 8em;
         padding-left: .83em;
     }
 
+    > .user-status {
+        margin-top: .5em;
+    }
+
     .user-status {
         .user-name {
             font-weight: bold;
@@ -32,6 +36,9 @@ $user-status-height: 8em;
             }
             &.counselor-level-3 {
                 color: $color-level-3;
+            }
+            &.counselor-level-4 {
+                color: $color-level-4;
             }
             &.supervisor {
                 color: $color-supervisor;
@@ -107,6 +114,10 @@ $user-status-height: 8em;
 
         &.counselor-level-3 .user-name {
             color: $color-level-3;
+        }
+
+        &.counselor-level-4 .user-name {
+            color: $color-level-4;
         }
 
         &.supervisor-plus .user-name {
@@ -372,6 +383,9 @@ $user-status-height: 8em;
         &.counselor-level-3 {
             color: $color-level-3;
         }
+        &.counselor-level-4 {
+            color: $color-level-4;
+        }
         &.dm-hover:hover {
             cursor: pointer;
             background-color: $color-hover;
@@ -412,4 +426,14 @@ $user-status-height: 8em;
             }
         }
     }
+}
+
+.chat-unread {
+    text-align: center;
+    font-size: .85em;
+    color: white;
+    background-color: $color-blue;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 2px;
 }

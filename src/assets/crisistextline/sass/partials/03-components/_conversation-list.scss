@@ -116,6 +116,15 @@
         }
     }
 
+    .conversation-ficon {
+        .ficon {
+            width: 18px;
+            height: 18px;
+            background-image: image-url('sprites-ficon.png');
+            background-position: -12px -212px;
+        }
+    }
+
     .conversation-mgt-plan,
     .mgtplan-reason {
         // width: 3em;
@@ -131,9 +140,14 @@
     }
 
     .priority-1 {
-        color: $color-med-dark;
+        color: $color-priority-1;
         .repeater-flag-box {
-            border: 1px solid $color-med-dark;
+            border: 1px solid $color-priority-1;
+        }
+        .conversation-ficon {
+            .ficon {
+                background-position: -12px -92px;
+            }
         }
         .conversation-mgt-plan {
             .button, .button:hover {
@@ -144,9 +158,14 @@
     }
 
     .priority-3 {
-        color: $color-green-alert;
+        color: $color-priority-3;
         .repeater-flag-box {
-            border: 1px solid $color-green-alert;
+            border: 1px solid $color-priority-3;
+        }
+        .conversation-ficon {
+            .ficon {
+                background-position: -12px -52px;
+            }
         }
         .conversation-mgt-plan {
             .button, .button:hover {
@@ -158,9 +177,14 @@
 
     .priority-4,
     .overdue {
-        color: $color-orange-alert;
+        color: $color-priority-4;
         .repeater-flag-box {
-            border: 1px solid $color-orange-alert;
+            border: 1px solid $color-priority-4;
+        }
+        .conversation-ficon {
+            .ficon {
+                background-position: -12px -12px;
+            }
         }
         .conversation-mgt-plan {
             .button, .button:hover {
@@ -171,6 +195,13 @@
     }
 
     .minimized .repeater-flag-box {display: none;}
+
+    .conversation-prioritize {
+        text-align: right;
+        .prioritize-arrow {
+            @include prioritize-arrow(20px);
+        }
+    }
 
     .row {
         display: inline-block;

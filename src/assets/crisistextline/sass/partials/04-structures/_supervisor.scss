@@ -57,8 +57,8 @@
     }
     .action-box {
         background-color: white;
-        &.question {
-            @include action-box-color($color-question);
+        &.notification {
+            @include action-box-color($color-notification);
         }
         &.flag {
             @include action-box-color($color-flag);
@@ -242,7 +242,6 @@
         }
 
         .sup-card {
-            z-index: 10;
             background: white;
         }
     }
@@ -270,6 +269,16 @@
             background-position: 0 -30px;
         }
     }
+}
+
+.sort-alpha, .sort-length {
+    height: 30px;
+    width: 30px;
+    padding: 0;
+}
+
+.sort-alpha {
+    margin-left: 30px;    
 }
 
 .user-conversations {
@@ -368,11 +377,25 @@
             clear: both;
         }
         .numbers {
-            .convo-number {
+            .convo-number, .icons {
                 float: left;
             }
             .level-count {
                 float: right;
+            }
+        }
+
+        .icons {
+            padding-top: 1px;
+            div {
+                display: inline-block;
+                margin-left: 5px;
+                width: 11px;
+                height: 11px;
+                background-image: image-url('sprites-supchat.png');
+            }
+            .icon-mgtplan {
+                background-position: 0px -11px;
             }
         }
 
@@ -419,24 +442,81 @@
         &.level-3 a {
             color: $color-level-3;
         }
+        &.level-4 a {
+            color: $color-level-4;
+        }
+    }
+
+    &.priority-4 .convo-number {
+        color: $color-priority-4;
+    }
+    &.priority-3 .convo-number {
+        color: $color-priority-3;
+    }
+    &.priority-1 .convo-number {
+        color: $color-priority-1;
+    }
+    .icons .prioritize-arrow {
+        cursor: pointer;
+        padding-left: .5em;
+        @include prioritize-arrow(11px);
+
+        &:hover {
+            opacity: 1;
+        }
     }
 
     &.high-priority {
-        border: 2px solid $color-orange-alert;
+        border: 2px solid $color-priority-4;
     }
 }
 
 .sup-chat-cc {
+    height: calc(100% - 2em);
+
     textarea {
         width: 100%;
         height: 3em;
         position: absolute;
         bottom: 0;
+        resize: none;
+        font-size: 1em;
     }
 
     .sup-chat-transcript {
         padding: 0 .5em;
-        height: 15em;
+        height: 14em;
         overflow-y: scroll;
     }
+
 }
+
+.message-super-popup {
+
+    ul {
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+        margin: 1em;
+
+        button {
+            color: white;
+            padding: 0.5em;
+            text-decoration: none;
+            &.color-0 { background: $color-0; }
+            &.color-1 { background: $color-1; }
+            &.color-2 { background: $color-2; }
+            &.color-3 { background: $color-3; }
+            &.color-4 { background: $color-4; }
+            &.color-5 { background: $color-5; }
+            &.color-6 { background: $color-6; }
+            &.color-7 { background: $color-7; }
+            &.color-8 { background: $color-8; }
+            &.color-9 { background: $color-9; }
+
+            &.priority-4 { background: $color-priority-4; }
+        }
+    }
+ }

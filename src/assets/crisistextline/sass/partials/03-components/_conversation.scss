@@ -4,7 +4,6 @@
     padding: .5em;
     margin-top: 1em;
     margin-left: -1em;
-    z-index: 9000;
     position: absolute;
 
     &.left {
@@ -64,7 +63,6 @@
     position: absolute;
     right: 1em;
     bottom: 0;
-    z-index: 100;
     transform: translateZ(0);
     pointer-events: none;
     white-space: nowrap;
@@ -103,11 +101,10 @@
             width: 200px;
             padding-bottom: 0;
 
-            .conversation-content, .conversation-title .timestamp {
-                display: none;
-            }
-
-            .conversation-content, .conversation-title .pending-transfer {
+            .conversation-content,
+            .conversation-title .timestamp,
+            .conversation-title .pending-transfer,
+            .conversation-blocker {
                 display: none;
             }
         }
@@ -244,29 +241,48 @@
         &.color-8 { background: $color-8; }
         &.color-9 { background: $color-9; }
 
-        span:first-of-type {
+        .texter-name {
             overflow: hidden;
             text-overflow: ellipsis;
             max-width: 140px;
             white-space: nowrap;
             display: inline-block;
             vertical-align: middle;
+            margin-right: .5em;
         }
 
         .repeater-flag-box {
             margin-left: 1em;
             border: 1px solid white;
         }
-        .mgt-plan {
+
+        .icon {
             width: 30px;
             height: 30px;
             display: inline-block;
             margin: 0 0 -12px 0;
-            background-image: image-url('sprites-mgtplan.png');
-            background-position: -6px -126px;
+            &.mgt-plan {
+                background-image: image-url('sprites-mgtplan.png');
+                background-position: -6px -126px;
+            }
+            &.ficon {
+                background-image: image-url('sprites-ficon.png');
+                background-position: -6px -126px;
+            }
         }
+
+        .prioritize-arrow {
+            @include prioritize-arrow(1em);
+            &.down {
+                color: white;
+                &:before, &:after {
+                    color: white;
+                }
+            }
+        }
+
         &.priority-4 {
-            background: $color-orange-alert;
+            background: $color-priority-4;
         }
 
         &.flashing {
@@ -283,7 +299,7 @@
     }
 
     .minimized {
-        .repeater-flag-box, .mgt-plan {
+        .repeater-flag-box, .icon {
             display: none;
         }
     }
@@ -308,6 +324,21 @@
             }
         }
     }
+
+    .conversation-footer {
+        padding: .5em;
+        height: 2em;
+        display: table;
+        width: 100%;
+    }
+
+    .conversation-footer > * {
+        display: table-cell;
+    }
+
+    .conversation-footer > :last-child {
+        text-align: right;
+    }
 }
 
 .message-list {
@@ -318,7 +349,6 @@
 .external {
     font-size: 1.1em;
     width: 450px;
-    padding-bottom: .5em;
     position: relative;
     .toolbar-button:last-child {
         float: right;
@@ -336,9 +366,8 @@
     }
 }
 .internal {
-    width: 300px;
+    width: 350px;
     position: relative;
-    z-index: 10;
 }
 
 .message-user {
@@ -410,6 +439,10 @@
             color: red;
         }
     }
+
+    .message-media {
+        @include calc(max-width, 100% - #{3em});
+    }
 }
 
 .next-conversation {
@@ -450,7 +483,7 @@
 
 .timestamp {
     font-weight: normal;
-    margin-left: 1em;
+    margin-left: .5em;
     font-size: .8em;
 
     &:before { content: '[started '; }
@@ -458,7 +491,7 @@
 }
 
 .pending-transfer {
-    font-weight: normal;
+    font-weight: bold;
     margin-left: 1em;
     font-size: .8em;
 }

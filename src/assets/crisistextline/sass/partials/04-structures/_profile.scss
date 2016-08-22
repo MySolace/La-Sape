@@ -46,9 +46,23 @@
     .observe {
         margin-top: 0;
     }
-    .repeater-flag-box {
+    .icons {
         display: inline-block;
-        margin: 7px 0 0 10px;
+        margin: .5em 0 0 .5em;
+        div {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: .5em;
+        }
+        .ficon {
+            width: 18px;
+            height: 18px;
+            background-image: image-url('sprites-ficon.png');
+            background-position: -12px -92px;
+        }
+        .repeater-flag-box {
+
+        }
     }
     .local-timestamp {
         &:hover {
@@ -63,7 +77,6 @@
     position: fixed;
     top: $header-height + 6em;
     display: block;
-    z-index: 5;
     .tab-item {
         display: inline-block;
         &.active {
@@ -381,11 +394,10 @@ $icon-width: 2em;
 }
 
 .namebar-left {
-    .conversation-status, .actor-carrier {
+    #profile-ids {
         clear: both;
         float: left;
-        margin-bottom: .5em;
-        margin-top: -.25em;
+        margin-bottom: 1em;
         margin-left: 2.5em;
         cursor: default;
     }
@@ -395,13 +407,13 @@ $icon-width: 2em;
             font-weight: bold;
         }
         &.priority-4 {
-            color: $color-orange-alert;
+            color: $color-priority-4;
         }
         &.priority-3 {
-            color: $color-green-alert;
+            color: $color-priority-3;
         }
         &.priority-1 {
-            color: $color-med-dark;
+            color: $color-priority-1;
         }
     }
     .actor-carrier {
@@ -416,7 +428,7 @@ $icon-width: 2em;
     margin: 0;
     float: left;
     position: relative;
-    @include calc(width, 100% - #{$width-sidebar-right});
+    @include calc(width, 100% - #{$width-sidebar-right} - 8em);
     input, .actor-name, a {
         font-size: 21px;
         font-weight: bold;
@@ -504,7 +516,6 @@ div[role="main"] .profile-fields {
     margin-top: -4.5em;
     padding: .5em 1em 1em 1em;
     margin-left: -1em;
-    z-index: 10;
 
     .close {
         width: 1.5em;

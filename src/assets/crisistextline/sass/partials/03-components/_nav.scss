@@ -1,4 +1,5 @@
 nav, .nav {
+    margin-left: .5em;
     li.active>a {
         background-color: rgba(255,255,255,.4);
     }
@@ -36,13 +37,13 @@ nav, .nav {
                 color: white;
             }
             &.chronic {
-                background-color: $color-orange-alert;
+                background-color: $color-priority-4;
                 color: white;
             }
             &.action-item {
                 color: white;
                 &.flag { border: 1px solid white; }
-                &.question { background-color: $color-question; }
+                &.notification { background-color: $color-notification; }
                 &.todo { background-color: $color-todo; }
                 &.mgtplan { background-color: $color-mgtplan; }
                 &.unread { background-color: $color-green;}
@@ -58,10 +59,6 @@ nav, .nav {
             }
         }
     }
-}
-
-#main-wrapper .pip {
-    left: 1.5em;
 }
 
 .section-admin nav a, .section-admin .nav a {
