@@ -143,15 +143,18 @@ $user-status-height: 8.5em;
                 position: relative;
                 float: left;
                 .user-count {
+                    font-size: 0.75em;
                     position: absolute;
-                    top: 0;
-                    margin-left: 7.25px;
+                    top: -1px;
+                    margin-left: 8.75px;
                 }
             }
 
             .user-pip {
-                @include user-icon-square($color-green, 1em);
-                margin: 2px 4px;
+                @include user-icon-square($color-green, 1.6em);
+                margin: 2px 8px 2px 4px;
+                font-size: 0.65em;
+                border-radius: 0.25em;
             }
 
             &.chatting.show-count, &.away {
@@ -207,9 +210,14 @@ $user-status-height: 8.5em;
                 text-decoration: none;
                 background-color: $color-red;
                 color: white;
-                right: 5px;
-                padding: 0 5px;
-                border-radius: 5px;
+                right: 0;
+                top: 2px;
+                width: 1.4em;
+                height: 1.4em;
+                line-height: 14px;
+                text-align: center;
+                border-radius: 0.25em;
+                font-size: 11px;
             }
 
             .remove-counselor:hover {
