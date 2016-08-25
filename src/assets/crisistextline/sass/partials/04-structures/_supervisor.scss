@@ -480,11 +480,12 @@
         position: absolute;
         bottom: 0;
         resize: none;
+        font-size: 1em;
     }
 
     .sup-chat-transcript {
         padding: 0 .5em;
-        height: 15em;
+        height: 14em;
         overflow-y: scroll;
     }
 
