@@ -18,7 +18,7 @@
 .overlay-close {
     border: 1px solid black !important;
     display: block;
-    padding: .25em .5em;
+    padding: .3em .5em;
     position: absolute;
     top: 0;
     right: 15px;
@@ -57,13 +57,13 @@
     }
 }
 
-
+$paddingLeftQuote : 38px;
 
 .intro-supers, .intro-quote {
     margin: 10px;
     position: relative;
     width: 45%;
-    padding-left: 38px;
+    padding-left: $paddingLeftQuote;
     display: inline-block;
     vertical-align: top;
     height: 90%;
@@ -73,10 +73,19 @@
     margin-right: 28px;
 }
 
+.logout-wrapper {
+    padding-left: $paddingLeftQuote;
+}
+
 .intro-supers {
     border-left: 1px solid;
 
     h2 {
         margin-top: 0;
+    }
+
+    &.first-shift {
+        width: 90%;
+        border: none;
     }
 }
