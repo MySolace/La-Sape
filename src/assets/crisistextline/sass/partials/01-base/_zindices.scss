@@ -3,6 +3,10 @@
     z-index: 9998;  // This should be the highest z-index on platform (platform quotes colorbox is at 9999)
 }
 
+.ui-autocomplete.emoji-autocomplete {
+    z-index: 9002;
+}
+
 .conversations {
     z-index: 9000;
 

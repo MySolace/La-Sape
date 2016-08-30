@@ -46,11 +46,15 @@ a.no-underline {
 }
 
 .ui-autocomplete.emoji-autocomplete {
-    background: $color-blue;
-    a {
-        color: white;
+    background-color: $color-med-light;
+    padding: 1em 0;
+    font-size: 80%;
+    .ui-menu-item {
+        cursor: pointer;
+        padding: 0 1em;
         &.ui-state-focus {
-            background: $color-med;
+            color: white;
+            background-color: $color-blue;
         }
     }
 }
