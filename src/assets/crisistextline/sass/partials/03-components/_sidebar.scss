@@ -142,16 +142,18 @@ $user-status-height: 8.5em;
             .user-count-container {
                 position: relative;
                 float: left;
+                width: 27px;
+                height: 25px;
                 .user-count {
                     font-size: 0.75em;
                     position: absolute;
-                    top: -1px;
+                    top: 3px;
                     margin-left: 8.75px;
                 }
             }
 
             .user-pip {
-                @include user-icon-square($color-green, 1.6em);
+                @include user-icon-square($color-green, 15px);
                 margin: 2px 8px 2px 4px;
                 font-size: 0.65em;
                 border-radius: 0.25em;
@@ -176,6 +178,10 @@ $user-status-height: 8.5em;
 
             &.new-grad {
                 line-height: 1.5em;
+
+                .user-count {
+                    top: 0px;
+                }
             }
 
             &.new-grad:after {
