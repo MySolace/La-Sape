@@ -234,9 +234,14 @@ $user-status-height: 8.5em;
         &.one-year .user-name {
             .user-pip {
                 @include user-icon-star($color-green);
-                font-size: 20px;
-                margin: -2px 1px 2px;
+                font-size: 1.65em;
+                margin: -4px 0;
             }
+            
+            .user-count{
+                top: -2px;
+            }
+
             &.chatting.available.show-count, &.away {
                 .user-pip {
                     color: $color-gold;
