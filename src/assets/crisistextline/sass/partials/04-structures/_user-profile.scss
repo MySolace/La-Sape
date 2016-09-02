@@ -134,6 +134,9 @@ $popup-quote-lines: 3;
                     &.level-3 {
                         background-color: $color-level-3;
                     }
+                    &.level-4 {
+                        background-color: $color-level-4;
+                    }
                 }
                 &.one-year {
                     @include user-icon-star($color-level-3);
