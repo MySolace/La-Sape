@@ -49,7 +49,6 @@ gulp.task('clean', function (cb) {
 	del([config.dest], cb);
 });
 
-
 // styles
 gulp.task('styles:crisistextline', function() {
 	return gulp.src(config.src.styles.crisistextline)
