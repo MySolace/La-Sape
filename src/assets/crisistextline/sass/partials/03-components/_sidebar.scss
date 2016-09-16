@@ -44,21 +44,7 @@ $user-status-height: 8.5em;
                 color: $color-supervisor;
             }
         }
-        .status {
-            height: 1em;
-            display: inline-block;
-            width: 5.5em;
-        }
-        .status-text {
-            padding-left: 0;
-        }
-        .status-message {
-            display: inline-block;
-            width: 10em;
-            input {
-                width: 100%;
-            }
-        }
+
         .supervisor {
             margin: 0 0 2px 0;
             .supervisor-mode {
