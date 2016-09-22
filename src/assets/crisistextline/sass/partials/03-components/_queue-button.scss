@@ -38,6 +38,10 @@
         background: $color-green-hover !important;
     }
 
+    &[disabled] {
+        opacity: 1;
+    }
+
     &.lock:before {
         left: 0;
         -webkit-transition: left 20s linear;
