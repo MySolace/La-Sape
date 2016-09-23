@@ -321,6 +321,14 @@ div[role="main"] .right-sidebar {
     }
 }
 
+.ui-dialog-content {
+    .post-convo-form {
+        label:first-child {
+            display: none;
+        }   
+    }
+}
+
 .columns-2 {
     @include columns(20em 2);
 }
