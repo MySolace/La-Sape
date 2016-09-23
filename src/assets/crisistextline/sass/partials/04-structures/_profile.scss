@@ -436,6 +436,7 @@ $icon-width: 2em;
     .actor-name, .actor-edit {
         margin: .2em 0 0 .2em;
         float: left;
+        cursor: pointer;
     }
     .actor-name {
         @include calc(max-width, 100% - #{7em});
