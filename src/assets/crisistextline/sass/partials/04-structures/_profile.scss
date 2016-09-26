@@ -436,6 +436,7 @@ $icon-width: 2em;
     .actor-name, .actor-edit {
         margin: .2em 0 0 .2em;
         float: left;
+        cursor: pointer;
     }
     .actor-name {
         @include calc(max-width, 100% - #{7em});
@@ -492,10 +493,15 @@ div[role="main"] .profile-fields {
             display: inline-block;
             font-size: 1em;
             padding: .5em;
+            font-weight: normal;
         }
 
         li {
             label { width: 10.8em; }
+        }
+
+        &.location-not-showing {
+            list-style: none;
         }
     }
     .saved:after {
@@ -516,6 +522,7 @@ div[role="main"] .profile-fields {
     margin-top: -4.5em;
     padding: .5em 1em 1em 1em;
     margin-left: -1em;
+    max-width: 33%;
 
     .close {
         width: 1.5em;
