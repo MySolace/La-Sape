@@ -461,22 +461,6 @@ $icon-width: 2em;
 
 .location-accuracy {
     font-weight: bold;
-    &:after {
-        font-weight: normal;
-        margin-left: .5em;
-    }
-    &.verified:after {
-        content: 'Verified (entered by counselor)';
-        background: $color-rate-g;
-    }
-    &.billing:after {
-        content: 'Billing address (sent to us from the mobile carrier)';
-        background: $color-rate-y;
-    }
-    &.guess:after {
-        content: "Guess (Largest city for the texter's area code)";
-        background: $color-rate-r;
-    }
 }
 
 div[role="main"] .profile-fields {
