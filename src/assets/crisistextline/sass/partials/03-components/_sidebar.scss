@@ -45,6 +45,18 @@ $user-status-height: 8.5em;
             }
         }
 
+        .status-message {
+            span {
+                font-style: italic;
+                width: 100%;
+                cursor: pointer;
+            }
+
+            #status-message {
+                display: none;
+            }
+        }
+
         .supervisor {
             margin: 0 0 2px 0;
             .supervisor-mode {
@@ -69,15 +81,6 @@ $user-status-height: 8.5em;
                 }
             }
         }
-
-        .status-message {
-          display: inline-block;
-          width: 10em;
-        }
-        .status-message input {
-          width: 100%;
-        }
-
     }
 
     .sidebar {
