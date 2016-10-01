@@ -77,3 +77,19 @@ button.active,
         opacity: 0.5;
     }
 }
+
+// Semantic UI Button overrides //
+.ui.button {
+    color: $color-dark;
+    background-color: $color-med-light;
+    &:focus, &:active, &:hover {
+        &:not(.ui-state-disabled) {
+            color: white;
+            background-color: $color-blue;
+        }
+        &.ui-state-disabled {
+            color: $color-dark;
+            background-color: $color-med-light;
+        }
+    }
+}

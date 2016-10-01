@@ -11,6 +11,22 @@ html, body {
         -ms-user-select: none;
         user-select: none;
     }
+    .records_list {
+        -webkit-user-select: text;
+        -khtml-user-drag: text;
+        -khtml-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+    }
+    .allow-select {
+        -webkit-user-select: text;
+        -khtml-user-drag: text;
+        -khtml-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+    }
 }
 
 @mixin normal-text() {
