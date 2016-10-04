@@ -580,6 +580,18 @@ button.observe {
     border-bottom: 1px solid $color-light;
 }
 
+#viewall-comments {
+    cursor: pointer;
+}
+
+.extraComment {
+    display: none;
+}
+
+#wrapper-survey .date {
+    font-style: italic;
+}
+
 .profile-popup {
     strong {
         width: 10em;
