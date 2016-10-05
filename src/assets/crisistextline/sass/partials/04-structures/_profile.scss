@@ -556,10 +556,13 @@ div[role="main"] .profile-fields {
 }
 
 .multi-text-more {
+    cursor: pointer;  
+    margin-top: .25em;
+}
+
+div.multi-text-more {
     width: 15px;
     height: 15px;
-    margin-top: .25em;
-    cursor: pointer;
     background: image-url('filled-plus.png') no-repeat;
     background-position: -15px 0px;
     &:hover {
@@ -590,6 +593,12 @@ button.observe {
 
 #wrapper-survey .date {
     font-style: italic;
+}
+
+.main_summary {
+    textarea {
+        min-height: 150px;
+    }
 }
 
 .profile-popup {
