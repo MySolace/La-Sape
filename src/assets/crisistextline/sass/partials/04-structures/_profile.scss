@@ -162,19 +162,51 @@ div[role="main"] .right-sidebar {
 
 .profile-messages {
     float: left;
-
+    overflow-x: hidden;
     @include profile-transcript-style;
 
     .message {
         &.note {
             background: $color-light;
             padding: .5em 0;
+            margin-bottom: 0;
             &:hover {
                 .message-meta {
                     margin-right: 30px;
                 }
             }
         }
+
+        &.feedback {
+            &:hover {
+                .message-meta {
+                    margin-right: 30px;
+                }
+            }
+            &:before {
+                content: '🗨';
+                position: absolute;
+                left: -.25em;
+                margin-top: -3px;
+            }
+            float: none;
+            width: 100%;
+            margin: 0 1.5em;
+            padding: .7em 2.5em .7em 1em;
+            border-left: 1px solid $color-med;
+            border-top: 1px solid $color-med;
+            background-color: lightyellow;
+        }
+
+        &.highlight {
+            &:before {
+                content: '▶';
+                color: $color-blue;
+                position: absolute;
+                left: -1.5em;
+            }
+        }
+
         .message-meta {
             float: right;
             margin-right: 30px;
@@ -218,6 +250,11 @@ div[role="main"] .right-sidebar {
             }
         }
     }
+
+    .feedback-header {
+        margin-top: 2em;
+        border-top: 1px solid $color-light;
+    }
 }
 
 .message-note-list {
@@ -252,43 +289,49 @@ div[role="main"] .right-sidebar {
     }
 }
 
-.profile-feedback-input {
-    width: 100%;
-    padding-bottom: 1em;
-    padding-left: 1em;
-    border-bottom: 1px solid $color-med;
+.conversation-feedback {
+    display: none;
 
     textarea {
-        width: 50%;
-        border: 1px solid $color-med;
+        width: 100%;
+        border: 1px solid $color-light;
         resize: none;
-        height: 6em;
-    }
-
-    button {
-        margin-top: .5em;
+        padding: .5em;
+        margin-bottom: -3px;
+        border-left: 1px solid $color-med;
+        border-right: 1px solid $color-med;
+        border-top: 1px solid $color-med;
+        border-bottom: 0px;
     }
 }
 
-.profile-feedback-list {
-    border: 2px solid $color-med;
-    background-color: $color-light;
-    margin: 1em;
-    float: left;
-    width: calc(75% - 2em);
-    padding: 1em .5em;
+.message-actions {
 
-    h3 {
-        margin-top: 0;
-        margin-bottom: .5em;
+    margin-bottom: 2em;
+    border-top: 1px solid $color-med;
+    background-color: $color-light;
+    padding-bottom: 3px;
+
+    .message-action-target {
+        margin-left: 1em;
+        margin-right: 1em;
+        padding: .25em;
+        font-weight: bold;
+        color: $color-blue;
+        font-size: .85em;
     }
 
-    .conversation-feedback {
-        margin: 1em 1em 0em;
+    button {
+        margin-left: .5em;
+    }
 
-        .feedback-actor {
-            font-weight: bold;
-        }
+}
+
+.notify-dialog {
+    textarea {
+        width: 100%;
+        height: 100%;
+        resize: none;
     }
 }
 
