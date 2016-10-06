@@ -318,6 +318,18 @@ ul.cc {
             left: 0;
         }        
     }
+
+    li.chatUser.one-year {
+        .user-name:before {
+            content: "\2605";
+            color: $color-green;
+            font-size: 1.65em;
+            line-height: 0.6em;
+            font-weight: normal;
+            position: absolute;
+            left: 0;
+        }
+    }
 }
 
 .sidebar-tabs {
