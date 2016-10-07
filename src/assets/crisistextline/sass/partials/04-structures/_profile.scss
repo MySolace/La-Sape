@@ -674,8 +674,15 @@ button.observe {
     display: none;
 }
 
-#wrapper-survey .date {
-    font-style: italic;
+#wrapper-survey {
+    .date {
+        font-style: italic;
+    }
+
+    form button.bottom {
+        position: fixed;
+        bottom: 0;
+    }
 }
 
 #main_summary {
