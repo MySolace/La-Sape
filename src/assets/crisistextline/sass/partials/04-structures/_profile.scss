@@ -679,9 +679,12 @@ button.observe {
         font-style: italic;
     }
 
-    form button.bottom {
+    form div.survey-buttons {
         position: fixed;
         bottom: 0;
+        width: 60%;
+        background-color: white;
+        padding-top: 1em;
     }
 }
 
