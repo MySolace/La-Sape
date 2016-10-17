@@ -18,3 +18,51 @@ $font-family: $font-name, Helvetica, Arial, sans-serif !default;
 @import '../../../../semantic-ui/app/assets/stylesheets/semantic-ui/collections/all';
 @import '../../../../semantic-ui/app/assets/stylesheets/semantic-ui/views/all';
 @import '../../../../semantic-ui/app/assets/stylesheets/semantic-ui/modules/all';
+
+
+// Copying Semantic's font awesome styling for use with :after selector
+@mixin font-awesome-style {
+	display: inline-block;
+	opacity: 1;
+	margin: 0em 0.25rem 0em 0em;
+	width: 1.18em;
+	height: 1em;
+	font-family: 'Icons';
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: inherit;
+	text-align: center;
+	speak: none;
+	font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+
+	&:after {
+
+		background: none !important;
+	}
+}
+
+//Adding missing styles from font awesome
+
+// Stacked Icons
+// -------------------------
+
+.stack {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: middle;
+}
+.stack-1x, .stack-2x {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.stack-1x { line-height: inherit; }
+.stack-2x { font-size: 2em; }
