@@ -684,7 +684,7 @@ button.observe {
         bottom: 0;
         width: 60%;
         background-color: white;
-        padding-top: 1em;
+        padding-bottom: 3em;
     }
 }
 
@@ -692,6 +692,10 @@ button.observe {
     textarea {
         min-height: 150px;
     }
+}
+
+#main_inapp_abuse {
+    display: none;
 }
 
 .profile-popup {
