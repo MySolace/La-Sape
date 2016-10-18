@@ -62,15 +62,16 @@ button[disabled] {
 @mixin button-active-hover {
     background-color: $color-blue;
     color: white;
+    &:hover {
+        background-color: $color-blue-hover;
+    }
 }
 
 button.active,
 .input-button.active,
 .button.active {
     @include button-active-hover;
-    &:hover {
-        background-color: $color-blue-hover;
-    }
+
 }
 
 @mixin button-mgt-plan {

@@ -52,16 +52,40 @@ $color-8:           #145126;    // hunter green
 $color-9:           #722846;    // burgundy
 
 // CC LEVEL COLORS
+$color-trainee:     $color-med-dark;
+$color-level-1:     $color-dark;
 $color-level-2:     $color-blue;
 $color-level-3:     $color-purple;
 $color-level-4:     $color-pink;
 $color-supervisor:  $color-orange-alert;
+$color-admin:       $color-orange-alert; // Currently set same as Super - need to come up w/ better separate color
+
+$levelColorList: $color-level-1 $color-level-2 $color-level-3 $color-level-4;
+@mixin apply-level-color($i, $attr) {
+    #{$attr}: nth($levelColorList, $i);
+}
 
 // CONVO PRIORITY LEVELS
 $color-priority-1:  $color-med-dark;
 $color-priority-2:  $color-dark;
 $color-priority-3:  #0A990A;
 $color-priority-4:  $color-orange-alert;
+
+$priorityColorList: $color-priority-1 $color-priority-2 $color-priority-3 $color-priority-4;
+@mixin apply-priority-color($i, $attr) {
+    #{$attr}: nth($priorityColorList, $i);
+}
+
+// QUEUE HEALTH COLORS
+$color-queue-health-1: $color-green;
+$color-queue-health-2: yellow;
+$color-queue-health-3: $color-orange-alert;
+$color-queue-health-4: $color-red;
+
+$queueHealthColorList: $color-queue-health-1 $color-queue-health-2 $color-queue-health-3 $color-queue-health-4;
+@mixin apply-queue-health-color($i, $attr) {
+    #{$attr}: nth($queueHealthColorList, $i);
+}
 
 // MISC USES
 $color-hover:           $color-med-light;

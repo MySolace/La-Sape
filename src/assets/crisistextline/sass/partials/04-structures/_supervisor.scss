@@ -284,14 +284,11 @@
 .user-conversations {
     h3 {
         margin-bottom: 0;
-        &.level-2 {
-            color: $color-level-2;
-        }
-        &.level-3 {
-            color: $color-level-3;
-        }
-        &.level-4 {
-            color: $color-level-4;
+
+        @for $i from 2 through 4 {
+            &.level-#{$i} {
+                @include apply-level-color($i, color);
+            }
         }
     }
 }
@@ -439,26 +436,20 @@
             text-decoration: none;
             color: $color-dark;
         }
-        &.level-2 a {
-            color: $color-level-2;
-        }
-        &.level-3 a {
-            color: $color-level-3;
-        }
-        &.level-4 a {
-            color: $color-level-4;
+
+        @for $i from 2 through 4 {
+            &.level-#{$i} a {
+                @include apply-level-color($i, color);
+            }
         }
     }
 
-    &.priority-4 .convo-number {
-        color: $color-priority-4;
+    @for $i from 1 through 4 {
+        &.priority-#{$i} .convo-number {
+            @include apply-priority-color($i, color);
+        }
     }
-    &.priority-3 .convo-number {
-        color: $color-priority-3;
-    }
-    &.priority-1 .convo-number {
-        color: $color-priority-1;
-    }
+
     .icons .prioritize-arrow {
         cursor: pointer;
         padding-left: .5em;

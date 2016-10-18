@@ -31,14 +31,11 @@ $user-status-height: 8.5em;
     .user-status {
         .user-name {
             font-weight: bold;
-            &.counselor-level-2 {
-                color: $color-level-2;
-            }
-            &.counselor-level-3 {
-                color: $color-level-3;
-            }
-            &.counselor-level-4 {
-                color: $color-level-4;
+
+            @for $i from 2 through 4 {
+                &.counselor-level-#{$i} {
+                    @include apply-level-color($i, color);
+                }
             }
             &.supervisor {
                 color: $color-supervisor;
@@ -88,22 +85,16 @@ $user-status-height: 8.5em;
         padding: .5em 0;
         cursor: pointer;
         &.trainee .user-name {
-            color: $color-med-dark;
+            color: $color-trainee;
             .user-pip {
                 background-color: $color-med !important;
             }
         }
 
-        &.counselor-level-2 .user-name {
-            color: $color-level-2;
-        }
-
-        &.counselor-level-3 .user-name {
-            color: $color-level-3;
-        }
-
-        &.counselor-level-4 .user-name {
-            color: $color-level-4;
+        @for $i from 2 through 4 {
+            &.counselor-level-#{$i} .user-name {
+                @include apply-level-color($i, color);
+            }
         }
 
         &.supervisor-plus .user-name {
@@ -417,15 +408,13 @@ ul.cc {
     .user {
         display: inline-block;
         font-weight: bold;
-        &.counselor-level-2 {
-            color: $color-level-2;
+
+        @for $i from 2 through 4 {
+            &.counselor-level-#{$i} {
+                @include apply-level-color($i, color);
+            }
         }
-        &.counselor-level-3 {
-            color: $color-level-3;
-        }
-        &.counselor-level-4 {
-            color: $color-level-4;
-        }
+
         &.dm-hover:hover {
             cursor: pointer;
             background-color: $color-hover;

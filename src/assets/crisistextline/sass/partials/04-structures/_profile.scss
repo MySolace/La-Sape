@@ -497,14 +497,11 @@ $icon-width: 2em;
             content: 'Status: ';
             font-weight: bold;
         }
-        &.priority-4 {
-            color: $color-priority-4;
-        }
-        &.priority-3 {
-            color: $color-priority-3;
-        }
-        &.priority-1 {
-            color: $color-priority-1;
+
+        @for $i from 1 through 4 {
+            &.priority-#{$i} {
+                @include apply-priority-color($i, color);
+            }
         }
     }
     .actor-carrier {
