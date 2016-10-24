@@ -1,3 +1,5 @@
+$button-disabled-opacity: 0.5;
+
 .button-sprite {
     width: 40px;
     height: 40px;
@@ -39,6 +41,10 @@ button,
     }
 }
 
+button[disabled] {
+    opacity: $button-disabled-opacity;
+}
+
 .button {
     cursor: pointer;
     background: $color-med;
@@ -56,15 +62,16 @@ button,
 @mixin button-active-hover {
     background-color: $color-blue;
     color: white;
+    &:hover {
+        background-color: $color-blue-hover;
+    }
 }
 
 button.active,
 .input-button.active,
 .button.active {
     @include button-active-hover;
-    &:hover {
-        background-color: $color-blue-hover;
-    }
+
 }
 
 @mixin button-mgt-plan {
@@ -74,7 +81,7 @@ button.active,
         background-position: -46px -166px;
     }
     &.disabled {
-        opacity: 0.5;
+        opacity: $button-disabled-opacity;
     }
 }
 

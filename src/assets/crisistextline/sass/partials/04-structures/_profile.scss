@@ -404,6 +404,14 @@ div[role="main"] .right-sidebar {
     }
 }
 
+.ui-dialog-content {
+    .post-convo-form {
+        label:first-child {
+            display: none;
+        }   
+    }
+}
+
 .columns-2 {
     @include columns(20em 2);
 }
@@ -489,14 +497,11 @@ $icon-width: 2em;
             content: 'Status: ';
             font-weight: bold;
         }
-        &.priority-4 {
-            color: $color-priority-4;
-        }
-        &.priority-3 {
-            color: $color-priority-3;
-        }
-        &.priority-1 {
-            color: $color-priority-1;
+
+        @for $i from 1 through 4 {
+            &.priority-#{$i} {
+                @include apply-priority-color($i, color);
+            }
         }
     }
     .actor-carrier {
@@ -631,10 +636,13 @@ div[role="main"] .profile-fields {
 }
 
 .multi-text-more {
+    cursor: pointer;  
+    margin-top: .25em;
+}
+
+div.multi-text-more {
     width: 15px;
     height: 15px;
-    margin-top: .25em;
-    cursor: pointer;
     background: image-url('filled-plus.png') no-repeat;
     background-position: -15px 0px;
     &:hover {
@@ -653,6 +661,38 @@ button.observe {
     color: $color-orange-alert;
     padding: 1em 0;
     border-bottom: 1px solid $color-light;
+}
+
+#viewall-comments {
+    cursor: pointer;
+}
+
+.extraComment {
+    display: none;
+}
+
+#wrapper-survey {
+    .date {
+        font-style: italic;
+    }
+
+    form div.survey-buttons {
+        position: fixed;
+        bottom: 0;
+        width: 60%;
+        background-color: white;
+        padding-bottom: 3em;
+    }
+}
+
+#main_summary {
+    textarea {
+        min-height: 150px;
+    }
+}
+
+#main_inapp_abuse {
+    display: none;
 }
 
 .profile-popup {

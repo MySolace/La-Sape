@@ -1,185 +1,287 @@
-$size-user-profile-badge: 22px;
-$margin-user-profile-badge: 8px;
-$size-user-profile-avatar: (3 * $size-user-profile-badge) + (2 * $margin-user-profile-badge);
-$size-quote-indent: 3em;
-$width-quote-textarea: 75%;
-
 $popup-avatar-size: 40px;
 $popup-fontsize: 11px;
 $popup-line-height: 1.4;
 $popup-quote-lines: 3;
 
-// Main Profile Card formatting
-.profile-card {
-    div, img, a {
-        &.editable {
-            cursor: pointer;
+// Common wrapper styling for sections and profile card
+.user-profile {
+    .profile-card, .profile-section {
+        margin-bottom: 2rem;
+    }
+    .profile-card .profile-card-name, .profile-section .section-name {
+        font-size: 2em;
+        font-weight: bold;
+        color: white;
+        padding: .5rem 1rem;
+    }
+    .profile-card .profile-card-content, .profile-section .field-content {
+        background-color: $color-light
+    }
+}
+
+// Main Profile Section formatting
+.user-profile .profile-section {
+    .section-name {
+        margin: 1rem 0;
+    }
+    .field-name {
+        color: white;
+        padding: .5rem 1rem;
+    }
+    .field-content {
+        overflow: hidden;
+        padding: 1.5rem 0;
+        text-align: center;
+        &:not(.size-normal) {
+            font-size: 6rem;
+        }
+        &:not(.weight-normal) {
+            font-weight: bold;
+        }
+        svg {
+            text {
+                fill: $color-dark;
+            }
+            .axis {
+                path, line {
+                    fill: none;
+                    stroke: $color-med;
+                    shape-rendering: crispEdges;
+                }
+                &.x line, &.y path {
+                    display: none;
+                }
+            }
+            .background-shape {
+                fill: $color-med-light;
+            }
+            @for $i from 1 through 4 {
+                .zone-#{$i} {
+                    @include apply-queue-health-color($i, fill);
+                }
+            }
         }
     }
+    // Specific Sections
+    &.cc-hours {
+        .section-name, .field-name {
+            background-color: $color-blue;
+        }
+        .field-content {
+            color: $color-blue;
+        }
+    }
+    &.cc-impact {
+        .section-name, .field-name {
+            background-color: $color-green;
+        }
+        .field-content {
+            color: $color-green;
+        }
+    }
+    // Specific Fields
+    .profile-field {
+        &.cc-hours-monthly {
+            .field-content {
+                padding: 3rem 0 2rem;
+            }
+            svg {
+                rect {
+                    fill: $color-blue;
+                }
+                .labels text {
+                    fill: white;
+                    &.lowVal {
+                        fill: $color-dark;
+                    }
+                }
+            }
+        }
+        &.cc-convo-count {
+            .field-content {
+                color: $color-dark;
+                font-size: 1.5rem;
+                padding: 2rem 0;
+                .convo-icon {
+                    margin: auto;
+                    padding-top: 1.6rem;
+                    background-color: $color-light;
+                    background-image: image-url('comment-green.png');
+                    background-size: 100px 100px;
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+        }
+        &.cc-queue-health {
+            .field-content {
+                padding: 2rem 0;
+                font-size: 1.5rem;
+            }
+        }
+        &.cc-issue-types {
+            .field-content {
+                padding: 3rem 0;
+            }
+            svg {
+                .shapes, .snippet {
+                    fill: $color-green;
+                }
+                .background-shape {
+                    fill: transparent;
+                }
+                .shapes, .legend, .labels {
+                    cursor: pointer;
+                }
+                .labels text {
+                    fill: white;
+                }
+            }
+        }
+        &.cc-texter-sentiment {
+            svg {
+                .words text {
+                    fill: $color-green;
+                }
+            }
+        }
+    }
+}
+
+// Main Profile Page Profile Card formatting
+.user-profile .profile-card {
     .profile-card-name {
-        width: 100%;
-        color: black;
-        margin-top: 0;
+        color: white;
+        @for $i from 1 through 4 {
+            &.level-#{$i} {
+                @include apply-level-color($i, background-color);
+            }
+        }
+        &.trainee {
+            background-color: $color-trainee;
+        }
+        &.supervisor {
+            background-color: $color-supervisor;
+        }
+        &.admin {
+            background-color: $color-admin;
+        }
+        a {
+            color: white;
+        }
         .edit-link {
-            font-size: 14px;
-            font-weight: normal;
+            font-size: 1rem;
         }
     }
+
+    .editable {
+        cursor: pointer;
+    }
+
+    // Overriding Semantic UI's grid padding here
+    .ui.grid > .column:not(.row), .ui.grid > .row > .column {
+        padding: 2rem 0 2rem 2rem;
+    }
+
     .profile-card-content {
-        width: 100%;
-        .profile-card-left, .profile-card-right {
-            display: inline-block;
-            vertical-align: top;
+        &>div>div {
+            margin-bottom: .5rem;
         }
-        input, textarea {
-            clear: both;
+        label {
+            font-weight: bold;
         }
-        div.unset {
+        input[type="text"], textarea {
+            width: 100%;
+            display: block;
+        }
+        textarea {
+            height: auto;
+        }
+        input[type="checkbox"] {
+            cursor: pointer;
+            margin-right: .5rem;
+        }
+        span.unset {
             font-style: italic;
             color: $color-med-dark;
         }
-    }
-    .profile-card-left {
-        margin-right: 1em;
-        .avatar {
-            .gravatar-toggle {
-                cursor: pointer;
-            }
-            &>div {
-                width: 100%;
-                font-size: .7em;
-            }
-            input[type="checkbox"] {
-                margin-left: 0;
-            }
-            .gravatar {
-                background-image: image-url('ctl-shortlogo-gray.png');
+        .edit-buttons {
+            margin: 1rem 0 0 !important;
+            .submit {
+                @include button-active-hover;
             }
         }
-        .badges {
-            clear: both;
-            display: relative;
-            overflow: hidden;
-            .badge {
-                float: left;
-                &:nth-of-type(3n) {
-                    margin-right: 0;
-                }
+        .gravatar-toggle, .alias-checkbox {
+            margin-top: .5em;
+            width: 100%;
+            label {
+                font-weight: normal;
             }
         }
     }
+
+    .profile-card-mid {
+        padding-right: 1rem !important;
+    }
+
     .profile-card-right {
-        textarea {
-            padding: .25em;
-        }
-        textarea, input {
-            font-size: 14px;
+        padding: 2rem 2rem 2rem 1rem !important;
+        span.value {
+            display: block;
+            &:not(.unset):before {
+                content: open-quote;
+            }
+            &:not(.unset):after {
+                content: close-quote;
+            }
         }
     }
-    .edit-buttons button.submit {
-        @include button-active-hover;
-    }
+    // TODO: Holding on badges for now
+    // .badges {
+    //     margin-top: 5px;
+    //     .badge {
+    //         width: $size-user-profile-badge;
+    //         height: $size-user-profile-badge;
+    //         margin-right: $margin-user-profile-badge;
+    //         &.cc-level {
+    //             @include user-icon-square($color-med, $size-user-profile-badge);
+    //             @for $i from 2 through 4 {
+    //                 &.level-#{$i} {
+    //                     @include apply-level-color($i, background-color);
+    //                 }
+    //             }
+    //         }
+    //         &.one-year {
+    //             @include user-icon-star($color-level-3);
+    //             font-size: $size-user-profile-badge - 2px;
+    //             margin-top: -1px;
+    //         }
+    //     }
+    // }
 }
 
 .supervisor-actions {
-
-    margin-top: 1em;
-
-    button {
-        background-color: $color-med-dark;
-        color: white;
-        margin-right: .5em;
-        margin-bottom: .5em;
-        background-size: 3em;
-        background-repeat: no-repeat;
-        background-position: left center;
-    }
-    button:hover {
-        background-color: $color-blue;
-    }
-    .good-egg {
-        background-image: image-url('egg-with-hearts-white.svg');
-        padding-left: 40px;
-    }
-    .funky-apple {
-        background-image: image-url('apple.svg');
-        padding-left: 45px;
-    }
-}
-
-// Profile Page Profile Card formatting (mainly adding in size dimensions)
-.user-profile .profile-card {
-    padding: 2em;
-    background: $color-light;
-    .profile-card-left {
-        .avatar {
-            width: $size-user-profile-avatar;
-            .gravatar {
-                width: $size-user-profile-avatar;
-                height: $size-user-profile-avatar;
-                background-size: $size-user-profile-avatar $size-user-profile-avatar;
-            }
+    .ui.button {
+        width: 50%;
+        color: $color-dark !important;
+        background-size: 2rem !important;
+        background-repeat: no-repeat !important;
+        background-position: 1rem center !important;
+        &.good-egg {
+            background-image: image-url('egg-with-hearts-dark.svg');
         }
-        .badges {
-            margin-top: 5px;
-            .badge {
-                width: $size-user-profile-badge;
-                height: $size-user-profile-badge;
-                margin-right: $margin-user-profile-badge;
-                &.cc-level {
-                    @include user-icon-square($color-med, $size-user-profile-badge);
-                    &.level-2 {
-                        background-color: $color-level-2;
-                    }
-                    &.level-3 {
-                        background-color: $color-level-3;
-                    }
-                    &.level-4 {
-                        background-color: $color-level-4;
-                    }
-                }
-                &.one-year {
-                    @include user-icon-star($color-level-3);
-                    font-size: $size-user-profile-badge - 2px;
-                    margin-top: -1px;
-                }
-            }
+        &.funky-apple {
+            background-image: image-url('apple-dark.svg');
         }
     }
-    .profile-card-right {
-        @include calc(width, 100% - #{$size-user-profile-avatar} - 1em);
-        textarea {
-            width: $width-quote-textarea;
-            height: 6em;
+    .ui.button:hover {
+        color: white !important;
+        background-color: $color-blue !important;
+        &.good-egg {
+            background-image: image-url('egg-with-hearts-white.svg') !important;
         }
-        input[type="text"] {
-            width: 100%;
-            max-width: 20em;
-        }
-        .quote {
-            margin-left: $size-quote-indent;
-        }
-        .quotemark {
-            height: $size-quote-indent;
-            .inner {
-                font-size: 4em;
-                font-style: normal;
-                font-weight: bold;
-                color: $color-med-dark;
-            }
-        }
-    }
-    .edit-buttons {
-        margin-top: 2em;
-        position: relative;
-        overflow: hidden;
-        padding-left: $size-quote-indent;
-        button {
-            float: left;
-            &.cancel {
-                float: right;
-                @include calc(margin-right, 100% - #{$width-quote-textarea} - #{$size-quote-indent});
-            }
+        &.funky-apple {
+            background-image: image-url('apple-white.svg') !important;
         }
     }
 }
@@ -196,14 +298,18 @@ $popup-quote-lines: 3;
 
 .profile-card.popup {
     padding: .5em;
+    .profile-card-content {
+        width: 100%;
+        .profile-card-left, .profile-card-right {
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
     .profile-card-left {
-        .avatar {
+        margin-right: 1em;
+        .gravatar {
             width: $popup-avatar-size;
-            .gravatar {
-                width: $popup-avatar-size;
-                height: $popup-avatar-size;
-                background-size: $popup-avatar-size $popup-avatar-size;
-            }
+            height: $popup-avatar-size;
         }
     }
     .profile-card-right {
