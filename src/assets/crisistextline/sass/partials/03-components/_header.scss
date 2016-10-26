@@ -62,26 +62,9 @@ header {
     }
 }
 
-.logo {
-    max-height: 100%;
-    vertical-align: middle;
-}
-
-.logo-wrapper {
-    float: left;
-    height: $header-height - $header-padding*2;
-    margin: $header-padding;
-}
-
 .app-demo, .app-local, .app-dev {
     &:after {
-        margin-left: 1em;
-        padding: .5em 1em;
-        background: white;
-        @include border-radius(.5em);
-        background: $color-red;
         color: white;
-        font-size: .8em;
     }
 }
 .app-local:after { content: 'LOCAL'; }
