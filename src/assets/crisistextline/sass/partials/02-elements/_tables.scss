@@ -8,6 +8,10 @@ table {
         background: $color-blue;
         color: white;
         text-align: left;
+        select {
+            color: $color-dark;
+            font-weight: normal;
+        }
     }
 
     tbody {
