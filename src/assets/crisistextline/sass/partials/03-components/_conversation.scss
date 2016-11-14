@@ -247,8 +247,12 @@
                 background-image: image-url('sprites-mgtplan.png');
                 background-position: -6px -126px;
             }
-            &.ficon {
+            &.icon-facebook {
                 background-image: image-url('sprites-ficon.png');
+                background-position: -6px -126px;
+            }
+            &.icon-kik {
+                background-image: image-url('sprites-kikicon.png');
                 background-position: -6px -126px;
             }
         }
