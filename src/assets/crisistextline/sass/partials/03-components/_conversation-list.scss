@@ -117,17 +117,17 @@
     }
 
     .conversation-service-icon {
-        .icon-facebook {
+        div {
             width: 18px;
             height: 18px;
-            background-image: image-url('sprites-ficon.png');
             background-position: -12px -212px;
+
+        }
+        .icon-facebook {
+            background-image: image-url('sprites-ficon.png');
         }
         .icon-kik {
-            width: 18px;
-            height: 18px;
             background-image: image-url('sprites-kikicon.png');
-            background-position: -12px -212px;
         }
     }
 
@@ -151,7 +151,7 @@
             border: 1px solid $color-priority-1;
         }
         .conversation-service-icon {
-            .icon-facebook {
+            div {
                 background-position: -12px -92px;
             }
         }
@@ -169,7 +169,7 @@
             border: 1px solid $color-priority-3;
         }
         .conversation-service-icon {
-            .icon-facebook {
+            div {
                 background-position: -12px -52px;
             }
         }
@@ -188,7 +188,7 @@
             border: 1px solid $color-priority-4;
         }
         .conversation-service-icon {
-            .icon-facebook {
+            div {
                 background-position: -12px -12px;
             }
         }
