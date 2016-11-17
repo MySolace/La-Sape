@@ -193,8 +193,12 @@ $user-status-height: 9.25rem;
             }
         }
 
-        &.supervisor-plus .user-name {
+        &.supervisor .user-name {
             color: $color-supervisor;
+        }
+
+        &.super-admin .user-name {
+            color: $color-admin;
         }
 
         &:hover {
@@ -410,14 +414,18 @@ $user-status-height: 9.25rem;
             }
         }
 
+        &.supervisor {
+            color: $color-supervisor;
+        }
+
+        &.super-admin {
+            color: $color-admin;
+        }
+
         &.dm-hover:hover {
             cursor: pointer;
             background-color: $color-hover;
         }
-    }
-
-    &.admin-message .user {
-        color: $color-supervisor;
     }
 
     .chat-timestamp {
