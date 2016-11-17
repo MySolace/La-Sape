@@ -402,6 +402,23 @@ div[role="main"] .right-sidebar {
             width: 60%;
         }
     }
+
+    div.ui.special.cards {
+
+        .card {
+            .hidden.content {
+                white-space: normal;
+                margin-top: 20%;
+                font-weight: bold;
+            }
+        }
+
+        &.enabled .ui.disabled.image{
+            opacity: 1;
+        }
+
+    }
+
 }
 
 .ui-dialog-content {
