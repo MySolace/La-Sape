@@ -407,9 +407,15 @@ div[role="main"] .right-sidebar {
 
         .card {
             .hidden.content {
+                padding: 0.5rem;
                 white-space: normal;
-                margin-top: 20%;
+                margin-top: 10%;
                 font-weight: bold;
+                font-size: 0.9vw !important;
+            }
+
+            input {
+                display: none;
             }
         }
 
@@ -699,6 +705,7 @@ button.observe {
         width: 60%;
         background-color: white;
         padding-bottom: 3em;
+        z-index: 3;
     }
 }
 
