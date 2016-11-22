@@ -404,7 +404,6 @@ div[role="main"] .right-sidebar {
     }
 
     div.ui.special.cards {
-
         .card {
             .hidden.content {
                 padding: 0.5rem;
@@ -419,12 +418,14 @@ div[role="main"] .right-sidebar {
             }
         }
 
-        .ui.disabled.image{
+        .ui.disabled.image {
             opacity: 1;
         }
-
     }
 
+    .debrief-filled-out {
+        margin-top: 1em;
+    }
 }
 
 .ui-dialog-content {
