@@ -410,11 +410,15 @@ div[role="main"] .right-sidebar {
                 white-space: normal;
                 margin-top: 10%;
                 font-weight: bold;
-                font-size: 0.9vw !important;
+                font-size: 0.85vw !important;
             }
 
             input {
                 display: none;
+            }
+
+            .content > .header:not(.ui) {
+                font-size: 1.2vw;   
             }
         }
 
