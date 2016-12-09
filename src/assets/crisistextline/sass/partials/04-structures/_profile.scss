@@ -475,6 +475,13 @@ $icon-width: 2em;
             background-position: -46px -5px;
         }
     }
+    &.admin-facebook-form {
+        background-image: image-url('sprites.png');
+        background-position: -6px -486px;
+        &:hover {
+            background-position: -46px -486px;
+        }
+    }
     &.flag {
         background-image: image-url('flag.png');
         background-position: -6px -46px;
