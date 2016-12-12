@@ -54,10 +54,16 @@
             vertical-align: middle;
             margin-right: .5em;
         }
-        .ficon {
+        .icon-facebook {
             width: 18px;
             height: 18px;
             background-image: image-url('sprites-ficon.png');
+            background-position: -12px -92px;
+        }
+        .icon-kik {
+            width: 18px;
+            height: 18px;
+            background-image: image-url('sprites-kikicon.png');
             background-position: -12px -92px;
         }
         .repeater-flag-box {
@@ -495,6 +501,13 @@ $icon-width: 2em;
         background-position: -6px -5px;
         &:hover {
             background-position: -46px -5px;
+        }
+    }
+    &.admin-facebook-form {
+        background-image: image-url('sprites.png');
+        background-position: -6px -486px;
+        &:hover {
+            background-position: -46px -486px;
         }
     }
     &.flag {
