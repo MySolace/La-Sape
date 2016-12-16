@@ -408,6 +408,34 @@ div[role="main"] .right-sidebar {
             width: 60%;
         }
     }
+
+    div.ui.special.cards {
+        .card {
+            .hidden.content {
+                padding: 0.5rem;
+                white-space: normal;
+                margin-top: 10%;
+                font-weight: bold;
+                font-size: 0.85vw !important;
+            }
+
+            input {
+                display: none;
+            }
+
+            .content > .header:not(.ui) {
+                font-size: 1.2vw;   
+            }
+        }
+
+        .ui.disabled.image {
+            opacity: 1;
+        }
+    }
+
+    .debrief-filled-out {
+        margin-top: 1em;
+    }
 }
 
 .ui-dialog-content {
@@ -473,6 +501,13 @@ $icon-width: 2em;
         background-position: -6px -5px;
         &:hover {
             background-position: -46px -5px;
+        }
+    }
+    &.admin-facebook-form {
+        background-image: image-url('sprites.png');
+        background-position: -6px -486px;
+        &:hover {
+            background-position: -46px -486px;
         }
     }
     &.flag {
