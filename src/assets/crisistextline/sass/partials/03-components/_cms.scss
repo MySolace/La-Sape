@@ -42,6 +42,10 @@
     }
 
     .cms-list-item {
+        &.active > .cms-list-item-button,
+        .cms-list-item-button:hover {
+            font-weight: bold;
+        }
         .cms-list-item-button {
             position: relative;
             padding: .75em 0;
