@@ -40,21 +40,24 @@
         }
     }
 
-    .cms-list .list-items > .cms-list-item {
+    .list-items > .cms-list-item {
         border-bottom: 1px solid $color-med-light;
         &:last-of-type {
             border-bottom: none;
         }
     }
 
-    .cms-list .cms-list-empty-search {
-        font-weight: bold;
+    .cms-list-empty-search {
+        // font-weight: bold;
+        color: $color-orange-alert;
+        padding: $height-cms-list-gap-full 0;
     }
 
     .cms-list-item {
         &.active > .cms-list-item-button,
         .cms-list-item-button:hover {
-            font-weight: bold;
+            // font-weight: bold;
+            color: $color-orange-alert;
         }
         .cms-list-item-button {
             position: relative;
