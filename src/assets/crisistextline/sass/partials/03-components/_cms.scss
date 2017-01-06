@@ -1,44 +1,54 @@
 .contentful {
     width: 100%;
-    .cms-list {
-        display: inline-block;
-        vertical-align: top;
-        width: 25%;
-        padding-right: 1.5rem;
-        .cms-space-name {
-            font-size: 1.5rem;
-        }
-        .cms-list-item-button, .cms-space-name {
-            cursor: pointer;
-        }
-    }
-    .cms-main {
-        display: inline-block;
-        vertical-align: top;
-        width: 75%;
-        padding-left: 1.5rem;
-        .cms-space, .cms-item {
-            .title {
-                font-size: 2rem;
-            }
-        }
-    }
+    $height-cms-list-gap-full: 1.5em;
+    $height-cms-list-gap-half: $height-cms-list-gap-full / 2;
 
-    .cms-list .cms-space-name,
-    .cms-main .cms-space .title,
-    .cms-main .cms-item  .title {
+    // Setting up the consistent bar line up top
+    .cms-list .cms-list-space-name,
+    .cms-main div[class^='cms-main-'] .title {
         line-height: 4rem;
         color: $color-blue;
         font-weight: bold;
         border-bottom: 1px solid $color-med-light;
     }
 
-    .cms-list > .cms-list-item {
+    // The CMS Main area
+    .cms-main {
+        display: inline-block;
+        vertical-align: top;
+        width: 75%;
+        padding-left: 1.5rem;
+        div[class^='cms-main-'] {
+            .title {
+                font-size: 2rem;
+            }
+            line-height: $height-cms-list-gap-full;
+        }
+    }
+
+    // The CMS List
+    .cms-list {
+        display: inline-block;
+        vertical-align: top;
+        width: 25%;
+        padding-right: 1.5rem;
+        .cms-list-space-name {
+            font-size: 1.5rem;
+        }
+        .cms-list-space-name, .cms-list-item-button {
+            cursor: pointer;
+        }
+    }
+
+    .cms-list .list-items > .cms-list-item {
         border-bottom: 1px solid $color-med-light;
-        padding: .75em 0;
         &:last-of-type {
             border-bottom: none;
         }
+    }
+
+    .cms-list .cms-list-empty-search {
+        font-weight: bold;
     }
 
     .cms-list-item {
@@ -48,11 +58,14 @@
         }
         .cms-list-item-button {
             position: relative;
-            padding: .75em 0;
+            .clicker {
+                padding: $height-cms-list-gap-full 0;
+            }
             .arrow {
                 height: 1em;
                 width: 1em;
                 float: right;
+                margin: $height-cms-list-gap-full 0;
                 &.active {
                     background-color: $color-blue;
                 }
@@ -61,8 +74,52 @@
                 }
             }
         }
+
+        &.parent.open,
+        .sub-entries .cms-list-item {
+            .cms-list-item-button {
+                .clicker {
+                    padding-bottom: $height-cms-list-gap-half;
+                }
+                .arrow {
+                    margin-bottom: $height-cms-list-gap-half;
+                }
+            }
+        }
+
+
         .sub-entries {
             padding-left: 1em;
+            .cms-list-item {
+                // TODO: figure out how to do the arrow, if we still want to do it
+                // &.active > .cms-list-item-button,
+                // .cms-list-item-button:hover {
+                //     .clicker {
+                //         margin: -.25em;
+                //         &:before {
+                //             content: '-';
+                //         }
+                //     }
+                // }
+                .cms-list-item-button {
+                    .clicker {
+                        padding-top: $height-cms-list-gap-half;
+                    }
+                    .arrow {
+                        margin-top: $height-cms-list-gap-half;
+                    }
+                }
+                &:last-of-type {
+                    .cms-list-item-button {
+                        .clicker {
+                            padding-bottom: $height-cms-list-gap-full;
+                        }
+                        .arrow {
+                            margin-bottom: $height-cms-list-gap-full;
+                        }
+                    }
+                }
+            }
         }
     }
 }
