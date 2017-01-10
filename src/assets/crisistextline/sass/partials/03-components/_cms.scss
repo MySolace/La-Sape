@@ -14,7 +14,6 @@
         background-color: $color-blue;
         margin: 0 (-1 * $padding-main-div);
         @include calc('width', 100% - #{$width-sidebar-left});
-        // width: 100%;
         position: fixed;
         border-bottom: 1px solid $color-med-light;
         .cms-search {
@@ -75,7 +74,6 @@
         .cms-list-space-name {
             font-size: 1.5rem;
         }
-        // .cms-list-space-name, .cms-list-item-button {
         .cms-list-item-button {
             cursor: pointer;
         }
@@ -100,9 +98,6 @@
             // Do we have an alternative for this behavior?
             font-weight: bold;
         }
-        // .cms-list-item-button:hover {
-        //     background-color: $color-light;
-        // }
         .cms-list-item-button {
             position: relative;
             .clicker {
