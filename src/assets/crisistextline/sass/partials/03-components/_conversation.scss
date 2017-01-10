@@ -255,6 +255,9 @@
                 background-image: image-url('sprites-kikicon.png');
                 background-position: -6px -126px;
             }
+            &.icon-cli {
+                display: none;
+            }
         }
 
         .prioritize-arrow {

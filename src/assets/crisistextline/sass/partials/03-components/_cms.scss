@@ -1,7 +1,47 @@
 .contentful {
-    width: 100%;
     $height-cms-list-gap-full: 1.5em;
     $height-cms-list-gap-half: $height-cms-list-gap-full / 2;
+    $height-cms-heading: 2rem;
+
+    width: 100%;
+    position: relative;
+
+    // TODO (TC): The CSS for .cms-upper and .cms-lower is pretty hacky
+    // because we need to get around how the platform is structured, w/ subnav, title, main-wrapper, etc.
+    // Come back and revisit this once we start implementing the new UX structure
+    .cms-upper {
+        z-index: 5;
+        background-color: $color-blue;
+        margin: 0 (-1 * $padding-main-div);
+        @include calc('width', 100% - #{$width-sidebar-left});
+        // width: 100%;
+        position: fixed;
+        border-bottom: 1px solid $color-med-light;
+        .cms-search {
+            height: 9em;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.4);
+            text-align: center;
+            padding: 1em 0;
+            .title {
+                font-weight: bold;
+                color: white;
+                font-size: $height-cms-heading;
+            }
+            .ui.action {
+                margin-top: 1em;
+                width: 50%;
+            }
+        }
+        .cms-breadcrumb {
+            width: 100%;
+            padding: 1.5em $padding-main-div;
+            background-color: white;
+        }
+    }
+    .cms-lower {
+        padding-top: 13em;
+    }
 
     // Setting up the consistent bar line up top
     .cms-list .cms-list-space-name,
@@ -20,7 +60,7 @@
         padding-left: 1.5rem;
         div[class^='cms-main-'] {
             .title {
-                font-size: 2rem;
+                font-size: $height-cms-heading;
             }
             line-height: $height-cms-list-gap-full;
         }
@@ -35,7 +75,8 @@
         .cms-list-space-name {
             font-size: 1.5rem;
         }
-        .cms-list-space-name, .cms-list-item-button {
+        // .cms-list-space-name, .cms-list-item-button {
+        .cms-list-item-button {
             cursor: pointer;
         }
     }
@@ -48,17 +89,20 @@
     }
 
     .cms-list-empty-search {
-        // font-weight: bold;
-        color: $color-orange-alert;
+        font-weight: bold;
         padding: $height-cms-list-gap-full 0;
     }
 
     .cms-list-item {
         &.active > .cms-list-item-button,
         .cms-list-item-button:hover {
-            // font-weight: bold;
-            color: $color-orange-alert;
+            // TODO (TC): This makes the results list unstable as we make successive items bold
+            // Do we have an alternative for this behavior?
+            font-weight: bold;
         }
+        // .cms-list-item-button:hover {
+        //     background-color: $color-light;
+        // }
         .cms-list-item-button {
             position: relative;
             .clicker {
@@ -69,11 +113,8 @@
                 width: 1em;
                 float: right;
                 margin: $height-cms-list-gap-full 0;
-                &.active {
-                    background-color: $color-blue;
-                }
-                &.inactive {
-                    background-color: $color-green;
+                i.icon {
+                    margin: none;
                 }
             }
         }

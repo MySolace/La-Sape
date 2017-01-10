@@ -103,3 +103,16 @@ $shadow-small:      0 2px 8px rgba(0,0,0,0.6);
         background-color: $color-blue-hover;
     }
 }
+
+.ui.input.focus input,
+.ui.input input:focus {
+    border-color: $color-blue !important;
+}
+
+.ui.action.input:not([class*="left action"]) input:focus {
+    border-right-color: $color-blue !important;
+}
+
+.ui.action.input:not([class*="right action"]) input:focus {
+    border-left-color: $color-blue !important;
+}

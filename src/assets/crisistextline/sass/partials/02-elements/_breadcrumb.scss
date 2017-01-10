@@ -1,0 +1,21 @@
+.breadcrumb {
+    width: 100%;
+}
+
+// we need this selector to override default Semanti UI color styling
+.ui.breadcrumb {
+    a,
+    a.inactive:hover,
+    .divider {
+        color: $color-med-dark;
+    }
+    a:not(.inactive):hover {
+        color: $color-dark;
+    }
+    a {
+        text-decoration: none;
+    }
+    a.section.inactive {
+        cursor: default;
+    }
+}
