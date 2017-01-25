@@ -438,6 +438,23 @@ div[role="main"] .right-sidebar {
     }
 }
 
+@media screen and (max-width: 1200px) {
+    .post-convo-form {
+        div.ui.special.cards {
+            .card {
+                button img {
+                    padding-top: 1em;
+                    padding-bottom: 1em;
+                }
+
+                .hidden.content {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+
 .ui-dialog-content {
     .post-convo-form {
         label:first-child {
