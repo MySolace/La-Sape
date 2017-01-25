@@ -226,7 +226,7 @@ $popup-quote-lines: 3;
 
     .profile-card-right {
         padding: 2rem 2rem 2rem 1rem !important;
-        span.value {
+        span.value:not(.static) {
             display: block;
             &:not(.unset):before {
                 content: open-quote;
