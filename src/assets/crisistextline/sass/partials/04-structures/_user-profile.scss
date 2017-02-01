@@ -152,7 +152,7 @@ $popup-quote-lines: 3;
 .user-profile .profile-card {
     .profile-card-name {
         color: white;
-        @for $i from 1 through 4 {
+        @for $i from 1 through length($levelColorList) {
             &.level-#{$i} {
                 @include apply-level-color($i, background-color);
             }
@@ -245,7 +245,7 @@ $popup-quote-lines: 3;
     //         margin-right: $margin-user-profile-badge;
     //         &.cc-level {
     //             @include user-icon-square($color-med, $size-user-profile-badge);
-    //             @for $i from 2 through 4 {
+    //             @for $i from 2 through length($levelColorList) {
     //                 &.level-#{$i} {
     //                     @include apply-level-color($i, background-color);
     //                 }

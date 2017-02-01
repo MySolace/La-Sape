@@ -20,8 +20,9 @@ $color-green-dark:  #517A56;
 $color-purple:      #A460C5;    $the-color-purple:  $color-purple; // We now have The Color Purple in the code base
 $color-purple-hover:#A67AB5;
 $color-orange-alert:#FF9900;
-$color-red:         #ED1C24;
-$color-gold:        #F2D10C;
+$color-red:         #E40B14;
+$color-gold:        #D6A44C;
+$color-gold-light:  #F2D10C;
 $color-teal:        #0CCCCC;
 $color-pink:        #E480B9;
 
@@ -57,10 +58,11 @@ $color-level-1:     $color-dark;
 $color-level-2:     $color-blue;
 $color-level-3:     $color-purple;
 $color-level-4:     $color-pink;
-$color-supervisor:  $color-orange-alert;
-$color-admin:       $color-orange-alert; // Currently set same as Super - need to come up w/ better separate color
+$color-level-5:     $color-gold;
+$color-supervisor:  $color-red;
+$color-admin:       $color-red; // Currently set same as Super - need to come up w/ better separate color
 
-$levelColorList: $color-level-1 $color-level-2 $color-level-3 $color-level-4;
+$levelColorList: $color-level-1 $color-level-2 $color-level-3 $color-level-4 $color-level-5;
 @mixin apply-level-color($i, $attr) {
     #{$attr}: nth($levelColorList, $i);
 }

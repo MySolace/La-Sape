@@ -32,7 +32,7 @@ $user-status-height: 9.25rem;
         .user-name {
             font-weight: bold;
 
-            @for $i from 2 through 4 {
+            @for $i from 2 through length($levelColorList) {
                 &.counselor-level-#{$i} {
                     @include apply-level-color($i, color);
                 }
@@ -62,7 +62,7 @@ $user-status-height: 9.25rem;
                     background-color: $color-green;
                 }
                 &.lock, option[value="lock"] {
-                    background-color: $color-gold;
+                    background-color: $color-gold-light;
                 }
             }
         }
@@ -91,7 +91,7 @@ $user-status-height: 9.25rem;
             }
         }
 
-        @for $i from 2 through 4 {
+        @for $i from 2 through length($levelColorList) {
             &.counselor-level-#{$i} .user-name {
                 @include apply-level-color($i, color);
             }
@@ -138,7 +138,7 @@ $user-status-height: 9.25rem;
 
             &.chatting.show-count, &.away {
                 .user-pip {
-                    background-color: $color-gold;
+                    background-color: $color-gold-light;
                 }
                 .user-count {
                     color: $color-dark;
@@ -221,7 +221,7 @@ $user-status-height: 9.25rem;
 
             &.chatting.available.show-count, &.away {
                 .user-pip {
-                    color: $color-gold;
+                    color: $color-gold-light;
                 }
             }
             &.busy {
@@ -409,7 +409,7 @@ ul.cc {
         display: inline-block;
         font-weight: bold;
 
-        @for $i from 2 through 4 {
+        @for $i from 2 through length($levelColorList) {
             &.counselor-level-#{$i} {
                 @include apply-level-color($i, color);
             }

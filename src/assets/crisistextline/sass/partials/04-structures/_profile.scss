@@ -556,7 +556,7 @@ $icon-width: 2em;
             font-weight: bold;
         }
 
-        @for $i from 1 through 4 {
+        @for $i from 1 through length($priorityColorList) {
             &.priority-#{$i} {
                 @include apply-priority-color($i, color);
             }
