@@ -1,0 +1,20 @@
+// Importing Semantic UI styles, using Ruby SASS port at https://github.com/doabit/semantic-ui-sass
+
+// The overall import of globals that we're overriding here
+// @import '../../../../semantic-ui/app/assets/stylesheets/semantic-ui/globals/all';
+
+// Definiing our own $font-url, $font-name, and $font-family variables for use by semantic-ui
+// $font-url: 'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin,latin-ext' !default;
+$font-name: 'Helvetica Neue' !default;
+$font-family: $font-name, Helvetica, Arial, sans-serif !default;
+
+@import '../../../../semantic-ui/app/assets/stylesheets/semantic-ui/globals/reset';
+
+// TODO: This does stuff to html and body that we're already doing (in a different way?). Hold off for now?
+// @import '../../../../semantic-ui/app/assets/stylesheets/semantic-ui/globals/site';
+
+// The rest is .ui classed, so Semantic UI specific, so we can consume with no worries
+@import '../../../../semantic-ui/app/assets/stylesheets/semantic-ui/elements/all';
+@import '../../../../semantic-ui/app/assets/stylesheets/semantic-ui/collections/all';
+@import '../../../../semantic-ui/app/assets/stylesheets/semantic-ui/views/all';
+@import '../../../../semantic-ui/app/assets/stylesheets/semantic-ui/modules/all';

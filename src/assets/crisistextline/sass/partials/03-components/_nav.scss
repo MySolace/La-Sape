@@ -12,7 +12,7 @@ nav, .nav {
         color: white;
         text-decoration: none;
         display: block;
-        padding: 0 1em;
+        padding: 0 1.2em;
         position: relative;
 
         &:hover {
@@ -20,20 +20,27 @@ nav, .nav {
         }
     }
 
+    .toolbox-tab {
+        .pip {
+            margin-left: -0.5em;    
+        }        
+    }
+
     .pip {
         position: absolute;
         top: .5em;
         left: 1em;
-        line-height: .9em;
+        line-height: 1em;
         margin-left: -1em;
+        text-align: center;
         div, span {
             display: inline-block;
             @include border-radius(.25em);
-            padding: 0 .25em;
-            height: 1em;
-            margin-right: .25em;
+            height: 1.4em;
+            width: 1.4em;
+            font-size: 0.65em;
             &.queue {
-                background-color: rgba(255,0,0,.7);
+                background-color: $color-red;
                 color: white;
             }
             &.chronic {

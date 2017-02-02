@@ -1,0 +1,26 @@
+select#help-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    overflow: hidden;
+
+    height: 1.25em;
+    width: 5em;
+    margin-right: 1em;
+    font-weight: normal;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.6;
+    }
+    option {
+        color: $color-dark;
+        background-color: white;
+        &.hidden {
+            display: none;
+        }
+    }
+}

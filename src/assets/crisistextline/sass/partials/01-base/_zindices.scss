@@ -1,6 +1,10 @@
 
-.ui-front {
+.ui-dialog {
     z-index: 9998;  // This should be the highest z-index on platform (platform quotes colorbox is at 9999)
+}
+
+.ui-autocomplete.emoji-autocomplete {
+    z-index: 9002;
 }
 
 .conversations {
@@ -35,4 +39,8 @@ div[role="main"] .right-sidebar {
 
 #tabs {
     z-index: 5;
+}
+
+#wrapper-survey form div.survey-buttons {
+    z-index: 3;
 }

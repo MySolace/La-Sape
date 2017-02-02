@@ -116,12 +116,18 @@
         }
     }
 
-    .conversation-ficon {
-        .ficon {
+    .conversation-service-icon {
+        div {
             width: 18px;
             height: 18px;
-            background-image: image-url('sprites-ficon.png');
             background-position: -12px -212px;
+
+        }
+        .icon-facebook {
+            background-image: image-url('sprites-ficon.png');
+        }
+        .icon-kik {
+            background-image: image-url('sprites-kikicon.png');
         }
     }
 
@@ -144,8 +150,8 @@
         .repeater-flag-box {
             border: 1px solid $color-priority-1;
         }
-        .conversation-ficon {
-            .ficon {
+        .conversation-service-icon {
+            div {
                 background-position: -12px -92px;
             }
         }
@@ -162,8 +168,8 @@
         .repeater-flag-box {
             border: 1px solid $color-priority-3;
         }
-        .conversation-ficon {
-            .ficon {
+        .conversation-service-icon {
+            div {
                 background-position: -12px -52px;
             }
         }
@@ -181,8 +187,8 @@
         .repeater-flag-box {
             border: 1px solid $color-priority-4;
         }
-        .conversation-ficon {
-            .ficon {
+        .conversation-service-icon {
+            div {
                 background-position: -12px -12px;
             }
         }

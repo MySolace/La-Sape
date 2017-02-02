@@ -54,10 +54,16 @@
             vertical-align: middle;
             margin-right: .5em;
         }
-        .ficon {
+        .icon-facebook {
             width: 18px;
             height: 18px;
             background-image: image-url('sprites-ficon.png');
+            background-position: -12px -92px;
+        }
+        .icon-kik {
+            width: 18px;
+            height: 18px;
+            background-image: image-url('sprites-kikicon.png');
             background-position: -12px -92px;
         }
         .repeater-flag-box {
@@ -162,19 +168,51 @@ div[role="main"] .right-sidebar {
 
 .profile-messages {
     float: left;
-
+    overflow-x: hidden;
     @include profile-transcript-style;
 
     .message {
         &.note {
             background: $color-light;
             padding: .5em 0;
+            margin-bottom: 0;
             &:hover {
                 .message-meta {
                     margin-right: 30px;
                 }
             }
         }
+
+        &.feedback {
+            &:hover {
+                .message-meta {
+                    margin-right: 30px;
+                }
+            }
+            &:before {
+                content: '🗨';
+                position: absolute;
+                left: -.25em;
+                margin-top: -3px;
+            }
+            float: none;
+            width: 100%;
+            margin: 0 1.5em;
+            padding: .7em 2.5em .7em 1em;
+            border-left: 1px solid $color-med;
+            border-top: 1px solid $color-med;
+            background-color: lightyellow;
+        }
+
+        &.highlight {
+            &:before {
+                content: '▶';
+                color: $color-blue;
+                position: absolute;
+                left: -1.5em;
+            }
+        }
+
         .message-meta {
             float: right;
             margin-right: 30px;
@@ -218,6 +256,11 @@ div[role="main"] .right-sidebar {
             }
         }
     }
+
+    .feedback-header {
+        margin-top: 2em;
+        border-top: 1px solid $color-light;
+    }
 }
 
 .message-note-list {
@@ -249,6 +292,52 @@ div[role="main"] .right-sidebar {
             border-width: .6em;
             content: '';
         }
+    }
+}
+
+.conversation-feedback {
+    display: none;
+
+    textarea {
+        width: 100%;
+        border: 1px solid $color-light;
+        resize: none;
+        padding: .5em;
+        margin-bottom: -3px;
+        border-left: 1px solid $color-med;
+        border-right: 1px solid $color-med;
+        border-top: 1px solid $color-med;
+        border-bottom: 0px;
+    }
+}
+
+.message-actions {
+
+    margin-bottom: 2em;
+    border-top: 1px solid $color-med;
+    background-color: $color-light;
+    padding-bottom: 3px;
+
+    .message-action-target {
+        margin-left: 1em;
+        margin-right: 1em;
+        padding: .25em;
+        font-weight: bold;
+        color: $color-blue;
+        font-size: .85em;
+    }
+
+    button {
+        margin-left: .5em;
+    }
+
+}
+
+.notify-dialog {
+    textarea {
+        width: 100%;
+        height: 100%;
+        resize: none;
     }
 }
 
@@ -319,6 +408,59 @@ div[role="main"] .right-sidebar {
             width: 60%;
         }
     }
+
+    div.ui.special.cards {
+        .card {
+            .hidden.content {
+                padding: 0.5rem;
+                white-space: normal;
+                margin-top: 10%;
+                font-weight: bold;
+                font-size: 0.85vw !important;
+            }
+
+            input {
+                display: none;
+            }
+
+            .content > .header:not(.ui) {
+                font-size: 1.2vw;   
+            }
+        }
+
+        .ui.disabled.image {
+            opacity: 1;
+        }
+    }
+
+    .debrief-filled-out {
+        margin-top: 1em;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .post-convo-form {
+        div.ui.special.cards {
+            .card {
+                button img {
+                    padding-top: 1em;
+                    padding-bottom: 1em;
+                }
+
+                .hidden.content {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+
+.ui-dialog-content {
+    .post-convo-form {
+        label:first-child {
+            display: none;
+        }   
+    }
 }
 
 .columns-2 {
@@ -378,6 +520,13 @@ $icon-width: 2em;
             background-position: -46px -5px;
         }
     }
+    &.admin-facebook-form {
+        background-image: image-url('sprites.png');
+        background-position: -6px -486px;
+        &:hover {
+            background-position: -46px -486px;
+        }
+    }
     &.flag {
         background-image: image-url('flag.png');
         background-position: -6px -46px;
@@ -406,14 +555,11 @@ $icon-width: 2em;
             content: 'Status: ';
             font-weight: bold;
         }
-        &.priority-4 {
-            color: $color-priority-4;
-        }
-        &.priority-3 {
-            color: $color-priority-3;
-        }
-        &.priority-1 {
-            color: $color-priority-1;
+
+        @for $i from 1 through 4 {
+            &.priority-#{$i} {
+                @include apply-priority-color($i, color);
+            }
         }
     }
     .actor-carrier {
@@ -436,6 +582,7 @@ $icon-width: 2em;
     .actor-name, .actor-edit {
         margin: .2em 0 0 .2em;
         float: left;
+        cursor: pointer;
     }
     .actor-name {
         @include calc(max-width, 100% - #{7em});
@@ -460,22 +607,6 @@ $icon-width: 2em;
 
 .location-accuracy {
     font-weight: bold;
-    &:after {
-        font-weight: normal;
-        margin-left: .5em;
-    }
-    &.verified:after {
-        content: 'Verified (entered by counselor)';
-        background: $color-rate-g;
-    }
-    &.billing:after {
-        content: 'Billing address (sent to us from the mobile carrier)';
-        background: $color-rate-y;
-    }
-    &.guess:after {
-        content: "Guess (Largest city for the texter's area code)";
-        background: $color-rate-r;
-    }
 }
 
 div[role="main"] .profile-fields {
@@ -492,10 +623,15 @@ div[role="main"] .profile-fields {
             display: inline-block;
             font-size: 1em;
             padding: .5em;
+            font-weight: normal;
         }
 
         li {
             label { width: 10.8em; }
+        }
+
+        &.location-not-showing {
+            list-style: none;
         }
     }
     .saved:after {
@@ -516,6 +652,7 @@ div[role="main"] .profile-fields {
     margin-top: -4.5em;
     padding: .5em 1em 1em 1em;
     margin-left: -1em;
+    max-width: 33%;
 
     .close {
         width: 1.5em;
@@ -557,10 +694,13 @@ div[role="main"] .profile-fields {
 }
 
 .multi-text-more {
+    cursor: pointer;  
+    margin-top: .25em;
+}
+
+div.multi-text-more {
     width: 15px;
     height: 15px;
-    margin-top: .25em;
-    cursor: pointer;
     background: image-url('filled-plus.png') no-repeat;
     background-position: -15px 0px;
     &:hover {
@@ -579,6 +719,38 @@ button.observe {
     color: $color-orange-alert;
     padding: 1em 0;
     border-bottom: 1px solid $color-light;
+}
+
+#viewall-comments {
+    cursor: pointer;
+}
+
+.extraComment {
+    display: none;
+}
+
+#wrapper-survey {
+    .date {
+        font-style: italic;
+    }
+
+    form div.survey-buttons {
+        position: fixed;
+        bottom: 0;
+        width: 60%;
+        background-color: white;
+        padding-bottom: 3em;
+    }
+}
+
+#main_summary {
+    textarea {
+        min-height: 150px;
+    }
+}
+
+#main_inapp_abuse {
+    display: none;
 }
 
 .profile-popup {

@@ -1,5 +1,15 @@
+#login-quote {
+    font-size: 3.5em;
+    text-indent: -0.45em;
+    margin-top: 0;
+
+    &.first-shift {
+        font-size: 2.5em;
+    }
+}
+
 #login-quote-author {
-    text-align: right;
+    
     &:before {
         content: "-";
     }
@@ -8,7 +18,7 @@
 .overlay-close {
     border: 1px solid black !important;
     display: block;
-    padding: .25em .5em;
+    padding: .3em .5em;
     position: absolute;
     top: 0;
     right: 15px;
@@ -16,17 +26,25 @@
 
 .super-intro-list {
     list-style-type: none;
+    padding: 0;
 
     li {
-        padding: 10px;
+        
         overflow-y: auto;
-        float: left;
-        width: 33%;
-        height: 300px;
-        text-align: center;
+        margin-top: 2em;
 
         img {
+            height: 100px;
+            width: 100px;
             margin-bottom: 5px;
+            float: left;
+        }
+
+        p {
+            margin-left: 110px;
+            margin-top: 0;
+            margin-top: 0;
+            margin-bottom: 0.3em;
         }
 
         .super-name {
@@ -41,9 +59,35 @@
     }
 }
 
-
+$paddingLeftQuote : 38px;
 
 .intro-supers, .intro-quote {
     margin: 10px;
     position: relative;
+    width: 45%;
+    padding-left: $paddingLeftQuote;
+    display: inline-block;
+    vertical-align: top;
+    height: 90%;
+}
+
+.intro-quote {
+    margin-right: 28px;
+}
+
+.logout-wrapper {
+    padding-left: $paddingLeftQuote;
+}
+
+.intro-supers {
+    border-left: 1px solid;
+
+    h2 {
+        margin-top: 0;
+    }
+
+    &.first-shift {
+        width: 90%;
+        border: none;
+    }
 }

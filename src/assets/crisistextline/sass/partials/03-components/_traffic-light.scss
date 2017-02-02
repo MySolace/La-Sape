@@ -33,20 +33,9 @@
         }
     }
 
-
-    .light-1.on {
-        background-color: $color-green;
-    }
-
-    .light-2.on {
-        background-color: yellow;
-    }
-
-    .light-3.on {
-        background-color: $color-orange-alert;
-    }
-
-    .light-4.on {
-        background-color: $color-red;
+    @for $i from 1 through 4 {
+        .light-#{$i}.on {
+            @include apply-queue-health-color($i, background-color);
+        }
     }
 }
