@@ -271,10 +271,14 @@
     }
 }
 
-.sort-alpha, .sort-length {
-    height: 30px;
-    width: 30px;
-    padding: 0;
+.sort-length {
+    padding: 0.3em;
+    margin-left: 1em;
+    text-transform: none;
+    font-size: 0.6em;
+    background-color: #F3F3F3;
+    font-weight: normal;
+    vertical-align: middle;
 }
 
 .sort-alpha {
