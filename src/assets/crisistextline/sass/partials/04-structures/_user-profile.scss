@@ -226,10 +226,6 @@ $popup-quote-lines: 3;
 
     .profile-card-right {
         padding: 2rem 2rem 2rem 1rem !important;
-        // TODO: Temporarily hiding coach on user profiles. Remove this when launching
-        .coach {
-            display: none;
-        }
         span.value:not(.static) {
             display: block;
             &:not(.unset):before {
