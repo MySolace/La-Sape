@@ -60,7 +60,7 @@ $color-level-3:     $color-purple;
 $color-level-4:     $color-pink;
 $color-level-5:     $color-pink;
 $color-supervisor:  $color-orange-alert;
-$color-admin:       $color-red-admin;
+$color-admin:       $color-red;
 
 $levelColorList: $color-level-1 $color-level-2 $color-level-3 $color-level-4 $color-level-5;
 @mixin apply-level-color($i, $attr) {
