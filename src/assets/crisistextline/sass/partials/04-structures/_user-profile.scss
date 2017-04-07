@@ -23,6 +23,10 @@ $popup-quote-lines: 3;
 .user-profile .profile-section {
     .section-name {
         margin: 1rem 0;
+
+        iframe {
+            float : right;
+        }
     }
     .field-name {
         color: white;
@@ -331,4 +335,61 @@ $popup-quote-lines: 3;
             }
         }
     }
+}
+
+.last-updated {
+    text-align: right;
+    font-style: italic;
+}
+
+
+//When taking a profile screenshot
+
+html.profile-screenshot {
+    overflow: visible;
+}
+
+.profile-screenshot {
+
+    head, #sidebar {
+        display: none;
+    }
+
+    body, body #body {
+        overflow: visible;
+    }
+
+    div[role="main"] {
+        padding: 0;
+    }
+
+    div[role="main"] > div {
+        overflow: visible;
+        padding: 0;
+    }
+
+    div[role="main"] nav {
+        display: none;
+    }
+
+    .ui.animated.button {
+        display: none;
+    }
+
+    .section-content .profile-field.cc-issue-types {
+        display: none;
+    }
+
+    &.only-cc-hours {
+        .cc-impact {
+            display: none;
+        }
+    }
+
+    &.only-cc-impact {
+        .cc-hours {
+            display: none;
+        }
+    }
+
 }
