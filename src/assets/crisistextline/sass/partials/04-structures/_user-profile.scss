@@ -172,6 +172,13 @@ $popup-quote-lines: 3;
         .edit-link {
             font-size: 1rem;
         }
+
+        span.last-updated {
+            font-weight: normal;
+            float: right;
+            font-size: 1rem;
+            font-style: italic;
+        }
     }
 
     .editable {
