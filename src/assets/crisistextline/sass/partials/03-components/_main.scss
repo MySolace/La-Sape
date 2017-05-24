@@ -24,26 +24,6 @@
     }
 }
 
-#system-message {
-    display: none;
-    color: white;
-    padding: 8px;
-    text-align: center;
-    background-color: $color-green;
-
-    &.important {
-        background-color: $color-red;
-    }
-
-    &.warning {
-        background-color: $color-orange-alert;
-    }
-
-    &.info {
-        background-color: $color-green;
-    }
-}
-
 .login-form {
     label {
         width: auto;
