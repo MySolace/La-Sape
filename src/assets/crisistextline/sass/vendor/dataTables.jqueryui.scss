@@ -87,6 +87,20 @@ table.dataTable {
     .sorting {
       cursor: pointer;
       *cursor: hand;
+      background-repeat: no-repeat;
+      background-position: center right;
+    }
+
+    .sorting {
+      background-image: url(/bundles/crisistextgui/images/sort_both.png);
+    }
+
+    .sorting_asc {
+      background-image: url(/bundles/crisistextgui/images/sort_asc_white.png);
+    }
+
+    .sorting_desc {
+      background-image: url(/bundles/crisistextgui/images/sort_desc_white.png);
     }
 
     th div.DataTables_sort_wrapper {
