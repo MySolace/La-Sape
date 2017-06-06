@@ -13,7 +13,9 @@
             width: 40em;
             height: auto;
             max-height: 100%;
-            margin: 5em auto;
+            margin-top: 5em;
+            @include calc(margin-left, 50% - #{20em}/2 - #{$width-sidebar-left});
+            @include calc(margin-right, 50% - #{20em}/2);
             @include box-shadow(0 0 2em $color-med);
             text-align: center;
             overflow: visible;

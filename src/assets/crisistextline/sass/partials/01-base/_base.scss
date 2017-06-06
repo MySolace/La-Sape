@@ -9,6 +9,19 @@
     background-image: image-url('loader.gif') no-repeat 95%;
 }
 
+body {
+    background-color: $color-light;
+}
+
+#main-wrapper {
+    background-color: white;
+}
+
+div[role="main"] {
+    @include calc(width, 100% - #{$width-sidebar-left});
+    float: right;
+}
+
 .clearfix {
     @include clearfix;
 }
