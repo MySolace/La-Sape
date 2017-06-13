@@ -1,6 +1,6 @@
 #main-wrapper.fixed-namebar {
     margin-top: $height-namebar-div;
-    position: relative;
+    position: fixed;
     overflow: none;
     @include calc(width, 100% - #{$width-sidebar-right} - #{$width-sidebar-left});
     .main-left {
