@@ -4,6 +4,14 @@
     @include box-sizing(border-box);
 }
 
+body {
+    background-color: $color-light;
+}
+
+#main-wrapper {
+    background-color: white;
+}
+
 .mini {
     div[role="main"] {
         margin-bottom: 5em;
@@ -13,7 +21,9 @@
             width: 40em;
             height: auto;
             max-height: 100%;
-            margin: 5em auto;
+            margin-top: 5em;
+            @include calc(margin-left, 50% - #{$width-login-form}/2 - #{$width-sidebar-left});
+            @include calc(margin-right, 50% - #{$width-login-form}/2);
             @include box-shadow(0 0 2em $color-med);
             text-align: center;
             overflow: visible;
@@ -35,7 +45,7 @@
         line-height: 2em;
         text-align: center;
         font-size: 1.5em;
-        width: 20em;
+        width: $width-login-form;
         margin: .5em;
     }
     input[type="submit"] {
@@ -84,6 +94,11 @@ body > div.flash {
 
 // TC - move this to stuff to base directory?
 div[role="main"] {
+    @include calc(width, 100% - #{$width-sidebar-left});
+    float: right;
+    margin-top: 1.2*$header-height;
+    padding-top: 0;
+    background-color: white;
     &>div {
         height: 100%;
         overflow-y: scroll;
