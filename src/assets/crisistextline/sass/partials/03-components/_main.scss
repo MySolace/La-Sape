@@ -99,6 +99,10 @@ div[role="main"] {
     margin-top: 1.2*$header-height;
     padding-top: 0;
     background-color: white;
+    @supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+        padding-top: 1.2*$header-height;
+        margin-top: 0;
+    }
     &>div {
         height: 100%;
         overflow-y: scroll;
