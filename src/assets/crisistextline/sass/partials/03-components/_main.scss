@@ -109,6 +109,9 @@ div[role="main"] {
         padding: 0 $padding-main-div $padding-main-div;
         position: relative;
     }
+    &>div.conversations {
+        position: absolute;
+    }
     ul {
         padding: 0;
         list-style-type: square;
