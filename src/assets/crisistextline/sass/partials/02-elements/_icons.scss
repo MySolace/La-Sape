@@ -34,27 +34,16 @@
     text-align: center;
 }
 
-// $levelColorList: $color-level-1 $color-level-2 $color-level-3 $color-level-4 $color-level-5;
-// @mixin apply-level-color($i, $attr) {
-//     #{$attr}: nth($levelColorList, $i);
-// }
-
-
-
-// $year-star-1: "emoji emoji26a1";
-// $year-star-2: "\D83D\DCAB";
-// $year-star-3: "\2728";
-// $year-star-4: "\26A1";
-// $yearStarList: $year-star-1 $year-star-2 $year-star-3 $year-star-4;
-// @mixin user-icon-star($year) {
-//     background-color: transparent !important;
-//     // color: $color;
-//     &:after {
-//         // content: "\2605";
-//         // content: nth($yearStarList, $year);
-//         // content: "<span class=\"emoji emoji26a1\"></span>";
-//     }
-// }
+$year-star-1: "⭐";
+$year-star-2: "💫";
+$year-star-3: "✨";
+$year-star-4: "⚡️";
+$yearStarList: $year-star-1 $year-star-2 $year-star-3 $year-star-4;
+@mixin counselor-year-star($year, $element) {
+    #{$element} {
+        content: nth($yearStarList, $year);
+    }
+}
 
 @mixin prioritize-arrow($size) {
     font-size: $size;

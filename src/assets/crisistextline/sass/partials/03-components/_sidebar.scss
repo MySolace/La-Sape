@@ -251,7 +251,6 @@ $user-status-height: 9.25rem;
         li.chatUser {
             &.new-grad, &.year-plus {
                 .user-name:after {
-                    // font-size: 1.5em;
                     padding-left: .5em;
                 }
             }
@@ -259,18 +258,10 @@ $user-status-height: 9.25rem;
             &.new-grad .user-name:after {
                 content: "🐣";
             }
-
-            &.counselor-year-1 .user-name:after {
-                content: "⭐";
-            }
-            &.counselor-year-2 .user-name:after {
-                content: "💫";
-            }
-            &.counselor-year-3 .user-name:after {
-                content: "✨";
-            }
-            &.counselor-year-4 .user-name:after {
-                content: "⚡";
+            @for $i from 1 through length($yearStarList) {
+                &.counselor-year-#{$i} {
+                    @include counselor-year-star($i, ".user-name:after");
+                }
             }
         }
     }
@@ -283,7 +274,6 @@ $user-status-height: 9.25rem;
         li.chatUser {
             &.new-grad, &.year-plus {
                 .user-name:before {
-                    // font-size: 1.5em;
                     position: absolute;
                     left: 0;
                 }
@@ -292,18 +282,10 @@ $user-status-height: 9.25rem;
             &.new-grad .user-name:before {
                 content: "🐣"; 
             }
-            // TODO (TC): REFACTOR THIS
-            &.counselor-year-1 .user-name:before {
-                content: "⭐";
-            }
-            &.counselor-year-2 .user-name:before {
-                content: "💫";
-            }
-            &.counselor-year-3 .user-name:before {
-                content: "✨";
-            }
-            &.counselor-year-4 .user-name:before {
-                content: "⚡";
+            @for $i from 1 through length($yearStarList) {
+                &.counselor-year-#{$i} {
+                    @include counselor-year-star($i, ".user-name:before");
+                }
             }
         }
     }
