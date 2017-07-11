@@ -115,6 +115,7 @@ $user-status-height: 9.25rem;
             color: $color-dark;
             display: block;
             padding-right: 1.75em;
+            // line-height: 1.5em;
 
             .user-count-container {
                 position: relative;
@@ -151,19 +152,6 @@ $user-status-height: 9.25rem;
                 .user-count {
                     color: white;
                 }
-            }
-
-            &.new-grad {
-                line-height: 1.5em;
-
-                .user-count {
-                    top: 0px;
-                }
-            }
-
-            &.new-grad:after {
-                font-weight: normal;
-                content: " 🐣";
             }
 
             &.flashing {
@@ -205,37 +193,6 @@ $user-status-height: 9.25rem;
 
             .remove-counselor:hover {
                 text-decoration: underline;
-            }
-        }
-
-        &.one-year .user-name {
-            .user-pip {
-                @include user-icon-star($color-green);
-                font-size: 1.65em;
-                margin: -4px 0;
-            }
-            
-            .user-count{
-                top: -2px;
-            }
-
-            &.chatting.available.show-count, &.away {
-                .user-pip {
-                    color: $color-gold-light;
-                }
-            }
-            &.busy {
-                .user-pip {
-                    color: darkred;
-                }
-            }
-            &.fadeout {
-                .user-pip {
-                    color: $color-med-dark;
-                }
-                .user-count {
-                    font-style: italic;
-                }
             }
         }
 
@@ -288,37 +245,48 @@ $user-status-height: 9.25rem;
     padding: 0;
 }
 
-ul.cc {
+// User emoji icons
+.chat {
+    ul.super-plus {
+        li.chatUser {
+            &.new-grad, &.year-plus {
+                .user-name:after {
+                    padding-left: .5em;
+                }
+            }
 
-    .user-count-container {
-        display: none;
+            &.new-grad .user-name:after {
+                content: "🐣";
+            }
+            @for $i from 1 through length($yearStarList) {
+                &.counselor-year-#{$i} {
+                    @include counselor-year-star($i, ".user-name:after");
+                }
+            }
+        }
     }
 
-    li.chatUser .user-name {
-
-        padding-left: 2em;
-
-        &.new-grad:after {
-            content: "";
+    ul.counselor {
+        .user-count-container {
+            visibility: hidden;
         }
 
-        &.new-grad:before {
-            font-weight: normal;
-            content: "🐣 ";
-            position: absolute;
-            left: 0;
-        }        
-    }
+        li.chatUser {
+            &.new-grad, &.year-plus {
+                .user-name:before {
+                    position: absolute;
+                    left: 0;
+                }
+            }
 
-    li.chatUser.one-year {
-        .user-name:before {
-            content: "\2605";
-            color: $color-green;
-            font-size: 1.65em;
-            line-height: 0.6em;
-            font-weight: normal;
-            position: absolute;
-            left: 0;
+            &.new-grad .user-name:before {
+                content: "🐣"; 
+            }
+            @for $i from 1 through length($yearStarList) {
+                &.counselor-year-#{$i} {
+                    @include counselor-year-star($i, ".user-name:before");
+                }
+            }
         }
     }
 }

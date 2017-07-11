@@ -34,11 +34,14 @@
     text-align: center;
 }
 
-@mixin user-icon-star($color) {
-    background-color: transparent !important;
-    color: $color;
-    &:after {
-        content: "\2605";
+$year-star-1: "🌟";
+$year-star-2: "💫";
+$year-star-3: "✨";
+$year-star-4: "⚡️";
+$yearStarList: $year-star-1 $year-star-2 $year-star-3 $year-star-4;
+@mixin counselor-year-star($year, $element) {
+    #{$element} {
+        content: nth($yearStarList, $year);
     }
 }
 
@@ -64,8 +67,4 @@
 
 .user-icon-square {
     @include user-icon-square($color-orange-alert, 10px);
-}
-
-.user-icon-star {
-    @include user-icon-star($color-orange-alert);
 }
