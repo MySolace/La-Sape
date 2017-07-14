@@ -40,6 +40,16 @@ $user-status-height: 9.25rem;
             &.supervisor {
                 color: $color-supervisor;
             }
+            &.new-grad:before,
+            &.year-plus:before {
+                padding-right: .5em;
+            }
+            &.new-grad:before {
+                content: $user-icon-baby-chick;
+            }
+            @for $i from 1 through length($yearStarList) {
+                @include counselor-year-star($i, "&.counselor-year-#{$i}:before");
+            }
         }
 
         .supervisor {
@@ -256,7 +266,7 @@ $user-status-height: 9.25rem;
             }
 
             &.new-grad .user-name:after {
-                content: "🐣";
+                content: $user-icon-baby-chick;
             }
             @for $i from 1 through length($yearStarList) {
                 &.counselor-year-#{$i} {
@@ -280,7 +290,7 @@ $user-status-height: 9.25rem;
             }
 
             &.new-grad .user-name:before {
-                content: "🐣"; 
+                content: $user-icon-baby-chick;
             }
             @for $i from 1 through length($yearStarList) {
                 &.counselor-year-#{$i} {

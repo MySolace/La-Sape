@@ -34,11 +34,12 @@
     text-align: center;
 }
 
-$year-star-1: "🌟";
-$year-star-2: "💫";
-$year-star-3: "✨";
-$year-star-4: "⚡️";
-$yearStarList: $year-star-1 $year-star-2 $year-star-3 $year-star-4;
+$user-icon-baby-chick: "🐣";
+$user-icon-year-1: "🌟";
+$user-icon-year-2: "💫";
+$user-icon-year-3: "✨";
+$user-icon-year-4: "⚡️";
+$yearStarList: $user-icon-year-1 $user-icon-year-2 $user-icon-year-3 $user-icon-year-4;
 @mixin counselor-year-star($year, $element) {
     #{$element} {
         content: nth($yearStarList, $year);
