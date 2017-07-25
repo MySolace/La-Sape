@@ -271,7 +271,7 @@ $popup-quote-lines: 3;
             background-image: image-url('egg-with-hearts-dark.svg');
         }
         &.escalation {
-            background-image: image-url('apple-dark.svg');
+            background-image: image-url('escalations-dark.svg');
         }
     }
     .ui.button:hover {
@@ -281,7 +281,7 @@ $popup-quote-lines: 3;
             background-image: image-url('egg-with-hearts-white.svg') !important;
         }
         &.escalation {
-            background-image: image-url('apple-white.svg') !important;
+            background-image: image-url('escalations-white.svg') !important;
         }
     }
 }
