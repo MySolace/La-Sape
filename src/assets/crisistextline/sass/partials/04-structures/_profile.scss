@@ -581,7 +581,7 @@ $icon-width: 2em;
     margin: 0;
     float: left;
     position: relative;
-    @include calc(width, 100% - #{$width-sidebar-right} - 8em);
+    @include calc(max-width, 100% - #{$width-sidebar-right} - 1em);
     input, .actor-name, a {
         font-size: 21px;
         font-weight: bold;
@@ -592,7 +592,8 @@ $icon-width: 2em;
         cursor: pointer;
     }
     .actor-name {
-        @include calc(max-width, 100% - #{7em});
+        @include calc(max-width, 100% - #{4em});
+        min-width: 4em;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
