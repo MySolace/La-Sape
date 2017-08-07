@@ -1,13 +1,13 @@
+$namebar-top-margin: 2em;
+$namebar-height: 4em;
+$tabs-top: $header-height + $namebar-top-margin + $namebar-height;
+$tabs-height: 2.5em;
+$main-left-top: $tabs-height + $tabs-top;
+
 #main-wrapper.fixed-namebar {
     margin-top: $height-namebar-div;
-    position: fixed;
     overflow: none;
-    @include calc(width, 100% - #{$width-sidebar-right} - #{$width-sidebar-left});
-    .main-left {
-        width: 100%;
-        position: relative;
-        padding-bottom: 7em;
-    }
+    @include calc(width, 100% - #{$width-sidebar-right});
     &> h1 {
         display: none;
     }
@@ -15,7 +15,8 @@
 
 .namebar {
     position: fixed;
-    top: $header-height + 2em;
+    top: $header-height + $namebar-top-margin;
+    height: $namebar-height;
     @include calc(width, 100% - #{$width-sidebar-left} - #{$padding-main-div} - 1em);
     overflow: hidden;
     background-color: transparent;
@@ -81,7 +82,8 @@
 
 #tabs {
     position: fixed;
-    top: $header-height + 6em;
+    top: $tabs-top;
+    height: $tabs-height;
     display: block;
     .tab-item {
         display: inline-block;
@@ -96,7 +98,12 @@
 }
 
 .main-left {
-    margin-top: 2.5em;
+    position: fixed;
+    top: $main-left-top;
+    @include calc(width, 100% - #{$width-sidebar-right} - 20.5em);
+    overflow-y: scroll;
+    padding-bottom: 5em;
+    @include calc(height, 100% - #{$main-left-top});
 }
 
 .tab-wrapper {
@@ -574,7 +581,7 @@ $icon-width: 2em;
     margin: 0;
     float: left;
     position: relative;
-    @include calc(width, 100% - #{$width-sidebar-right} - 8em);
+    @include calc(max-width, 100% - #{$width-sidebar-right} - 1em);
     input, .actor-name, a {
         font-size: 21px;
         font-weight: bold;
@@ -585,7 +592,8 @@ $icon-width: 2em;
         cursor: pointer;
     }
     .actor-name {
-        @include calc(max-width, 100% - #{7em});
+        @include calc(max-width, 100% - #{4em});
+        min-width: 4em;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
