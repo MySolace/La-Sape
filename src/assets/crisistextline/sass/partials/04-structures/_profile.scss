@@ -103,7 +103,7 @@ $main-left-top: $tabs-height + $tabs-top;
     @include calc(width, 100% - #{$width-sidebar-right} - 20.5em);
     overflow-y: scroll;
     padding-bottom: 5em;
-    @include calc(height, 100% - #{$main-left-top});
+    @include calc(height, 100% - #{$main-left-top} - 2.5em);
 }
 
 .tab-wrapper {
@@ -747,7 +747,7 @@ button.observe {
         bottom: 0;
         width: 60%;
         background-color: white;
-        padding-bottom: 3em;
+        padding: 1em 0;
     }
 }
 
