@@ -21,8 +21,8 @@ $button-disabled-opacity: 0.5;
     }
 }
 
-button,
-.input-button {
+button:not(.react-clickable),
+.input-button:not(.react-clickable) {
     border: 0;
     text-transform: uppercase;
     font-size: .75em;
@@ -41,11 +41,11 @@ button,
     }
 }
 
-button[disabled] {
+button:not(.react-clickable)[disabled] {
     opacity: $button-disabled-opacity;
 }
 
-.button {
+.button:not(.react-clickable) {
     cursor: pointer;
     background: $color-med;
 
@@ -67,9 +67,9 @@ button[disabled] {
     }
 }
 
-button.active,
-.input-button.active,
-.button.active {
+button.active:not(.react-clickable),
+.input-button.active:not(.react-clickable),
+.button.active:not(.react-clickable) {
     @include button-active-hover;
 
 }
@@ -86,7 +86,7 @@ button.active,
 }
 
 // Semantic UI Button overrides //
-.ui.button {
+.ui.button:not(.react-clickable) {
     color: $color-dark;
     background-color: $color-med-light;
     &:focus, &:active, &:hover {
