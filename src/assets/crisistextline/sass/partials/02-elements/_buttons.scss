@@ -28,7 +28,6 @@ button,
     font-size: .75em;
     background: $color-med;
     padding: 1em 1.2em;
-
     &:enabled {
         cursor: pointer;
         &:hover {
@@ -38,6 +37,17 @@ button,
     }
     &:focus {
         outline: none;
+    }
+    &.react-clickable {
+        text-transform: initial;
+        font-size: 1em;
+        background: transparent;
+        padding: 0;
+        &:enabled {
+            &:hover {
+                background-color: transparent;
+            }
+        }
     }
 }
 
@@ -71,7 +81,6 @@ button.active,
 .input-button.active,
 .button.active {
     @include button-active-hover;
-
 }
 
 @mixin button-mgt-plan {
