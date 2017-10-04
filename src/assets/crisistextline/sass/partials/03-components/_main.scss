@@ -10,6 +10,10 @@ body {
 
 #main-wrapper {
     background-color: white;
+    &.no-side-padding {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 .mini {
